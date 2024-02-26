@@ -35,7 +35,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /dapi/v1/time:
     get:
       tags:
@@ -52,7 +55,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /dapi/v1/exchangeInfo:
     get:
       tags:
@@ -69,7 +75,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /dapi/v1/depth:
     get:
       tags:
@@ -97,7 +106,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /dapi/v1/trades:
     get:
       tags:
@@ -118,7 +130,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /dapi/v1/historicalTrades:
     get:
       tags:
@@ -145,7 +160,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /dapi/v1/aggTrades:
     get:
       tags:
@@ -166,7 +184,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /dapi/v1/premiumIndex:
     get:
       tags:
@@ -183,7 +204,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /dapi/v1/fundingRate:
     get:
       tags:
@@ -204,7 +228,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /dapi/v1/klines:
     get:
       tags:
@@ -232,7 +259,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /dapi/v1/continuousKlines:
     get:
       tags:
@@ -261,7 +291,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /dapi/v1/indexPriceKlines:
     get:
       tags:
@@ -286,7 +319,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /dapi/v1/markPriceKlines:
     get:
       tags:
@@ -311,7 +347,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /dapi/v1/ticker/24hr:
     get:
       tags:
@@ -338,7 +377,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /dapi/v1/ticker/price:
     get:
       tags:
@@ -356,7 +398,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /dapi/v1/ticker/bookTicker:
     get:
       tags:
@@ -374,7 +419,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /dapi/v1/openInterest:
     get:
       tags:
@@ -396,7 +444,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /futures/data/openInterestHist:
     get:
       tags:
@@ -430,7 +481,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /futures/data/topLongShortAccountRatio:
     get:
       tags:
@@ -458,7 +512,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /futures/data/topLongShortPositionRatio:
     get:
       tags:
@@ -486,7 +543,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /futures/data/globalLongShortAccountRatio:
     get:
       tags:
@@ -514,7 +574,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /futures/data/takerBuySellVol:
     get:
       tags:
@@ -548,7 +611,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /futures/data/basis:
     get:
       tags:
@@ -582,7 +648,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /dapi/v1/fundingInfo:
     get:
       tags:
@@ -604,7 +673,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /dapi/v1/positionSide/dual:
     post:
       tags:
@@ -641,7 +713,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
     get:
       tags:
         - Trade
@@ -672,7 +747,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /dapi/v1/order:
     post:
       tags:
@@ -725,7 +803,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
     put:
       tags:
         - Trade
@@ -766,7 +847,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
     get:
       tags:
         - Trade
@@ -805,7 +889,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
     delete:
       tags:
         - Trade
@@ -844,7 +931,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /dapi/v1/batchOrders:
     post:
       tags:
@@ -883,7 +973,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
     put:
       tags:
         - Trade
@@ -922,7 +1015,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
     delete:
       tags:
         - Trade
@@ -962,7 +1058,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /dapi/v1/orderAmendment:
     get:
       tags:
@@ -1002,7 +1101,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /dapi/v1/allOpenOrders:
     delete:
       tags:
@@ -1038,7 +1140,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /dapi/v1/countdownCancelAll:
     post:
       tags:
@@ -1079,7 +1184,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /dapi/v1/openOrder:
     get:
       tags:
@@ -1119,7 +1227,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /dapi/v1/openOrders:
     get:
       tags:
@@ -1151,7 +1262,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /dapi/v1/allOrders:
     get:
       tags:
@@ -1183,7 +1297,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /dapi/v1/account:
     get:
       tags:
@@ -1215,7 +1332,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /dapi/v1/leverage:
     post:
       tags:
@@ -1255,7 +1375,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /dapi/v1/marginType:
     post:
       tags:
@@ -1295,7 +1418,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /dapi/v1/positionMargin:
     post:
       tags:
@@ -1339,7 +1465,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /dapi/v1/positionMargin/history:
     get:
       tags:
@@ -1375,7 +1504,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /dapi/v1/positionRisk:
     get:
       tags:
@@ -1407,7 +1539,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /dapi/v1/userTrades:
     get:
       tags:
@@ -1439,7 +1574,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /dapi/v1/income:
     get:
       tags:
@@ -1471,7 +1609,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /dapi/v1/leverageBracket:
     get:
       tags:
@@ -1503,7 +1644,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /dapi/v1/forceOrders:
     get:
       tags:
@@ -1535,7 +1679,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /dapi/v1/adlQuantile:
     get:
       tags:
@@ -1567,7 +1714,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /dapi/v1/income/asyn:
     get:
       tags:
@@ -1603,7 +1753,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /dapi/v1/listenKey:
     post:
       tags:
@@ -1625,7 +1778,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
     put:
       tags:
         - Data Stream
@@ -1646,7 +1802,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
     delete:
       tags:
         - Data Stream
@@ -1667,7 +1826,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /dapi/v1/pmExchangeInfo:
     get:
       tags:
@@ -1684,7 +1846,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /dapi/v1/pmAccountInfo:
     get:
       tags:
@@ -1720,4 +1885,7 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false

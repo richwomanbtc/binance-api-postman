@@ -17,5 +17,6 @@ fi
 
 # yqを使用して、requestBody.contentが空のエントリを削除
 yq eval 'del(.. | select(has("requestBody") and .requestBody.content | length == 0) | .requestBody)' -i "$OPENAPI_FILE"
+yq '(.. | select(has("content") and .content.application/json | length == 0)).content."application/json".schema |= {"type": "object", "additionalProperties": false}' -i "$OPENAPI_FILE"
 
 echo "Processed file: $OPENAPI_FILE"

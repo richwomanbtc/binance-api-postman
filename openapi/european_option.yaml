@@ -30,7 +30,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /eapi/v1/time:
     get:
       tags:
@@ -47,7 +50,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /eapi/v1/exchangeInfo:
     get:
       tags:
@@ -65,7 +71,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /eapi/v1/depth:
     get:
       tags:
@@ -87,7 +96,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /eapi/v1/trades:
     get:
       tags:
@@ -110,7 +122,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /eapi/v1/historicalTrades:
     get:
       tags:
@@ -133,7 +148,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /eapi/v1/klines:
     get:
       tags:
@@ -162,7 +180,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /eapi/v1/mark:
     get:
       tags:
@@ -180,7 +201,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /eapi/v1/ticker:
     get:
       tags:
@@ -198,7 +222,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /eapi/v1/index:
     get:
       tags:
@@ -221,7 +248,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /eapi/v1/exerciseHistory:
     get:
       tags:
@@ -242,7 +272,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /eapi/v1/account:
     get:
       tags:
@@ -274,7 +307,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /eapi/v1/order:
     post:
       tags:
@@ -327,7 +363,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
     get:
       tags:
         - Account/Trades
@@ -364,7 +403,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
     delete:
       tags:
         - Account/Trades
@@ -401,7 +443,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /eapi/v1/batchOrders:
     post:
       tags:
@@ -439,7 +484,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
     delete:
       tags:
         - Account/Trades
@@ -476,7 +524,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /eapi/v1/allOpenOrders:
     delete:
       tags:
@@ -514,7 +565,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /eapi/v1/allOpenOrdersByUnderlying:
     delete:
       tags:
@@ -552,7 +606,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /eapi/v1/openOrders:
     get:
       tags:
@@ -585,7 +642,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /eapi/v1/historyOrders:
     get:
       tags:
@@ -624,7 +684,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /eapi/v1/position:
     get:
       tags:
@@ -657,7 +720,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /eapi/v1/userTrades:
     get:
       tags:
@@ -690,7 +756,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /eapi/v1/exerciseRecord:
     get:
       tags:
@@ -723,7 +792,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /eapi/v1/bill:
     get:
       tags:
@@ -761,7 +833,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /eapi/v1/income/asyn:
     get:
       tags:
@@ -810,7 +885,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /eapi/v1/income/asyn/id:
     get:
       tags:
@@ -851,7 +929,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /eapi/v1/userDataStream:
     post:
       tags:
@@ -885,7 +966,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
     put:
       tags:
         - Data Stream
@@ -923,7 +1007,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
     delete:
       tags:
         - Data Stream
@@ -960,7 +1047,10 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
   /eapi/v1/marginAccount:
     delete:
       tags:
@@ -993,4 +1083,7 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
