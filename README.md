@@ -1,5 +1,10 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+# Postman to OpenAPI
+
+`npm install -g postman-to-openapi`
+`make convert`
+
 # Binance API Postman
 [Postman](https://getpostman.com) is an API Collaboration Platform.
 

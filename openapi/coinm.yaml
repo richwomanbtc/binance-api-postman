@@ -1,0 +1,1690 @@
+openapi: 3.0.0
+info:
+  title: Binance Coin-M Futures API
+  description: |-
+    Binance official supported Postman collections.<br/>
+    - API documents: https://binance-docs.github.io/apidocs/futures/en/
+    - Telegram: https://t.me/binance_api_english
+    - Open Issue at: https://github.com/binance-exchange/binance-api-postman
+  version: 1.0.0
+servers:
+  - url: https://dapi.binance.com
+    description: Binance COIN-M Futures API
+  - url: https://testnet.binancefuture.com
+    description: Binance Futures Testnet
+tags:
+  - name: Market
+  - name: Trade
+  - name: Data Stream
+  - name: Portfolio Margin
+paths:
+  /dapi/v1/ping:
+    get:
+      tags:
+        - Market
+      summary: Test Connectivity
+      description: Test connectivity to the Rest API.
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dapi/v1/time:
+    get:
+      tags:
+        - Market
+      summary: Check Server Time
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dapi/v1/exchangeInfo:
+    get:
+      tags:
+        - Market
+      summary: Exchange Information
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dapi/v1/depth:
+    get:
+      tags:
+        - Market
+      summary: Order Book
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: symbol
+          in: query
+          schema:
+            type: string
+          example: BTCUSDT
+        - name: limit
+          in: query
+          schema:
+            type: integer
+          description: Default 100; max 1000. Valid limits:[5, 10, 20, 50, 100, 500, 1000]
+          example: '100'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dapi/v1/trades:
+    get:
+      tags:
+        - Market
+      summary: Recent Trades List
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: symbol
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dapi/v1/historicalTrades:
+    get:
+      tags:
+        - Market
+      summary: Old Trades Lookup (MARKET_DATA)
+      description: This endpoint need your API key only, not the secret key.
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: symbol
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dapi/v1/aggTrades:
+    get:
+      tags:
+        - Market
+      summary: Compressed/Aggregate Trades List
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: symbol
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dapi/v1/premiumIndex:
+    get:
+      tags:
+        - Market
+      summary: Index Price and Mark Price
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dapi/v1/fundingRate:
+    get:
+      tags:
+        - Market
+      summary: Get Funding Rate History of Perpetual Futures
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: symbol
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dapi/v1/klines:
+    get:
+      tags:
+        - Market
+      summary: Kline/Candlestick Data
+      description: >-
+        Kline/candlestick bars for a symbol. Klines are uniquely identified by
+        their open time.
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: symbol
+          in: query
+          schema:
+            type: string
+        - name: interval
+          in: query
+          schema:
+            type: string
+          description: 1m, 1h, 1d, etc
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dapi/v1/continuousKlines:
+    get:
+      tags:
+        - Market
+      summary: Continuous Contract Kline/Candlestick Data
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: pair
+          in: query
+          schema:
+            type: string
+        - name: contractType
+          in: query
+          schema:
+            type: string
+        - name: interval
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dapi/v1/indexPriceKlines:
+    get:
+      tags:
+        - Market
+      summary: Index Price Kline/Candlestick Data
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: pair
+          in: query
+          schema:
+            type: string
+        - name: interval
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dapi/v1/markPriceKlines:
+    get:
+      tags:
+        - Market
+      summary: Mark Price Kline/Candlestick Data
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: symbol
+          in: query
+          schema:
+            type: string
+        - name: interval
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dapi/v1/ticker/24hr:
+    get:
+      tags:
+        - Market
+      summary: 24hr Ticker Price Change Statistics
+      description: |-
+        24 hour rolling window price change statistics.
+
+        Careful when accessing this with no symbol.
+
+        Weight:
+
+        1 for a single symbol;
+
+        40 when the symbol parameter is omitted
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dapi/v1/ticker/price:
+    get:
+      tags:
+        - Market
+      summary: Symbol Price Ticker
+      description: Latest price for a symbol or symbols.
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dapi/v1/ticker/bookTicker:
+    get:
+      tags:
+        - Market
+      summary: Symbol Order Book Ticker
+      description: Best price/qty on the order book for a symbol or symbols.
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dapi/v1/openInterest:
+    get:
+      tags:
+        - Market
+      summary: Open Interest
+      description: Get present open interest of a specific symbol.
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: symbol
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /futures/data/openInterestHist:
+    get:
+      tags:
+        - Market
+      summary: Open Interest Statistics
+      description: Get present open interest of a specific symbol.
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: pair
+          in: query
+          schema:
+            type: string
+        - name: contractType
+          in: query
+          schema:
+            type: string
+          description: ALL,CURRENT_QUARTER,NEXT_QUARTER
+          example: ALL
+        - name: period
+          in: query
+          schema:
+            type: string
+          description: '"5m","15m","30m","1h","2h","4h","6h","12h","1d"'
+          example: 5m
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /futures/data/topLongShortAccountRatio:
+    get:
+      tags:
+        - Market
+      summary: Top Trader Long/Short Ratio (Accounts)
+      description: Get present open interest of a specific symbol.
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: pair
+          in: query
+          schema:
+            type: string
+        - name: period
+          in: query
+          schema:
+            type: string
+          description: '"5m","15m","30m","1h","2h","4h","6h","12h","1d"'
+          example: 5m
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /futures/data/topLongShortPositionRatio:
+    get:
+      tags:
+        - Market
+      summary: Top Trader Long/Short Ratio (Positions)
+      description: Get present open interest of a specific symbol.
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: pair
+          in: query
+          schema:
+            type: string
+        - name: period
+          in: query
+          schema:
+            type: string
+          description: '"5m","15m","30m","1h","2h","4h","6h","12h","1d"'
+          example: 5m
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /futures/data/globalLongShortAccountRatio:
+    get:
+      tags:
+        - Market
+      summary: Long/Short Ratio
+      description: Get present open interest of a specific symbol.
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: pair
+          in: query
+          schema:
+            type: string
+        - name: period
+          in: query
+          schema:
+            type: string
+          description: '"5m","15m","30m","1h","2h","4h","6h","12h","1d"'
+          example: 5m
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /futures/data/takerBuySellVol:
+    get:
+      tags:
+        - Market
+      summary: Taker Buy/Sell Volume
+      description: Get present open interest of a specific symbol.
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: pair
+          in: query
+          schema:
+            type: string
+        - name: contractType
+          in: query
+          schema:
+            type: string
+          description: ALL,CURRENT_QUARTER,NEXT_QUARTER
+          example: ALL
+        - name: period
+          in: query
+          schema:
+            type: string
+          description: '"5m","15m","30m","1h","2h","4h","6h","12h","1d"'
+          example: 5m
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /futures/data/basis:
+    get:
+      tags:
+        - Market
+      summary: Basis
+      description: Get present open interest of a specific symbol.
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: pair
+          in: query
+          schema:
+            type: string
+        - name: contractType
+          in: query
+          schema:
+            type: string
+          description: CURRENT_QUARTER,NEXT_QUARTER
+          example: CURRENT_QUARTER
+        - name: period
+          in: query
+          schema:
+            type: string
+          description: '"5m","15m","30m","1h","2h","4h","6h","12h","1d"'
+          example: 5m
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dapi/v1/fundingInfo:
+    get:
+      tags:
+        - Market
+      summary: Quarterly Contract Settlement Price
+      description: Get present open interest of a specific symbol.
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: pair
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dapi/v1/positionSide/dual:
+    post:
+      tags:
+        - Trade
+      summary: Change Position Mode（TRADE）
+      requestBody:
+        content: {}
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: dualSidePosition
+          in: query
+          schema:
+            type: string
+          description: 'Boolean value. "true": Hedge Mode mode; "false": One-way Mode'
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Trade
+      summary: Get Current Position Mode（USER_DATA）
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dapi/v1/order:
+    post:
+      tags:
+        - Trade
+      summary: New Order (TRADE)
+      description: https://binance-docs.github.io/apidocs/futures/en/#new-order-trade
+      requestBody:
+        content: {}
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: symbol
+          in: query
+          schema:
+            type: string
+        - name: side
+          in: query
+          schema:
+            type: string
+        - name: type
+          in: query
+          schema:
+            type: string
+        - name: quantity
+          in: query
+          schema:
+            type: string
+        - name: price
+          in: query
+          schema:
+            type: string
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    put:
+      tags:
+        - Trade
+      summary: Modify Order (TRADE)
+      description: https://binance-docs.github.io/apidocs/futures/en/#new-order-trade
+      requestBody:
+        content: {}
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: symbol
+          in: query
+          schema:
+            type: string
+        - name: side
+          in: query
+          schema:
+            type: string
+          description: SELL, BUY
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Trade
+      summary: Query Order
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: symbol
+          in: query
+          schema:
+            type: string
+        - name: orderId
+          in: query
+          schema:
+            type: string
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Trade
+      summary: Cancel Order
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: symbol
+          in: query
+          schema:
+            type: string
+        - name: orderId
+          in: query
+          schema:
+            type: string
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dapi/v1/batchOrders:
+    post:
+      tags:
+        - Trade
+      summary: Place Multiple Orders (TRADE)
+      requestBody:
+        content: {}
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: batchOrders
+          in: query
+          schema:
+            type: string
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          description: |-
+            Default BOTH for One-way Mode ;
+            LONG or SHORT for Hedge Mode. It must be sent with Hedge Mode.
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    put:
+      tags:
+        - Trade
+      summary: Modify Multiple Orders (TRADE)
+      requestBody:
+        content: {}
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: batchOrders
+          in: query
+          schema:
+            type: string
+          description: order list. Max 5 orders
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          description: |-
+            Default BOTH for One-way Mode ;
+            LONG or SHORT for Hedge Mode. It must be sent with Hedge Mode.
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Trade
+      summary: Cancel Multiple Orders (TRADE)
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: symbol
+          in: query
+          schema:
+            type: string
+        - name: orderIdList
+          in: query
+          schema:
+            type: string
+          description: '[id,id]  no space in between'
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dapi/v1/orderAmendment:
+    get:
+      tags:
+        - Trade
+      summary: Get Order Modify History (USER_DATA)
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: symbol
+          in: query
+          schema:
+            type: string
+        - name: orderId
+          in: query
+          schema:
+            type: string
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dapi/v1/allOpenOrders:
+    delete:
+      tags:
+        - Trade
+      summary: Cancel All Open Orders
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: symbol
+          in: query
+          schema:
+            type: string
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dapi/v1/countdownCancelAll:
+    post:
+      tags:
+        - Trade
+      summary: Auto-Cancel All Open Orders (TRADE)
+      requestBody:
+        content: {}
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: symbol
+          in: query
+          schema:
+            type: string
+        - name: countdownTime
+          in: query
+          schema:
+            type: string
+          description: countdown time, 1000 for 1 second. 0 to cancel the timer
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dapi/v1/openOrder:
+    get:
+      tags:
+        - Trade
+      summary: Query Current Open Order (USER_DATA)
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: symbol
+          in: query
+          schema:
+            type: string
+        - name: orderId
+          in: query
+          schema:
+            type: string
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dapi/v1/openOrders:
+    get:
+      tags:
+        - Trade
+      summary: Current All Open Orders (USER_DATA)
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dapi/v1/allOrders:
+    get:
+      tags:
+        - Trade
+      summary: All Orders
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dapi/v1/account:
+    get:
+      tags:
+        - Trade
+      summary: Account information
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dapi/v1/leverage:
+    post:
+      tags:
+        - Trade
+      summary: Change Initial Leverage
+      requestBody:
+        content: {}
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: symbol
+          in: query
+          schema:
+            type: string
+        - name: leverage
+          in: query
+          schema:
+            type: string
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dapi/v1/marginType:
+    post:
+      tags:
+        - Trade
+      summary: Change Margin Type
+      requestBody:
+        content: {}
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: symbol
+          in: query
+          schema:
+            type: string
+        - name: marginType
+          in: query
+          schema:
+            type: string
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dapi/v1/positionMargin:
+    post:
+      tags:
+        - Trade
+      summary: Modify Isolated Position Margin
+      requestBody:
+        content: {}
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: symbol
+          in: query
+          schema:
+            type: string
+        - name: amount
+          in: query
+          schema:
+            type: string
+        - name: type
+          in: query
+          schema:
+            type: string
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dapi/v1/positionMargin/history:
+    get:
+      tags:
+        - Trade
+      summary: Get Postion Margin Change History
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: symbol
+          in: query
+          schema:
+            type: string
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dapi/v1/positionRisk:
+    get:
+      tags:
+        - Trade
+      summary: Position Information
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dapi/v1/userTrades:
+    get:
+      tags:
+        - Trade
+      summary: Account Trade List
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dapi/v1/income:
+    get:
+      tags:
+        - Trade
+      summary: Get Income History
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dapi/v1/leverageBracket:
+    get:
+      tags:
+        - Trade
+      summary: Notional Bracket (USER_DATA)
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dapi/v1/forceOrders:
+    get:
+      tags:
+        - Trade
+      summary: User's Force Orders (USER_DATA)
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dapi/v1/adlQuantile:
+    get:
+      tags:
+        - Trade
+      summary: Position ADL Quantile Estimation (USER_DATA)
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dapi/v1/income/asyn:
+    get:
+      tags:
+        - Trade
+      summary: Get Futures Transaction History Download Link by Id (USER_DATA)
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: downloadId
+          in: query
+          schema:
+            type: string
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dapi/v1/listenKey:
+    post:
+      tags:
+        - Data Stream
+      summary: Create New Listen Key
+      requestBody:
+        content: {}
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    put:
+      tags:
+        - Data Stream
+      summary: Renew Listen Key
+      requestBody:
+        content: {}
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Data Stream
+      summary: Delete Listen Key
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dapi/v1/pmExchangeInfo:
+    get:
+      tags:
+        - Portfolio Margin
+      summary: Portfolio Margin Exchange Information
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dapi/v1/pmAccountInfo:
+    get:
+      tags:
+        - Portfolio Margin
+      summary: Portfolio Margin Account Information
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: asset
+          in: query
+          schema:
+            type: string
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

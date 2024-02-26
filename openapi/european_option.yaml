@@ -1,0 +1,981 @@
+openapi: 3.0.0
+info:
+  title: Binance European Options API
+  description: |-
+    Binance official supported Postman collections.<br/>
+    - API documents: https://binance-docs.github.io/apidocs/voptions/en
+  version: 1.0.0
+servers:
+  - url: https://eapi.binance.com
+    description: Binance European Option API
+tags:
+  - name: Market
+  - name: Account/Trades
+  - name: Data Stream
+  - name: Market Maker
+paths:
+  /eapi/v1/ping:
+    get:
+      tags:
+        - Market
+      summary: Test connectivity
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /eapi/v1/time:
+    get:
+      tags:
+        - Market
+      summary: Get server time
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /eapi/v1/exchangeInfo:
+    get:
+      tags:
+        - Market
+      summary: Exchange Information
+      description: Current exchange trading rules and symbol information
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /eapi/v1/depth:
+    get:
+      tags:
+        - Market
+      summary: Order Book
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: symbol
+          in: query
+          schema:
+            type: string
+          description: Option trading pair
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /eapi/v1/trades:
+    get:
+      tags:
+        - Market
+      summary: Recent Trades List
+      description: Get recent market trades
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: symbol
+          in: query
+          schema:
+            type: string
+          description: Option trading pair
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /eapi/v1/historicalTrades:
+    get:
+      tags:
+        - Market
+      summary: Old Trades Lookup (MARKET_DATA)
+      description: Get older market historical trades.
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: symbol
+          in: query
+          schema:
+            type: string
+          description: Option trading pair, e.g BTC-200730-9000-C
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /eapi/v1/klines:
+    get:
+      tags:
+        - Market
+      summary: Kline/Candlestick Data
+      description: >-
+        Kline/candlestick bars for an option symbol. Klines are uniquely
+        identified by their open time.
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: symbol
+          in: query
+          schema:
+            type: string
+          description: Option trading pair, e.g BTC-200730-9000-C
+        - name: interval
+          in: query
+          schema:
+            type: string
+          description: Time Interval
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /eapi/v1/mark:
+    get:
+      tags:
+        - Market
+      summary: Option Mark Price
+      description: Option mark price and greek info.
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /eapi/v1/ticker:
+    get:
+      tags:
+        - Market
+      summary: 24hr Ticker Price Change Statistics
+      description: 24 hour rolling window price change statistics.
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /eapi/v1/index:
+    get:
+      tags:
+        - Market
+      summary: Symbol Price Ticker
+      description: Get spot index price for option underlying.
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: underlying
+          in: query
+          schema:
+            type: string
+          description: Spot pair（Option contract underlying asset）
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /eapi/v1/exerciseHistory:
+    get:
+      tags:
+        - Market
+      summary: Historical Exercise Records
+      description: |-
+        REALISTIC_VALUE_STRICKEN -> Exercised
+
+        EXTRINSIC_VALUE_EXPIRED -> Expired OTM
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /eapi/v1/account:
+    get:
+      tags:
+        - Account/Trades
+      summary: Option Account Information (TRADE)
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /eapi/v1/order:
+    post:
+      tags:
+        - Account/Trades
+      summary: New Order (TRADE)
+      description: Send a new order.
+      requestBody:
+        content: {}
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: symbol
+          in: query
+          schema:
+            type: string
+          description: Option trading pair, e.g BTC-200730-9000-C
+        - name: side
+          in: query
+          schema:
+            type: string
+          description: 'Buy/sell direction: SELL, BUY'
+        - name: type
+          in: query
+          schema:
+            type: string
+          description: 'Order Type: LIMIT(only support limit)'
+        - name: quantity
+          in: query
+          schema:
+            type: string
+          description: Order Quantity
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Account/Trades
+      summary: Query Single Order (TRADE)
+      description: Check an order status.
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: symbol
+          in: query
+          schema:
+            type: string
+          description: Option trading pair, e.g BTC-200730-9000-C
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Account/Trades
+      summary: Cancel Option Order (TRADE)
+      description: Cancel an active order.
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: symbol
+          in: query
+          schema:
+            type: string
+          description: Option trading pair, e.g BTC-200730-9000-C
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /eapi/v1/batchOrders:
+    post:
+      tags:
+        - Account/Trades
+      summary: Place Multiple Orders (TRADE)
+      description: Send multiple option orders.
+      requestBody:
+        content: {}
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: orders
+          in: query
+          schema:
+            type: string
+          description: order list. Max 5 orders
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Account/Trades
+      summary: Cancel Multiple Option orders (TRADE)
+      description: Cancel an active order.
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: symbol
+          in: query
+          schema:
+            type: string
+          description: Option trading pair, e.g BTC-200730-9000-C
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /eapi/v1/allOpenOrders:
+    delete:
+      tags:
+        - Account/Trades
+      summary: Cancel all Option orders on specific symbol (TRADE)
+      description: Cancel all active order on a symbol.
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: symbol
+          in: query
+          schema:
+            type: string
+          description: Option trading pair, e.g BTC-200730-9000-C
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /eapi/v1/allOpenOrdersByUnderlying:
+    delete:
+      tags:
+        - Account/Trades
+      summary: Cancel All Option Orders By Underlying (TRADE)
+      description: Cancel all active orders on specified underlying.
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: underlying
+          in: query
+          schema:
+            type: string
+          description: Option underlying, e.g BTCUSDT
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /eapi/v1/openOrders:
+    get:
+      tags:
+        - Account/Trades
+      summary: Query Current Open Option Orders (USER_DATA)
+      description: 'Query current all open orders, status: ACCEPTED PARTIALLY_FILLED'
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /eapi/v1/historyOrders:
+    get:
+      tags:
+        - Account/Trades
+      summary: Query Option Order History (TRADE)
+      description: >-
+        Query all finished orders within 1 month, finished status: CANCELLED
+        FILLED REJECTED.
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: symbol
+          in: query
+          schema:
+            type: string
+          description: Option trading pair
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /eapi/v1/position:
+    get:
+      tags:
+        - Account/Trades
+      summary: Option Position Information (USER_DATA)
+      description: Get current position information.
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /eapi/v1/userTrades:
+    get:
+      tags:
+        - Account/Trades
+      summary: Account Trade List (USER_DATA)
+      description: Get trades for a specific account and symbol.
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /eapi/v1/exerciseRecord:
+    get:
+      tags:
+        - Account/Trades
+      summary: User Exercise Record (USER_DATA)
+      description: Get account exercise records.
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /eapi/v1/bill:
+    get:
+      tags:
+        - Account/Trades
+      summary: Account Funding Flow (USER_DATA)
+      description: Query account funding flows.
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: currency
+          in: query
+          schema:
+            type: string
+          description: Asset type, e.g USDT
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /eapi/v1/income/asyn:
+    get:
+      tags:
+        - Account/Trades
+      summary: Get Download Id For Option Transaction History (USER_DATA)
+      description: >-
+        Request Limitation is 5 times per month, shared by front end download
+        page and rest api
+
+        The time between startTime and endTime can not be longer than 1 year
+
+
+        Weight: 5
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: startTime
+          in: query
+          schema:
+            type: string
+          description: Timestamp in ms
+        - name: endTime
+          in: query
+          schema:
+            type: string
+          description: Timestamp in ms
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /eapi/v1/income/asyn/id:
+    get:
+      tags:
+        - Account/Trades
+      summary: Get Option Transaction History Download Link by Id (USER_DATA)
+      description: |-
+        Download link expiration: 24h
+
+        Weight: 5
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: downloadId
+          in: query
+          schema:
+            type: string
+          description: get by download id api
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /eapi/v1/userDataStream:
+    post:
+      tags:
+        - Data Stream
+      summary: Start User Data Stream (USER_STREAM)
+      description: >-
+        Start a new user data stream. The stream will close after 60 minutes
+        unless a keepalive is sent. If the account has an active listenKey, that
+        listenKey will be returned and its validity will be extended for 60
+        minutes.
+      requestBody:
+        content: {}
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    put:
+      tags:
+        - Data Stream
+      summary: Keepalive User Data Stream (USER_STREAM)
+      description: >-
+        Keepalive a user data stream to prevent a time out. User data streams
+        will close after 60 minutes. It's recommended to send a ping about every
+        60 minutes.
+      requestBody:
+        content: {}
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: listenKey
+          in: query
+          schema:
+            type: string
+          description: listenKey
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Data Stream
+      summary: Close User Data Stream (USER_STREAM)
+      description: Close out a user data stream.
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: listenKey
+          in: query
+          schema:
+            type: string
+          description: listenKey
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /eapi/v1/marginAccount:
+    delete:
+      tags:
+        - Market Maker
+      summary: Option Margin Account Information (USER_DATA)
+      description: Get current account information.
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: binance-api-key
+        - name: timestamp
+          in: query
+          schema:
+            type: integer
+          example: '1234567890'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: signature
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

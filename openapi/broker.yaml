@@ -1,0 +1,874 @@
+openapi: 3.0.0
+info:
+  title: Binance Broker API
+  description: |-
+    Binance official supported Postman collections.<br/>
+    - API documents: https://binance-docs.github.io/Brokerage-API/General
+  version: 1.0.0
+servers:
+  - url: http://{{url}}
+paths:
+  /sapi/v1/broker/subAccount:
+    post:
+      tags:
+        - default
+      summary: Create a Sub Account
+      requestBody:
+        content: {}
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: '{{binance-api-key}}'
+        - name: tag
+          in: query
+          schema:
+            type: string
+          description: tag length should be less than 32
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: '{{signature}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - default
+      summary: Query Sub Account
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: '{{binance-api-key}}'
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: '{{signature}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /sapi/v1/broker/subAccount/margin:
+    post:
+      tags:
+        - default
+      summary: Enable Margin for Sub Account
+      requestBody:
+        content: {}
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: '{{binance-api-key}}'
+        - name: subAccountId
+          in: query
+          schema:
+            type: string
+        - name: margin
+          in: query
+          schema:
+            type: string
+          description: only true for now
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: '{{signature}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /sapi/v1/broker/subAccount/futures:
+    post:
+      tags:
+        - default
+      summary: Enable Futures for Sub Account
+      requestBody:
+        content: {}
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: '{{binance-api-key}}'
+        - name: subAccountId
+          in: query
+          schema:
+            type: string
+        - name: futures
+          in: query
+          schema:
+            type: string
+          description: only true for now
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: '{{signature}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /sapi/v1/broker/subAccountApi:
+    post:
+      tags:
+        - default
+      summary: Change Sub Account Api Permission
+      requestBody:
+        content: {}
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: '{{binance-api-key}}'
+        - name: subAccountId
+          in: query
+          schema:
+            type: string
+        - name: subAccountApiKey
+          in: query
+          schema:
+            type: string
+        - name: canTrade
+          in: query
+          schema:
+            type: string
+        - name: marginTrade
+          in: query
+          schema:
+            type: string
+        - name: futuresTrade
+          in: query
+          schema:
+            type: string
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: '{{signature}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - default
+      summary: Delete Sub Account Api Key
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: '{{binance-api-key}}'
+        - name: subAccountId
+          in: query
+          schema:
+            type: string
+        - name: subAccountApiKey
+          in: query
+          schema:
+            type: string
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: '{{signature}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - default
+      summary: Query Sub Account Api Key
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: '{{binance-api-key}}'
+        - name: subAccountId
+          in: query
+          schema:
+            type: string
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: '{{signature}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /sapi/v1/broker/subAccountApi/commission:
+    post:
+      tags:
+        - default
+      summary: Change Sub Account Commission
+      requestBody:
+        content: {}
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: '{{binance-api-key}}'
+        - name: subAccountId
+          in: query
+          schema:
+            type: string
+        - name: makerCommission
+          in: query
+          schema:
+            type: string
+        - name: takerCommission
+          in: query
+          schema:
+            type: string
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: '{{signature}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /sapi/v1/broker/subAccountApi/commission/futures:
+    post:
+      tags:
+        - default
+      summary: Change Sub Account Futures Commission Adjustment
+      requestBody:
+        content: {}
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: '{{binance-api-key}}'
+        - name: subAccountId
+          in: query
+          schema:
+            type: string
+        - name: symbol
+          in: query
+          schema:
+            type: string
+        - name: makerAdjustment
+          in: query
+          schema:
+            type: string
+        - name: takerAdjustment
+          in: query
+          schema:
+            type: string
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: '{{signature}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - default
+      summary: Query Sub Account Futures Commission Adjustment
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: '{{binance-api-key}}'
+        - name: subAccountId
+          in: query
+          schema:
+            type: string
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: '{{signature}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /sapi/v1/broker/info:
+    get:
+      tags:
+        - default
+      summary: Broker Account Information
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: '{{binance-api-key}}'
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: '{{signature}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /sapi/v1/broker/transfer:
+    post:
+      tags:
+        - default
+      summary: Sub Account Transfer
+      requestBody:
+        content: {}
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: '{{binance-api-key}}'
+        - name: asset
+          in: query
+          schema:
+            type: string
+        - name: amount
+          in: query
+          schema:
+            type: string
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: '{{signature}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - default
+      summary: Query Sub Account Transfer History
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: '{{binance-api-key}}'
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: '{{signature}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /sapi/v1/broker/rebate/recentRecord:
+    get:
+      tags:
+        - default
+      summary: Query Broker Commission Rebate Recent Record
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: '{{binance-api-key}}'
+        - name: subAccountId
+          in: query
+          schema:
+            type: string
+        - name: startTime
+          in: query
+          schema:
+            type: string
+        - name: endTime
+          in: query
+          schema:
+            type: string
+        - name: page
+          in: query
+          schema:
+            type: string
+          description: default 1
+        - name: size
+          in: query
+          schema:
+            type: string
+          description: default 500, max 500
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: '{{signature}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /sapi/v1/broker/rebate/historicalRecord:
+    post:
+      tags:
+        - default
+      summary: Generate Broker Commission Rebate History
+      requestBody:
+        content: {}
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: '{{binance-api-key}}'
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: '{{signature}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - default
+      summary: Query Broker Commission Rebate History
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: '{{binance-api-key}}'
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: '{{signature}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /sapi/v1/broker/subAccount/bnbBurn/spot:
+    post:
+      tags:
+        - default
+      summary: Enable Or Disable BNB Burn for Sub Account SPOT and MARGIN
+      requestBody:
+        content: {}
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: '{{binance-api-key}}'
+        - name: subAccountId
+          in: query
+          schema:
+            type: string
+        - name: spotBNBBurn
+          in: query
+          schema:
+            type: string
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: '{{signature}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /sapi/v1/broker/subAccount/bnbBurn/marginInterest:
+    post:
+      tags:
+        - default
+      summary: Enable Or Disable BNB Burn for Sub Account Margin Interest
+      requestBody:
+        content: {}
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: '{{binance-api-key}}'
+        - name: subAccountId
+          in: query
+          schema:
+            type: string
+        - name: spotBNBBurn
+          in: query
+          schema:
+            type: string
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: '{{signature}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /sapi/v1/broker/subAccount/bnbBurn/status:
+    get:
+      tags:
+        - default
+      summary: Get BNB Burn Status for Sub Account
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: '{{binance-api-key}}'
+        - name: subAccountId
+          in: query
+          schema:
+            type: string
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: '{{signature}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /sapi/v1/broker/subAccount/depositHist:
+    get:
+      tags:
+        - default
+      summary: Get Sub Account Deposit History
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: '{{binance-api-key}}'
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: '{{signature}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /sapi/v1/broker/subAccount/spotSummary:
+    get:
+      tags:
+        - default
+      summary: Query Sub Account Spot Asset info
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: '{{binance-api-key}}'
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: '{{signature}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /sapi/v1/broker/subAccount/marginSummary:
+    get:
+      tags:
+        - default
+      summary: Query Subaccount Margin Asset info
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: '{{binance-api-key}}'
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: '{{signature}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /sapi/v1/broker/subAccount/futuresSummary:
+    get:
+      tags:
+        - default
+      summary: Query Subaccount Futures Asset info
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: X-MBX-APIKEY
+          in: header
+          schema:
+            type: string
+          example: '{{binance-api-key}}'
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+        - name: signature
+          in: query
+          schema:
+            type: string
+          example: '{{signature}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

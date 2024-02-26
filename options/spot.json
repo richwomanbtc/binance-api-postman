@@ -1,0 +1,34 @@
+{
+    "servers": [
+        {
+            "url": "https://api.binance.com",
+            "description": "Binance Spot API"
+        },
+        {
+            "url": "https://api-gcp.binance.com",
+            "description": "Binance Spot API (GCP)"
+        },
+        {
+            "url": "https://api1.binance.com",
+            "description": "Binance Spot API"
+        },
+        {
+            "url": "https://api2.binance.com",
+            "description": "Binance Spot API"
+        },
+        {
+            "url": "https://api3.binance.com",
+            "description": "Binance Spot API"
+        },
+        {
+            "url": "https://data-api.binance.vision",
+            "description": "Binance Spot API that have `NONE` as security type "
+        }
+    ],
+    "replaceVars": true,
+    "additionalVars": {
+        "timestamp": 1234567890,
+        "signature": "signature",
+        "binance-api-key": "binance-api-key"
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "servers": [
+        {
+            "url": "https://dapi.binance.com",
+            "description": "Binance COIN-M Futures API"
+        },
+        {
+            "url": "https://testnet.binancefuture.com",
+            "description": "Binance Futures Testnet"
+        }
+    ],
+    "replaceVars": true,
+    "additionalVars": {
+        "timestamp": 1234567890,
+        "signature": "signature",
+        "binance-api-key": "binance-api-key"
+    }
+}

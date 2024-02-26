@@ -1,0 +1,15 @@
+{
+    "servers": [
+        {
+            "url": "https://eapi.binance.com",
+            "description": "Binance European Option API"
+        }
+    ],
+    "replaceVars": true,
+    "additionalVars": {
+        "timestamp": 1234567890,
+        "signature": "signature",
+        "binance-api-key": "binance-api-key",
+        "secret-key": "secret-key"
+    }
+}
