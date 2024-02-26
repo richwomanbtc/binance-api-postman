@@ -88,6 +88,7 @@ paths:
       tags:
         - BLVT
       summary: Get BLVT Info (MARKET_DATA)
+      operationId: getBlvtInfoMarketData
       description: 'Weight(IP): 1'
       parameters:
         - name: Content-Type
@@ -110,6 +111,7 @@ paths:
       tags:
         - BLVT
       summary: Subscribe BLVT (USER_DATA)
+      operationId: subscribeBlvtUserData
       description: 'Weight(IP): 1'
       parameters:
         - name: Content-Type
@@ -154,6 +156,7 @@ paths:
       tags:
         - BLVT
       summary: Query Subscription Record (USER_DATA)
+      operationId: querySubscriptionRecordUserData
       description: |-
         - Only the data of the latest 90 days is available
 
@@ -191,6 +194,7 @@ paths:
       tags:
         - BLVT
       summary: Redeem BLVT (USER_DATA)
+      operationId: redeemBlvtUserData
       description: 'Weight(IP): 1'
       parameters:
         - name: Content-Type
@@ -235,6 +239,7 @@ paths:
       tags:
         - BLVT
       summary: Query Redemption Record (USER_DATA)
+      operationId: queryRedemptionRecordUserData
       description: |-
         - Only the data of the latest 90 days is available
 
@@ -272,6 +277,7 @@ paths:
       tags:
         - BLVT
       summary: Get BLVT User Limit Info (USER_DATA)
+      operationId: getBlvtUserLimitInfoUserData
       description: 'Weight(IP): 1'
       parameters:
         - name: Content-Type
@@ -306,6 +312,7 @@ paths:
       tags:
         - C2C
       summary: Get C2C Trade History (USER_DATA)
+      operationId: getC2CTradeHistoryUserData
       description: >-
         - If startTimestamp and endTimestamp are not sent, the recent 30-day data will be returned.
 
@@ -351,6 +358,7 @@ paths:
       tags:
         - Convert
       summary: List All Convert Pairs (USER_DATA)
+      operationId: listAllConvertPairsUserData
       description: |-
         - The max interval between startTime and endTime is 30 days.
 
@@ -398,6 +406,7 @@ paths:
       tags:
         - Convert
       summary: Query order quantity precision per asset (USER_DATA)
+      operationId: queryOrderQuantityPrecisionPerAssetUserData
       description: |-
         - The max interval between startTime and endTime is 30 days.
 
@@ -435,6 +444,7 @@ paths:
       tags:
         - Convert
       summary: Send quote request (USER_DATA)
+      operationId: sendQuoteRequestUserData
       description: |-
         - The max interval between startTime and endTime is 30 days.
 
@@ -486,6 +496,7 @@ paths:
       tags:
         - Convert
       summary: Accept Quote (TRADE)
+      operationId: acceptQuoteTrade
       description: |-
         - The max interval between startTime and endTime is 30 days.
 
@@ -527,6 +538,7 @@ paths:
       tags:
         - Convert
       summary: Order status (USER_DATA)
+      operationId: orderStatusUserData
       description: |-
         - The max interval between startTime and endTime is 30 days.
 
@@ -568,6 +580,7 @@ paths:
       tags:
         - Convert
       summary: Place limit order (USER_DATA)
+      operationId: placeLimitOrderUserData
       description: |-
         Enable users to place a limit order
         baseAsset or quoteAsset can be determined via exchangeInfo endpoint.
@@ -634,6 +647,7 @@ paths:
       tags:
         - Convert
       summary: Cancel limit order (USER_DATA)
+      operationId: cancelLimitOrderUserData
       description: |-
         Enable users to cancel a limit order
 
@@ -676,6 +690,7 @@ paths:
       tags:
         - Convert
       summary: Query limit open orders (USER_DATA)
+      operationId: queryLimitOpenOrdersUserData
       description: |-
         Enable users to query for all existing limit orders
 
@@ -713,6 +728,7 @@ paths:
       tags:
         - Convert
       summary: Get Convert Trade History (USER_DATA)
+      operationId: getConvertTradeHistoryUserData
       description: |-
         - The max interval between startTime and endTime is 30 days.
 
@@ -760,6 +776,7 @@ paths:
       tags:
         - Crypto Loans
       summary: Get Crypto Loans Income History (USER_DATA)
+      operationId: getCryptoLoansIncomeHistoryUserData
       description: >-
         - If startTime and endTime are not sent, the recent 7-day data will be returned.
 
@@ -805,6 +822,7 @@ paths:
       tags:
         - Crypto Loans
       summary: Borrow - Crypto Loan Borrow (TRADE)
+      operationId: borrowCryptoLoanBorrowTrade
       parameters:
         - name: Content-Type
           in: header
@@ -850,6 +868,7 @@ paths:
       tags:
         - Crypto Loans
       summary: Borrow - Get Loan Borrow History (USER_DATA)
+      operationId: borrowGetLoanBorrowHistoryUserData
       parameters:
         - name: Content-Type
           in: header
@@ -883,6 +902,7 @@ paths:
       tags:
         - Crypto Loans
       summary: Borrow - Get Loan Ongoing Orders (USER_DATA)
+      operationId: borrowGetLoanOngoingOrdersUserData
       parameters:
         - name: Content-Type
           in: header
@@ -916,6 +936,7 @@ paths:
       tags:
         - Crypto Loans
       summary: Repay - Crypto Loan Repay (TRADE)
+      operationId: repayCryptoLoanRepayTrade
       parameters:
         - name: Content-Type
           in: header
@@ -957,6 +978,7 @@ paths:
       tags:
         - Crypto Loans
       summary: Repay - Get Loan Repayment History (USER_DATA)
+      operationId: repayGetLoanRepaymentHistoryUserData
       parameters:
         - name: Content-Type
           in: header
@@ -990,6 +1012,7 @@ paths:
       tags:
         - Crypto Loans
       summary: Adjust LTV - Crypto Loan Adjust LTV (TRADE)
+      operationId: adjustLtvCryptoLoanAdjustLtvTrade
       parameters:
         - name: Content-Type
           in: header
@@ -1036,6 +1059,7 @@ paths:
       tags:
         - Crypto Loans
       summary: Adjust LTV - Get Loan LTV Adjustment History (USER_DATA)
+      operationId: adjustLtvGetLoanLtvAdjustmentHistoryUserData
       parameters:
         - name: Content-Type
           in: header
@@ -1069,6 +1093,7 @@ paths:
       tags:
         - Crypto Loans
       summary: Get Loanable Assets Data (USER_DATA)
+      operationId: getLoanableAssetsDataUserData
       parameters:
         - name: Content-Type
           in: header
@@ -1102,6 +1127,7 @@ paths:
       tags:
         - Crypto Loans
       summary: Get Collateral Assets Data (USER_DATA)
+      operationId: getCollateralAssetsDataUserData
       parameters:
         - name: Content-Type
           in: header
@@ -1135,6 +1161,7 @@ paths:
       tags:
         - Crypto Loans
       summary: Check Collateral Repay Rate (USER_DATA)
+      operationId: checkCollateralRepayRateUserData
       parameters:
         - name: Content-Type
           in: header
@@ -1181,6 +1208,7 @@ paths:
       tags:
         - Crypto Loans
       summary: Crypto Loan Customize Margin Call (TRADE)
+      operationId: cryptoLoanCustomizeMarginCallTrade
       parameters:
         - name: Content-Type
           in: header
@@ -1218,6 +1246,7 @@ paths:
       tags:
         - Crypto Loans
       summary: Borrow - Flexible Loan Borrow (TRADE)
+      operationId: borrowFlexibleLoanBorrowTrade
       parameters:
         - name: Content-Type
           in: header
@@ -1262,6 +1291,7 @@ paths:
       tags:
         - Crypto Loans
       summary: Borrow - Get Flexible Loan Ongoing Orders (USER_DATA)
+      operationId: borrowGetFlexibleLoanOngoingOrdersUserData
       parameters:
         - name: Content-Type
           in: header
@@ -1310,6 +1340,7 @@ paths:
       tags:
         - Crypto Loans
       summary: Borrow - Get Flexible Loan Borrow History (USER_DATA)
+      operationId: borrowGetFlexibleLoanBorrowHistoryUserData
       parameters:
         - name: Content-Type
           in: header
@@ -1365,6 +1396,7 @@ paths:
       tags:
         - Crypto Loans
       summary: Repay - Flexible Loan Repay (TRADE)
+      operationId: repayFlexibleLoanRepayTrade
       parameters:
         - name: Content-Type
           in: header
@@ -1416,6 +1448,7 @@ paths:
       tags:
         - Crypto Loans
       summary: Repay - Get Flexible Loan Repayment History (USER_DATA)
+      operationId: repayGetFlexibleLoanRepaymentHistoryUserData
       parameters:
         - name: Content-Type
           in: header
@@ -1471,6 +1504,7 @@ paths:
       tags:
         - Crypto Loans
       summary: Adjust LTV - Flexible Loan Adjust LTV (TRADE)
+      operationId: adjustLtvFlexibleLoanAdjustLtvTrade
       parameters:
         - name: Content-Type
           in: header
@@ -1518,6 +1552,7 @@ paths:
       tags:
         - Crypto Loans
       summary: Get Flexible Loan Collateral Assets Data (USER_DATA)
+      operationId: getFlexibleLoanCollateralAssetsDataUserData
       parameters:
         - name: Content-Type
           in: header
@@ -1553,6 +1588,7 @@ paths:
       tags:
         - Fiat
       summary: Get Fiat Deposit/Withdraw History (USER_DATA)
+      operationId: getFiatDepositWithdrawHistoryUserData
       description: >-
         - If beginTime and endTime are not sent, the recent 30-day data will be returned.
 
@@ -1599,6 +1635,7 @@ paths:
       tags:
         - Fiat
       summary: Get Fiat Payments History (USER_DATA)
+      operationId: getFiatPaymentsHistoryUserData
       description: >-
         - If beginTime and endTime are not sent, the recent 30-day data will be returned.
 
@@ -1645,6 +1682,7 @@ paths:
       tags:
         - Futures
       summary: New Future Account Transfer (USER_DATA)
+      operationId: newFutureAccountTransferUserData
       description: |-
         Execute transfer between spot account and futures account.
 
@@ -1697,6 +1735,7 @@ paths:
       tags:
         - Futures
       summary: Get Future Account Transaction History List (USER_DATA)
+      operationId: getFutureAccountTransactionHistoryListUserData
       description: 'Weight(IP): 10'
       parameters:
         - name: Content-Type
@@ -1739,6 +1778,7 @@ paths:
       tags:
         - Futures
       summary: Get Future TickLevel Orderbook Historical Data Download Link (USER_DATA)
+      operationId: getFutureTickLevelOrderbookHistoricalDataDownloadLinkUserData
       parameters:
         - name: Content-Type
           in: header
@@ -1789,6 +1829,7 @@ paths:
       tags:
         - Futures Algo
       summary: Volume Participation New Order (TRADE)
+      operationId: volumeParticipationNewOrderTrade
       description: >-
         Send in a VP new order. Only support on USDⓈ-M Contracts.
 
@@ -1858,6 +1899,7 @@ paths:
       tags:
         - Futures Algo
       summary: Time-Weighted Average Price New Order (TRADE)
+      operationId: timeWeightedAveragePriceNewOrderTrade
       description: |-
         Send in a Twap new order. Only support on USDⓈ-M Contracts.
 
@@ -1917,6 +1959,7 @@ paths:
       tags:
         - Futures Algo
       summary: Cancel Algo Order (TRADE)
+      operationId: cancelAlgoOrderTrade
       description: |-
         Cancel an active order.
 
@@ -1959,6 +2002,7 @@ paths:
       tags:
         - Futures Algo
       summary: Query Current Algo Open Orders (USER_DATA)
+      operationId: queryCurrentAlgoOpenOrdersUserData
       description: 'Weight(IP): 1'
       parameters:
         - name: Content-Type
@@ -1993,6 +2037,7 @@ paths:
       tags:
         - Futures Algo
       summary: Query Historical Algo Orders (USER_DATA)
+      operationId: queryHistoricalAlgoOrdersUserData
       description: 'Weight(IP): 1'
       parameters:
         - name: Content-Type
@@ -2027,6 +2072,7 @@ paths:
       tags:
         - Futures Algo
       summary: Query Sub Orders (USER_DATA)
+      operationId: querySubOrdersUserData
       description: |-
         Get respective sub orders for a specified algoId
 
@@ -2064,6 +2110,7 @@ paths:
       tags:
         - Spot Algo
       summary: Time-Weighted Average Price New Order (TRADE)
+      operationId: timeWeightedAveragePriceNewOrderTrade
       description: |-
         Place a new spot TWAP order with Algo service.
 
@@ -2124,6 +2171,7 @@ paths:
       tags:
         - Spot Algo
       summary: Cancel Algo Order (TRADE)
+      operationId: cancelAlgoOrderTrade
       description: |-
         Cancel an open TWAP order
 
@@ -2166,6 +2214,7 @@ paths:
       tags:
         - Spot Algo
       summary: Query Current Algo Open Orders (USER_DATA)
+      operationId: queryCurrentAlgoOpenOrdersUserData
       description: |-
         Get all open SPOT TWAP orders
 
@@ -2203,6 +2252,7 @@ paths:
       tags:
         - Spot Algo
       summary: Query Historical Algo Orders (USER_DATA)
+      operationId: queryHistoricalAlgoOrdersUserData
       description: |-
         Get all historical SPOT TWAP orders
 
@@ -2240,6 +2290,7 @@ paths:
       tags:
         - Spot Algo
       summary: Query Sub Orders (USER_DATA)
+      operationId: querySubOrdersUserData
       description: |-
         Get respective sub orders for a specified algoId
 
@@ -2281,6 +2332,7 @@ paths:
       tags:
         - Gift Card
       summary: Create a Binance Code (USER_DATA)
+      operationId: createABinanceCodeUserData
       description: >-
         This API is for creating a Binance Code. To get started with, please make sure:
 
@@ -2341,6 +2393,7 @@ paths:
       tags:
         - Gift Card
       summary: Redeem a Binance Code (USER_DATA)
+      operationId: redeemABinanceCodeUserData
       description: >-
         This API is for redeeming the Binance Code. Once redeemed, the coins will be deposited in your funding wallet.
 
@@ -2387,6 +2440,7 @@ paths:
       tags:
         - Gift Card
       summary: Buy a Binance Code (TRADE)
+      operationId: buyABinanceCodeTrade
       description: >-
         This API is for redeeming the Binance Code. Once redeemed, the coins will be deposited in your funding wallet.
 
@@ -2444,6 +2498,7 @@ paths:
       tags:
         - Gift Card
       summary: Verify a Binance Code (USER_DATA)
+      operationId: verifyABinanceCodeUserData
       description: >-
         This API is for verifying whether the Binance Code is valid or not by entering Binance Code or reference number.
 
@@ -2490,6 +2545,7 @@ paths:
       tags:
         - Gift Card
       summary: Fetch Token Limit (USER_DATA)
+      operationId: fetchTokenLimitUserData
       description: >-
         This API is for verifying whether the Binance Code is valid or not by entering Binance Code or reference number.
 
@@ -2536,6 +2592,7 @@ paths:
       tags:
         - Gift Card
       summary: Fetch RSA Public Key (USER_DATA)
+      operationId: fetchRsaPublicKeyUserData
       description: >-
         This API is for fetching the RSA Public Key.
 
@@ -2578,6 +2635,7 @@ paths:
       tags:
         - Margin
       summary: Adjust cross margin max leverage (USER_DATA)
+      operationId: adjustCrossMarginMaxLeverageUserData
       description: >-
         Adjust cross margin max leverage
 
@@ -2617,6 +2675,7 @@ paths:
       tags:
         - Margin
       summary: Get Cross Margin Transfer History (USER_DATA)
+      operationId: getCrossMarginTransferHistoryUserData
       description: |-
         - Response in descending order
         - Returns data for last 7 days by default
@@ -2656,6 +2715,7 @@ paths:
       tags:
         - Margin
       summary: Get All Margin Assets (MARKET_DATA)
+      operationId: getAllMarginAssetsMarketData
       description: 'Weight(IP): 1'
       parameters:
         - name: Content-Type
@@ -2678,6 +2738,7 @@ paths:
       tags:
         - Margin
       summary: Get All Cross Margin Pairs (MARKET_DATA)
+      operationId: getAllCrossMarginPairsMarketData
       description: 'Weight(IP): 1'
       parameters:
         - name: Content-Type
@@ -2700,6 +2761,7 @@ paths:
       tags:
         - Margin
       summary: Query Margin PriceIndex (MARKET_DATA)
+      operationId: queryMarginPriceIndexMarketData
       description: 'Weight(IP): 10'
       parameters:
         - name: Content-Type
@@ -2728,6 +2790,7 @@ paths:
       tags:
         - Margin
       summary: Query Margin Account's Order (USER_DATA)
+      operationId: queryMarginAccountsOrderUserData
       description: >-
         - Either `orderId` or `origClientOrderId` must be sent.
 
@@ -2773,6 +2836,7 @@ paths:
       tags:
         - Margin
       summary: Margin Account New Order (TRADE)
+      operationId: marginAccountNewOrderTrade
       description: |-
         Post a new order for margin account.
 
@@ -2825,6 +2889,7 @@ paths:
       tags:
         - Margin
       summary: Margin Account Cancel Order (TRADE)
+      operationId: marginAccountCancelOrderTrade
       description: |-
         Cancel an active order for margin account.
 
@@ -2870,6 +2935,7 @@ paths:
       tags:
         - Margin
       summary: Get Interest History (USER_DATA)
+      operationId: getInterestHistoryUserData
       description: |-
         - Response in descending order
         - If `isolatedSymbol` is not sent, crossed margin data will be returned
@@ -2914,6 +2980,7 @@ paths:
       tags:
         - Margin
       summary: Get Force Liquidation Record (USER_DATA)
+      operationId: getForceLiquidationRecordUserData
       description: |-
         - Response in descending order
 
@@ -2951,6 +3018,7 @@ paths:
       tags:
         - Margin
       summary: Query Cross Margin Account Details (USER_DATA)
+      operationId: queryCrossMarginAccountDetailsUserData
       description: 'Weight(IP): 10'
       parameters:
         - name: Content-Type
@@ -2985,6 +3053,7 @@ paths:
       tags:
         - Margin
       summary: Query Margin Account's Open Orders (USER_DATA)
+      operationId: queryMarginAccountsOpenOrdersUserData
       description: >-
         - If the `symbol` is not sent, orders for all symbols will be returned in an array.
 
@@ -3026,6 +3095,7 @@ paths:
       tags:
         - Margin
       summary: Margin Account Cancel all Open Orders on a Symbol (TRADE)
+      operationId: marginAccountCancelAllOpenOrdersOnASymbolTrade
       description: |
         - Cancels all active orders on a symbol for margin account.
         - This includes OCO orders.
@@ -3070,6 +3140,7 @@ paths:
       tags:
         - Margin
       summary: Query Margin Account's All Orders (USER_DATA)
+      operationId: queryMarginAccountsAllOrdersUserData
       description: >-
         - If `orderId` is set, it will get orders >= that orderId. Otherwise most recent orders are returned.
 
@@ -3119,6 +3190,7 @@ paths:
       tags:
         - Margin
       summary: Margin Account New OCO (TRADE)
+      operationId: marginAccountNewOcoTrade
       description: |-
         Send in a new OCO for a margin account
 
@@ -3189,6 +3261,7 @@ paths:
       tags:
         - Margin
       summary: Query Margin Account's OCO (USER_DATA)
+      operationId: queryMarginAccountsOcoUserData
       description: |-
         Retrieves a specific OCO based on provided optional parameters
 
@@ -3227,6 +3300,7 @@ paths:
       tags:
         - Margin
       summary: Margin Account Cancel OCO (TRADE)
+      operationId: marginAccountCancelOcoTrade
       description: |-
         Cancel an entire Order List for a margin account
 
@@ -3273,6 +3347,7 @@ paths:
       tags:
         - Margin
       summary: Query Margin Account's all OCO (USER_DATA)
+      operationId: queryMarginAccountsAllOcoUserData
       description: >-
         Retrieves all OCO for a specific margin account based on provided optional parameters
 
@@ -3311,6 +3386,7 @@ paths:
       tags:
         - Margin
       summary: Query Margin Account's Open OCO (USER_DATA)
+      operationId: queryMarginAccountsOpenOcoUserData
       description: 'Weight(IP): 10'
       parameters:
         - name: Content-Type
@@ -3345,6 +3421,7 @@ paths:
       tags:
         - Margin
       summary: Query Margin Account's Trade List (USER_DATA)
+      operationId: queryMarginAccountsTradeListUserData
       description: >-
         - If `fromId` is set, it will get orders >= that `fromId`. Otherwise most recent trades are returned.
 
@@ -3389,6 +3466,7 @@ paths:
       tags:
         - Margin
       summary: Query Max Borrow (USER_DATA)
+      operationId: queryMaxBorrowUserData
       description: >-
         - If `isolatedSymbol` is not sent, crossed margin data will be sent.
 
@@ -3434,6 +3512,7 @@ paths:
       tags:
         - Margin
       summary: Query Max Transfer-Out Amount (USER_DATA)
+      operationId: queryMaxTransferOutAmountUserData
       description: |-
         - If `isolatedSymbol` is not sent, crossed margin data will be sent.
 
@@ -3476,6 +3555,7 @@ paths:
       tags:
         - Margin
       summary: Get Summary of Margin account (USER_DATA)
+      operationId: getSummaryOfMarginAccountUserData
       description: |-
         - If `isolatedSymbol` is not sent, crossed margin data will be sent.
 
@@ -3517,6 +3597,7 @@ paths:
       tags:
         - Margin
       summary: Query Isolated Margin Account Info (USER_DATA)
+      operationId: queryIsolatedMarginAccountInfoUserData
       description: >-
         - If "symbols" is not sent, all isolated assets will be returned.
 
@@ -3556,6 +3637,7 @@ paths:
       tags:
         - Margin
       summary: Disable Isolated Margin Account (TRADE)
+      operationId: disableIsolatedMarginAccountTrade
       description: >-
         Disable isolated margin account for a specific symbol. Each trading pair can only be deactivated once every 24 hours .
 
@@ -3599,6 +3681,7 @@ paths:
       tags:
         - Margin
       summary: Enable Isolated Margin Account (TRADE)
+      operationId: enableIsolatedMarginAccountTrade
       description: |-
         Enable isolated margin account for a specific symbol.
 
@@ -3642,6 +3725,7 @@ paths:
       tags:
         - Margin
       summary: Query Enabled Isolated Margin Account Limit (USER_DATA)
+      operationId: queryEnabledIsolatedMarginAccountLimitUserData
       description: |-
         Query enabled isolated margin account limit.
 
@@ -3679,6 +3763,7 @@ paths:
       tags:
         - Margin
       summary: Get All Isolated Margin Symbol (USER_DATA)
+      operationId: getAllIsolatedMarginSymbolUserData
       description: 'Weight(IP): 10'
       parameters:
         - name: Content-Type
@@ -3713,6 +3798,7 @@ paths:
       tags:
         - Margin
       summary: Toggle BNB Burn On Spot Trade And Margin Interest (USER_DATA)
+      operationId: toggleBnbBurnOnSpotTradeAndMarginInterestUserData
       description: |-
         - "spotBNBBurn" and "interestBNBBurn" should be sent at least one.
 
@@ -3749,6 +3835,7 @@ paths:
       tags:
         - Margin
       summary: Get BNB Burn Status (USER_DATA)
+      operationId: getBnbBurnStatusUserData
       description: 'Weight(IP): 1'
       parameters:
         - name: Content-Type
@@ -3783,6 +3870,7 @@ paths:
       tags:
         - Margin
       summary: Query Margin Interest Rate History (USER_DATA)
+      operationId: queryMarginInterestRateHistoryUserData
       description: |-
         The max interval between startTime and endTime is 30 days.
 
@@ -3825,6 +3913,7 @@ paths:
       tags:
         - Margin
       summary: Query Cross Margin Fee Data (USER_DATA)
+      operationId: queryCrossMarginFeeDataUserData
       description: >-
         Get cross margin fee data collection with any vip level or user's current specific data as https://www.binance.com/en/margin-fee
 
@@ -3863,6 +3952,7 @@ paths:
       tags:
         - Margin
       summary: Query Isolated Margin Fee Data (USER_DATA)
+      operationId: queryIsolatedMarginFeeDataUserData
       description: >-
         Get isolated margin fee data collection with any vip level or user's current specific data as https://www.binance.com/en/margin-fee
 
@@ -3901,6 +3991,7 @@ paths:
       tags:
         - Margin
       summary: Query Isolated Margin Tier Data (USER_DATA)
+      operationId: queryIsolatedMarginTierDataUserData
       description: >-
         Get isolated margin tier data collection with any tier as https://www.binance.com/en/margin-data
 
@@ -3945,6 +4036,7 @@ paths:
       tags:
         - Margin
       summary: Query Current Margin Order Count Usage (TRADE)
+      operationId: queryCurrentMarginOrderCountUsageTrade
       description: |-
         Displays the user's current margin order count usage for all intervals.
 
@@ -3982,6 +4074,7 @@ paths:
       tags:
         - Margin
       summary: Cross margin collateral ratio (MARKET_DATA)
+      operationId: crossMarginCollateralRatioMarketData
       description: 'Weight(IP): 100'
       parameters:
         - name: Content-Type
@@ -4010,6 +4103,7 @@ paths:
       tags:
         - Margin
       summary: Get Small Liability Exchange Coin List (USER_DATA)
+      operationId: getSmallLiabilityExchangeCoinListUserData
       description: |-
         Query the coins which can be small liability exchange
 
@@ -4046,6 +4140,7 @@ paths:
       tags:
         - Margin
       summary: Small Liability Exchange (MARGIN)
+      operationId: smallLiabilityExchangeMargin
       description: |-
         Cross Margin Small Liability Exchange
         Only convert once within 6 hours
@@ -4092,6 +4187,7 @@ paths:
       tags:
         - Margin
       summary: Get Small Liability Exchange History (USER_DATA)
+      operationId: getSmallLiabilityExchangeHistoryUserData
       description: |-
         Get Small liability Exchange History
 
@@ -4139,6 +4235,7 @@ paths:
       tags:
         - Margin
       summary: Get a future hourly interest rate (USER_DATA)
+      operationId: getAFutureHourlyInterestRateUserData
       description: |-
         Get user the next hourly estimate interest
 
@@ -4181,6 +4278,8 @@ paths:
         - Margin
       summary: >-
         Get tokens or symbols delist schedule for cross margin and isolated margin (MARKET_DATA)
+      operationId: >-
+        getTokensOrSymbolsDelistScheduleForCrossMarginAndIsolatedMarginMarketData
       description: >-
         Get tokens or symbols delist schedule for cross margin and isolated margin
 
@@ -4219,6 +4318,7 @@ paths:
       tags:
         - Margin
       summary: Get cross or isolated margin capital flow(USER_DATA)
+      operationId: getCrossOrIsolatedMarginCapitalFlowUserData
       description: >-
         Get tokens or symbols delist schedule for cross margin and isolated margin
 
@@ -4283,6 +4383,7 @@ paths:
       tags:
         - Margin
       summary: Query Margin Available Inventory (USER_DATA)
+      operationId: queryMarginAvailableInventoryUserData
       description: >-
         Get tokens or symbols delist schedule for cross margin and isolated margin
 
@@ -4323,6 +4424,7 @@ paths:
       tags:
         - Margin
       summary: Margin manual liquidation(MARGIN)
+      operationId: marginManualLiquidationMargin
       description: >-
         Get tokens or symbols delist schedule for cross margin and isolated margin
 
@@ -4364,6 +4466,7 @@ paths:
         - Margin
       summary: >-
         Query Liability Coin Leverage Bracket in Cross Margin Pro Mode(MARKET_DATA)
+      operationId: queryLiabilityCoinLeverageBracketInCrossMarginProModeMarketData
       parameters:
         - name: Content-Type
           in: header
@@ -4385,6 +4488,7 @@ paths:
       tags:
         - Margin
       summary: Margin account borrow/repay(MARGIN)
+      operationId: marginAccountBorrowRepayMargin
       description: 'Weight(UID): 3000'
       parameters:
         - name: Content-Type
@@ -4441,6 +4545,7 @@ paths:
       tags:
         - Margin
       summary: Query borrow/repay records in Margin account(USER_DATA)
+      operationId: queryBorrowRepayRecordsInMarginAccountUserData
       description: 'Query borrow/repay records in Margin account. Weight(IP): 10'
       parameters:
         - name: Content-Type
@@ -4479,6 +4584,7 @@ paths:
       tags:
         - Market
       summary: Test Connectivity
+      operationId: testConnectivity
       description: |-
         Test connectivity to the Rest API.
 
@@ -4499,6 +4605,7 @@ paths:
       tags:
         - Market
       summary: Check Server Time
+      operationId: checkServerTime
       description: |-
         Test connectivity to the Rest API and get the current server time.
 
@@ -4519,6 +4626,7 @@ paths:
       tags:
         - Market
       summary: Exchange Information
+      operationId: exchangeInformation
       description: >-
         Current exchange trading rules and symbol information
 
@@ -4543,6 +4651,7 @@ paths:
       tags:
         - Market
       summary: Order Book
+      operationId: orderBook
       description: |-
         | Limit               | Weight(IP)  |
         |---------------------|-------------|
@@ -4572,6 +4681,7 @@ paths:
       tags:
         - Market
       summary: Recent Trades List
+      operationId: recentTradesList
       description: |-
         Get recent trades.
 
@@ -4598,6 +4708,7 @@ paths:
       tags:
         - Market
       summary: Old Trade Lookup (MARKET_DATA)
+      operationId: oldTradeLookupMarketData
       description: |-
         Get older market trades.
 
@@ -4629,6 +4740,7 @@ paths:
       tags:
         - Market
       summary: Compressed/Aggregate Trades List
+      operationId: compressedAggregateTradesList
       description: >-
         Get compressed, aggregate trades. Trades that fill at the time, from the same order, with the same price will have the quantity aggregated.
 
@@ -4660,6 +4772,7 @@ paths:
       tags:
         - Market
       summary: Kline/Candlestick Data
+      operationId: klineCandlestickData
       description: >-
         Kline/candlestick bars for a symbol.
 
@@ -4697,6 +4810,7 @@ paths:
       tags:
         - Market
       summary: UIKlines
+      operationId: uiKlines
       description: >-
         The request is similar to klines having the same parameters and response.
 
@@ -4728,6 +4842,7 @@ paths:
       tags:
         - Market
       summary: Current Average Price
+      operationId: currentAveragePrice
       description: |-
         Current average price for a symbol.
 
@@ -4754,6 +4869,7 @@ paths:
       tags:
         - Market
       summary: 24hr Ticker Price Change Statistics
+      operationId: 24HrTickerPriceChangeStatistics
       description: >-
         24 hour rolling window price change statistics. Careful when accessing this with no symbol.
 
@@ -4782,6 +4898,7 @@ paths:
       tags:
         - Market
       summary: Symbol Price Ticker
+      operationId: symbolPriceTicker
       description: >-
         Latest price for a symbol or symbols.
 
@@ -4810,6 +4927,7 @@ paths:
       tags:
         - Market
       summary: Symbol Order Book Ticker
+      operationId: symbolOrderBookTicker
       description: >-
         Best price/qty on the order book for a symbol or symbols.
 
@@ -4838,6 +4956,7 @@ paths:
       tags:
         - Market
       summary: Rolling window price change statistics
+      operationId: rollingWindowPriceChangeStatistics
       description: >-
         The window used to compute statistics is typically slightly wider than requested windowSize.
 
@@ -4868,6 +4987,7 @@ paths:
       tags:
         - Market
       summary: Trading Day Ticker
+      operationId: tradingDayTicker
       parameters:
         - name: Content-Type
           in: header
@@ -4890,6 +5010,7 @@ paths:
       tags:
         - Mining
       summary: Acquiring Algorithm (MARKET_DATA)
+      operationId: acquiringAlgorithmMarketData
       description: 'Weight(IP): 1'
       parameters:
         - name: Content-Type
@@ -4912,6 +5033,7 @@ paths:
       tags:
         - Mining
       summary: Acquiring CoinName (MARKET_DATA)
+      operationId: acquiringCoinNameMarketData
       description: 'Weight(IP): 1'
       parameters:
         - name: Content-Type
@@ -4934,6 +5056,7 @@ paths:
       tags:
         - Mining
       summary: Request for Detail Miner List (USER_DATA)
+      operationId: requestForDetailMinerListUserData
       description: 'Weight(IP): 5'
       parameters:
         - name: Content-Type
@@ -4983,6 +5106,7 @@ paths:
       tags:
         - Mining
       summary: Request for Miner List (USER_DATA)
+      operationId: requestForMinerListUserData
       description: 'Weight(IP): 5'
       parameters:
         - name: Content-Type
@@ -5027,6 +5151,7 @@ paths:
       tags:
         - Mining
       summary: Earnings List (USER_DATA)
+      operationId: earningsListUserData
       description: 'Weight(IP): 5'
       parameters:
         - name: Content-Type
@@ -5071,6 +5196,7 @@ paths:
       tags:
         - Mining
       summary: Extra Bonus List (USER_DATA)
+      operationId: extraBonusListUserData
       description: 'Weight(IP): 5'
       parameters:
         - name: Content-Type
@@ -5115,6 +5241,7 @@ paths:
       tags:
         - Mining
       summary: Hashrate Resale List (USER_DATA)
+      operationId: hashrateResaleListUserData
       description: 'Weight(IP): 5'
       parameters:
         - name: Content-Type
@@ -5149,6 +5276,7 @@ paths:
       tags:
         - Mining
       summary: Hashrate Resale Detail (USER_DATA)
+      operationId: hashrateResaleDetailUserData
       description: 'Weight(IP): 5'
       parameters:
         - name: Content-Type
@@ -5193,6 +5321,7 @@ paths:
       tags:
         - Mining
       summary: Hashrate Resale Request (USER_DATA)
+      operationId: hashrateResaleRequestUserData
       description: 'Weight(IP): 5'
       parameters:
         - name: Content-Type
@@ -5248,6 +5377,7 @@ paths:
       tags:
         - Mining
       summary: Cancel hashrate resale configuration (USER_DATA)
+      operationId: cancelHashrateResaleConfigurationUserData
       description: 'Weight(IP): 5'
       parameters:
         - name: Content-Type
@@ -5292,6 +5422,7 @@ paths:
       tags:
         - Mining
       summary: Statistic List (USER_DATA)
+      operationId: statisticListUserData
       description: 'Weight(IP): 5'
       parameters:
         - name: Content-Type
@@ -5336,6 +5467,7 @@ paths:
       tags:
         - Mining
       summary: Account List (USER_DATA)
+      operationId: accountListUserData
       description: 'Weight(IP): 5'
       parameters:
         - name: Content-Type
@@ -5380,6 +5512,7 @@ paths:
       tags:
         - Mining
       summary: Mining Account Earning (USER_DATA)
+      operationId: miningAccountEarningUserData
       description: 'Weight(IP): 5'
       parameters:
         - name: Content-Type
@@ -5419,6 +5552,7 @@ paths:
       tags:
         - NFT
       summary: Get NFT Transaction History (USER_DATA)
+      operationId: getNftTransactionHistoryUserData
       description: >-
         - The max interval between startTime and endTime is 90 days.
 
@@ -5466,6 +5600,7 @@ paths:
       tags:
         - NFT
       summary: Get NFT Deposit History (USER_DATA)
+      operationId: getNftDepositHistoryUserData
       description: >-
         - The max interval between startTime and endTime is 90 days.
 
@@ -5506,6 +5641,7 @@ paths:
       tags:
         - NFT
       summary: Get NFT Withdraw History (USER_DATA)
+      operationId: getNftWithdrawHistoryUserData
       description: >-
         - The max interval between startTime and endTime is 90 days.
 
@@ -5546,6 +5682,7 @@ paths:
       tags:
         - NFT
       summary: Get NFT Asset (USER_DATA)
+      operationId: getNftAssetUserData
       description: 'Weight(UID): 3000'
       parameters:
         - name: Content-Type
@@ -5580,6 +5717,7 @@ paths:
       tags:
         - Pay
       summary: Get Pay Trade History (USER_DATA)
+      operationId: getPayTradeHistoryUserData
       description: >-
         - If startTimestamp and endTimestamp are not sent, the recent 90 days' data will be returned.
 
@@ -5622,6 +5760,7 @@ paths:
       tags:
         - Portfolio Margin
       summary: Get Classic Portfolio Margin Account Info (USER_DATA)
+      operationId: getClassicPortfolioMarginAccountInfoUserData
       description: 'Weight(IP): 1'
       parameters:
         - name: Content-Type
@@ -5656,6 +5795,7 @@ paths:
       tags:
         - Portfolio Margin
       summary: Classic Portfolio Margin Collateral Rate (MARKET_DATA)
+      operationId: classicPortfolioMarginCollateralRateMarketData
       description: |-
         Portfolio Margin Collateral Rate.
 
@@ -5681,6 +5821,7 @@ paths:
       tags:
         - Portfolio Margin
       summary: Query Classic Portfolio Margin Bankruptcy Loan Amount (USER_DATA)
+      operationId: queryClassicPortfolioMarginBankruptcyLoanAmountUserData
       description: |-
         Query Portfolio Margin Bankruptcy Loan Amount.
 
@@ -5718,6 +5859,7 @@ paths:
       tags:
         - Portfolio Margin
       summary: Classic Portfolio Margin Bankruptcy Loan Repay
+      operationId: classicPortfolioMarginBankruptcyLoanRepay
       description: |-
         Repay futures Negative Balance
 
@@ -5760,6 +5902,7 @@ paths:
         - Portfolio Margin
       summary: >-
         Query Classic Portfolio Margin Negative Balance Interest History(USER_DATA)
+      operationId: queryClassicPortfolioMarginNegativeBalanceInterestHistoryUserData
       description: |-
         Query interest history of negative balance for portfolio margin.
 
@@ -5797,6 +5940,7 @@ paths:
       tags:
         - Portfolio Margin
       summary: Query Portfolio Margin Asset Index Price (MARKET_DATA)
+      operationId: queryPortfolioMarginAssetIndexPriceMarketData
       description: |-
         Query Portfolio Margin Asset Index Price
 
@@ -5828,6 +5972,7 @@ paths:
       tags:
         - Portfolio Margin
       summary: Fund Auto-collection (TRADE)
+      operationId: fundAutoCollectionTrade
       description: >-
         Transfers all assets from Futures Account to Margin account
 
@@ -5872,6 +6017,7 @@ paths:
       tags:
         - Portfolio Margin
       summary: Fund Collection by Asset (TRADE)
+      operationId: fundCollectionByAssetTrade
       description: |-
         Transfers specific asset from Futures Account to Margin account
 
@@ -5911,6 +6057,7 @@ paths:
       tags:
         - Portfolio Margin
       summary: BNB transfer (TRADE)
+      operationId: bnbTransferTrade
       description: >-
         BNB transfer can be between Margin Account and USDM Account
 
@@ -5961,6 +6108,7 @@ paths:
       tags:
         - Portfolio Margin
       summary: Change Auto-repay-futures Status (TRADE)
+      operationId: changeAutoRepayFuturesStatusTrade
       description: |-
         Change Auto-repay-futures Status
 
@@ -6003,6 +6151,7 @@ paths:
       tags:
         - Portfolio Margin
       summary: Get Auto-repay-futures Status (USER_DATA)
+      operationId: getAutoRepayFuturesStatusUserData
       description: |-
         Query Auto-repay-futures Status
 
@@ -6040,6 +6189,7 @@ paths:
       tags:
         - Portfolio Margin
       summary: Repay futures Negative Balance (USER_DATA)
+      operationId: repayFuturesNegativeBalanceUserData
       description: |-
         Repay futures Negative Balance
 
@@ -6077,6 +6227,7 @@ paths:
       tags:
         - Portfolio Margin
       summary: Get Portfolio Margin Asset Leverage (USER_DATA)
+      operationId: getPortfolioMarginAssetLeverageUserData
       description: |-
         Repay futures Negative Balance
 
@@ -6114,6 +6265,7 @@ paths:
       tags:
         - Rebate
       summary: Get Spot Rebate History Records (USER_DATA)
+      operationId: getSpotRebateHistoryRecordsUserData
       description: >-
         - The max interval between startTime and endTime is 90 days.
 
@@ -6156,6 +6308,7 @@ paths:
       tags:
         - Savings
       summary: Get Fixed and Activity Project List (USER_DATA)
+      operationId: getFixedAndActivityProjectListUserData
       description: 'Weight(IP): 1'
       parameters:
         - name: Content-Type
@@ -6195,6 +6348,7 @@ paths:
       tags:
         - Savings
       summary: Purchase Fixed/Activity Project (USER_DATA)
+      operationId: purchaseFixedActivityProjectUserData
       description: 'Weight(IP): 1'
       parameters:
         - name: Content-Type
@@ -6237,6 +6391,7 @@ paths:
       tags:
         - Savings
       summary: Get Fixed/Activity Project Position (USER_DATA)
+      operationId: getFixedActivityProjectPositionUserData
       description: 'Weight(IP): 1'
       parameters:
         - name: Content-Type
@@ -6276,6 +6431,7 @@ paths:
       tags:
         - Savings
       summary: Change Fixed/Activity Position to Daily Position (USER_DATA)
+      operationId: changeFixedActivityPositionToDailyPositionUserData
       description: |-
         - PositionId is mandatory parameter for fixed position.
 
@@ -6321,6 +6477,7 @@ paths:
       tags:
         - Sub-Account
       summary: Create a Virtual Sub-account (For Master Account)
+      operationId: createAVirtualSubAccountForMasterAccount
       description: >-
         - This request will generate a virtual sub account under your master account.
 
@@ -6367,6 +6524,7 @@ paths:
       tags:
         - Sub-Account
       summary: Query Sub-account List (For Master Account)
+      operationId: querySubAccountListForMasterAccount
       description: 'Weight(IP): 1'
       parameters:
         - name: Content-Type
@@ -6401,6 +6559,7 @@ paths:
       tags:
         - Sub-Account
       summary: Query Sub-account Spot Asset Transfer History (For Master Account)
+      operationId: querySubAccountSpotAssetTransferHistoryForMasterAccount
       description: |-
         - fromEmail and toEmail cannot be sent at the same time.
         - Return fromEmail equal master account email by default.
@@ -6439,6 +6598,7 @@ paths:
       tags:
         - Sub-Account
       summary: Query Sub-account Futures Asset Transfer History (For Master Account)
+      operationId: querySubAccountFuturesAssetTransferHistoryForMasterAccount
       description: 'Weight(IP): 1'
       parameters:
         - name: Content-Type
@@ -6483,6 +6643,7 @@ paths:
       tags:
         - Sub-Account
       summary: Sub-account Futures Asset Transfer (For Master Account)
+      operationId: subAccountFuturesAssetTransferForMasterAccount
       description: |-
         - Master account can transfer max 2000 times a minute
 
@@ -6546,6 +6707,7 @@ paths:
       tags:
         - Sub-Account
       summary: Query Sub-account Assets (For Master Account)
+      operationId: querySubAccountAssetsForMasterAccount
       description: |-
         Fetch sub-account assets
 
@@ -6588,6 +6750,7 @@ paths:
       tags:
         - Sub-Account
       summary: Query Sub-account Spot Assets Summary (For Master Account)
+      operationId: querySubAccountSpotAssetsSummaryForMasterAccount
       description: |-
         Get BTC valued asset summary of subaccounts.
 
@@ -6625,6 +6788,7 @@ paths:
       tags:
         - Sub-Account
       summary: Get Sub-account Deposit Address (For Master Account)
+      operationId: getSubAccountDepositAddressForMasterAccount
       description: |-
         Fetch sub-account deposit address
 
@@ -6673,6 +6837,7 @@ paths:
       tags:
         - Sub-Account
       summary: Get Sub-account Deposit History (For Master Account)
+      operationId: getSubAccountDepositHistoryForMasterAccount
       description: |-
         Fetch sub-account deposit history
 
@@ -6715,6 +6880,7 @@ paths:
       tags:
         - Sub-Account
       summary: Get Sub-account's Status on Margin/Futures (For Master Account)
+      operationId: getSubAccountsStatusOnMarginFuturesForMasterAccount
       description: |-
         - If no `email` sent, all sub-accounts' information will be returned.
 
@@ -6752,6 +6918,7 @@ paths:
       tags:
         - Sub-Account
       summary: Enable Margin for Sub-account (For Master Account)
+      operationId: enableMarginForSubAccountForMasterAccount
       description: 'Weight(IP): 1'
       parameters:
         - name: Content-Type
@@ -6791,6 +6958,7 @@ paths:
       tags:
         - Sub-Account
       summary: Get Detail on Sub-account's Margin Account (For Master Account)
+      operationId: getDetailOnSubAccountsMarginAccountForMasterAccount
       description: 'Weight(IP): 10'
       parameters:
         - name: Content-Type
@@ -6830,6 +6998,7 @@ paths:
       tags:
         - Sub-Account
       summary: Get Summary of Sub-account's Margin Account (For Master Account)
+      operationId: getSummaryOfSubAccountsMarginAccountForMasterAccount
       description: 'Weight(IP): 10'
       parameters:
         - name: Content-Type
@@ -6864,6 +7033,7 @@ paths:
       tags:
         - Sub-Account
       summary: Enable Futures for Sub-account (For Master Account)
+      operationId: enableFuturesForSubAccountForMasterAccount
       description: 'Weight(IP): 1'
       parameters:
         - name: Content-Type
@@ -6903,6 +7073,7 @@ paths:
       tags:
         - Sub-Account
       summary: Get Detail on Sub-account's Futures Account (For Master Account)
+      operationId: getDetailOnSubAccountsFuturesAccountForMasterAccount
       description: 'Weight(IP): 10'
       parameters:
         - name: Content-Type
@@ -6942,6 +7113,7 @@ paths:
       tags:
         - Sub-Account
       summary: Get Summary of Sub-account's Futures Account (For Master Account)
+      operationId: getSummaryOfSubAccountsFuturesAccountForMasterAccount
       description: 'Weight(IP): 1'
       parameters:
         - name: Content-Type
@@ -6976,6 +7148,7 @@ paths:
       tags:
         - Sub-Account
       summary: Get Futures Position-Risk of Sub-account (For Master Account)
+      operationId: getFuturesPositionRiskOfSubAccountForMasterAccount
       description: 'Weight(IP): 10'
       parameters:
         - name: Content-Type
@@ -7015,6 +7188,7 @@ paths:
       tags:
         - Sub-Account
       summary: Futures Transfer for Sub-account (For Master Account)
+      operationId: futuresTransferForSubAccountForMasterAccount
       description: 'Weight(IP): 1'
       parameters:
         - name: Content-Type
@@ -7076,6 +7250,7 @@ paths:
       tags:
         - Sub-Account
       summary: Margin Transfer for Sub-account (For Master Account)
+      operationId: marginTransferForSubAccountForMasterAccount
       description: 'Weight(IP): 1'
       parameters:
         - name: Content-Type
@@ -7133,6 +7308,7 @@ paths:
       tags:
         - Sub-Account
       summary: Transfer to Sub-account of Same Master (For Sub-account)
+      operationId: transferToSubAccountOfSameMasterForSubAccount
       description: 'Weight(IP): 1'
       parameters:
         - name: Content-Type
@@ -7182,6 +7358,7 @@ paths:
       tags:
         - Sub-Account
       summary: Transfer to Master (For Sub-account)
+      operationId: transferToMasterForSubAccount
       description: 'Weight(IP): 1'
       parameters:
         - name: Content-Type
@@ -7226,6 +7403,7 @@ paths:
       tags:
         - Sub-Account
       summary: Sub-account Transfer History (For Sub-account)
+      operationId: subAccountTransferHistoryForSubAccount
       description: >-
         - If `type` is not sent, the records of type 2: transfer out will be returned by default.
 
@@ -7266,6 +7444,7 @@ paths:
       tags:
         - Sub-Account
       summary: Query Universal Transfer History (For Master Account)
+      operationId: queryUniversalTransferHistoryForMasterAccount
       description: >-
         - `fromEmail` and `toEmail` cannot be sent at the same time.
 
@@ -7309,6 +7488,7 @@ paths:
       tags:
         - Sub-Account
       summary: Universal Transfer (For Master Account)
+      operationId: universalTransferForMasterAccount
       description: >-
         - You need to enable "internal transfer" option for the api key which requests this endpoint.
 
@@ -7371,6 +7551,7 @@ paths:
       tags:
         - Sub-Account
       summary: Get Detail on Sub-account's Futures Account V2 (For Master Account)
+      operationId: getDetailOnSubAccountsFuturesAccountV2ForMasterAccount
       description: 'Weight(IP): 1'
       parameters:
         - name: Content-Type
@@ -7417,6 +7598,7 @@ paths:
       tags:
         - Sub-Account
       summary: Get Summary of Sub-account's Futures Account V2 (For Master Account)
+      operationId: getSummaryOfSubAccountsFuturesAccountV2ForMasterAccount
       description: 'Weight(IP): 10'
       parameters:
         - name: Content-Type
@@ -7458,6 +7640,7 @@ paths:
       tags:
         - Sub-Account
       summary: Get Futures Position-Risk of Sub-account V2 (For Master Account)
+      operationId: getFuturesPositionRiskOfSubAccountV2ForMasterAccount
       description: 'Weight(IP): 1'
       parameters:
         - name: Content-Type
@@ -7504,6 +7687,7 @@ paths:
       tags:
         - Sub-Account
       summary: Enable Leverage Token for Sub-account (For Master Account)
+      operationId: enableLeverageTokenForSubAccountForMasterAccount
       description: 'Weight(IP): 1'
       parameters:
         - name: Content-Type
@@ -7548,6 +7732,7 @@ paths:
       tags:
         - Sub-Account
       summary: Get IP Restriction for a Sub-account API Key (For Master Account)
+      operationId: getIpRestrictionForASubAccountApiKeyForMasterAccount
       description: 'Weight(UID): 3000'
       parameters:
         - name: Content-Type
@@ -7591,6 +7776,7 @@ paths:
       tags:
         - Sub-Account
       summary: Delete IP List for a Sub-account API Key (For Master Account)
+      operationId: deleteIpListForASubAccountApiKeyForMasterAccount
       description: 'Weight(UID): 3000'
       parameters:
         - name: Content-Type
@@ -7639,6 +7825,7 @@ paths:
       tags:
         - Sub-Account
       summary: Query Sub-Account API key Third Party IP whitelist (For Master Account)
+      operationId: querySubAccountApiKeyThirdPartyIpWhitelistForMasterAccount
       description: 'Weight(UID): 3000'
       parameters:
         - name: Content-Type
@@ -7673,6 +7860,7 @@ paths:
       tags:
         - Sub-Account
       summary: Update IP Restriction for Sub-Account API key (For Master Account)
+      operationId: updateIpRestrictionForSubAccountApiKeyForMasterAccount
       description: >-
         Before the usage of this endpoint, please ensure `POST /sapi/v1/sub-account/subAccountApi/ipRestriction` was used to enable the IP restriction.
 
@@ -7727,6 +7915,7 @@ paths:
         - Sub-Account
       summary: >-
         Deposit assets into the managed sub-account (For Investor Master Account)
+      operationId: depositAssetsIntoTheManagedSubAccountForInvestorMasterAccount
       description: 'Weight(IP): 1'
       parameters:
         - name: Content-Type
@@ -7776,6 +7965,7 @@ paths:
       tags:
         - Sub-Account
       summary: Query managed sub-account asset details (For Investor Master Account)
+      operationId: queryManagedSubAccountAssetDetailsForInvestorMasterAccount
       description: 'Weight(IP): 1'
       parameters:
         - name: Content-Type
@@ -7816,6 +8006,7 @@ paths:
         - Sub-Account
       summary: >-
         Withdrawl assets from the managed sub-account (For Investor Master Account)
+      operationId: withdrawlAssetsFromTheManagedSubAccountForInvestorMasterAccount
       description: 'Weight(IP): 1'
       parameters:
         - name: Content-Type
@@ -7865,6 +8056,7 @@ paths:
       tags:
         - Sub-Account
       summary: Query managed sub-account snapshot (For Investor Master Account)
+      operationId: queryManagedSubAccountSnapshotForInvestorMasterAccount
       description: >-
         - The query time period must be less then 30 days
 
@@ -7919,6 +8111,7 @@ paths:
         - Sub-Account
       summary: >-
         Query Managed Sub Account Transfer Log (For Investor Master Account) (USER_DATA)
+      operationId: queryManagedSubAccountTransferLogForInvestorMasterAccountUserData
       description: >-
         Investor can use this api to query managed sub account transfer log.
 
@@ -7984,6 +8177,7 @@ paths:
         - Sub-Account
       summary: >-
         Query Managed Sub Account Transfer Log (For Trading Team Master Account) (USER_DATA)
+      operationId: queryManagedSubAccountTransferLogForTradingTeamMasterAccountUserData
       description: "Trading team can use this api to query managed sub account transfer log. This endpoint\n is available for trading team of Managed Sub-Account. A Managed Sub-Account is \nan account type for investors who value flexibility in asset allocation \nand account application, while delegating trades to a professional trading team.\n\nWeight(UID): 60"
       parameters:
         - name: Content-Type
@@ -8039,6 +8233,8 @@ paths:
         - Sub-Account
       summary: >-
         Query Managed Sub-account Futures Asset Details (For Investor Master Account) (USER_DATA)
+      operationId: >-
+        queryManagedSubAccountFuturesAssetDetailsForInvestorMasterAccountUserData
       description: >-
         Investor can use this api to query managed sub account futures asset details
 
@@ -8077,6 +8273,7 @@ paths:
         - Sub-Account
       summary: >-
         Query Managed Sub-account Margin Asset Details (For Investor Master Account) (USER_DATA)
+      operationId: queryManagedSubAccountMarginAssetDetailsForInvestorMasterAccountUserData
       description: >-
         Investor can use this api to query managed sub account margin asset details
 
@@ -8114,6 +8311,7 @@ paths:
       tags:
         - Sub-Account
       summary: Query Sub-account Assets (For Master Account)(USER_DATA)
+      operationId: querySubAccountAssetsForMasterAccountUserData
       description: |-
         Fetch sub-account assets
 
@@ -8156,6 +8354,7 @@ paths:
       tags:
         - Sub-Account
       summary: Query Managed Sub-account List (For Investor)(USER_DATA)
+      operationId: queryManagedSubAccountListForInvestorUserData
       description: |-
         Get investor's managed sub-account list.
 
@@ -8194,6 +8393,7 @@ paths:
         - Sub-Account
       summary: >-
         Query Sub-account Transaction Statistics (For Master Account) (USER_DATA)
+      operationId: querySubAccountTransactionStatisticsForMasterAccountUserData
       description: |-
         Query Sub-account Transaction statistics (For Master Account).
 
@@ -8237,6 +8437,7 @@ paths:
         - Sub-Account
       summary: >-
         Get Managed Sub-account Deposit Address (For Investor Master Account) (USER_DATA)
+      operationId: getManagedSubAccountDepositAddressForInvestorMasterAccountUserData
       description: |-
         Get investor's managed sub-account deposit address.
 
@@ -8283,6 +8484,7 @@ paths:
       tags:
         - Sub-Account
       summary: Enable Options for Sub-account (For Master Account)(USER_DATA)
+      operationId: enableOptionsForSubAccountForMasterAccountUserData
       description: |-
         Enable Options for Sub-account (For Master Account).
 
@@ -8326,6 +8528,7 @@ paths:
         - Sub-Account
       summary: >-
         Query Managed Sub Account Transfer Log (For Trading Team Sub Account)(USER_DATA)
+      operationId: queryManagedSubAccountTransferLogForTradingTeamSubAccountUserData
       description: |-
         Query Managed Sub Account Transfer Log (For Trading Team Sub Account)
 
@@ -8384,6 +8587,7 @@ paths:
       tags:
         - Trade
       summary: Test New Order (TRADE)
+      operationId: testNewOrderTrade
       description: >-
         Test new order creation and signature/recvWindow long.
 
@@ -8446,6 +8650,7 @@ paths:
       tags:
         - Trade
       summary: Query Order (USER_DATA)
+      operationId: queryOrderUserData
       description: >-
         Check an order's status.
 
@@ -8494,6 +8699,7 @@ paths:
       tags:
         - Trade
       summary: New Order (TRADE)
+      operationId: newOrderTrade
       description: >-
         Send in a new order.
 
@@ -8573,6 +8779,7 @@ paths:
       tags:
         - Trade
       summary: Cancel Order (TRADE)
+      operationId: cancelOrderTrade
       description: |-
         Cancel an active order.
 
@@ -8618,6 +8825,7 @@ paths:
       tags:
         - Trade
       summary: Cancel an Existing Order and Send a New Order (TRADE)
+      operationId: cancelAnExistingOrderAndSendANewOrderTrade
       description: >-
         Cancels an existing order and places a new order on the same symbol.
 
@@ -8686,6 +8894,7 @@ paths:
       tags:
         - Trade
       summary: Current Open Orders (USER_DATA)
+      operationId: currentOpenOrdersUserData
       description: >-
         Get all open orders on a symbol. Careful when accessing this with no symbol.
 
@@ -8727,6 +8936,7 @@ paths:
       tags:
         - Trade
       summary: Cancel all Open Orders on a Symbol (TRADE)
+      operationId: cancelAllOpenOrdersOnASymbolTrade
       description: |-
         Cancels all active orders on a symbol.
         This includes OCO orders.
@@ -8771,6 +8981,7 @@ paths:
       tags:
         - Trade
       summary: All Orders (USER_DATA)
+      operationId: allOrdersUserData
       description: >-
         Get all account orders; active, canceled, or filled..
 
@@ -8822,6 +9033,7 @@ paths:
       tags:
         - Trade
       summary: New OCO (TRADE)
+      operationId: newOcoTrade
       description: "Send in a new OCO\n\n- Price Restrictions:\n  - `SELL`: Limit Price > Last Price > Stop Price\n  - `BUY`: Limit Price < Last Price < Stop Price\n- Quantity Restrictions:\n    - Both legs must have the same quantity\n    - `ICEBERG` quantities however do not have to be the same\n- Order Rate Limit\n    - `OCO` counts as 2 orders against the order rate limit.\n    \nWeight(IP): 1"
       parameters:
         - name: Content-Type
@@ -8880,6 +9092,7 @@ paths:
       tags:
         - Trade
       summary: Query OCO (USER_DATA)
+      operationId: queryOcoUserData
       description: |-
         Retrieves a specific OCO based on provided optional parameters
 
@@ -8916,6 +9129,7 @@ paths:
       tags:
         - Trade
       summary: Cancel OCO (TRADE)
+      operationId: cancelOcoTrade
       description: |-
         Cancel an entire Order List
 
@@ -8961,6 +9175,7 @@ paths:
       tags:
         - Trade
       summary: Query all OCO (USER_DATA)
+      operationId: queryAllOcoUserData
       description: |-
         Retrieves all OCO based on provided optional parameters
 
@@ -8998,6 +9213,7 @@ paths:
       tags:
         - Trade
       summary: Query Open OCO (USER_DATA)
+      operationId: queryOpenOcoUserData
       description: 'Weight(IP): 3'
       parameters:
         - name: Content-Type
@@ -9032,6 +9248,7 @@ paths:
       tags:
         - Trade
       summary: Account Information (USER_DATA)
+      operationId: accountInformationUserData
       description: |-
         Get current account information.
 
@@ -9075,6 +9292,7 @@ paths:
       tags:
         - Trade
       summary: Account Trade List (USER_DATA)
+      operationId: accountTradeListUserData
       description: >-
         Get trades for a specific account and symbol.
 
@@ -9122,6 +9340,7 @@ paths:
       tags:
         - Trade
       summary: Query Current Order Count Usage (TRADE)
+      operationId: queryCurrentOrderCountUsageTrade
       description: |-
         Displays the user's current order count usage for all intervals.
 
@@ -9159,6 +9378,7 @@ paths:
       tags:
         - Trade
       summary: New order using SOR (TRADE)
+      operationId: newOrderUsingSorTrade
       description: >-
         Test new order creation and signature/recvWindow long.
 
@@ -9216,6 +9436,7 @@ paths:
       tags:
         - Trade
       summary: Test New order using SOR (TRADE)
+      operationId: testNewOrderUsingSorTrade
       description: >-
         Test new order creation and signature/recvWindow long.
 
@@ -9275,6 +9496,7 @@ paths:
       tags:
         - Trade
       summary: Query Allocations (USER_DATA)
+      operationId: queryAllocationsUserData
       description: |-
         Get current account information.
 
@@ -9342,6 +9564,7 @@ paths:
       tags:
         - Trade
       summary: Query Commission Rates (USER_DATA)
+      operationId: queryCommissionRatesUserData
       parameters:
         - name: Content-Type
           in: header
@@ -9384,6 +9607,7 @@ paths:
       tags:
         - User Data Stream > Spot
       summary: Create a ListenKey (USER_STREAM)
+      operationId: createAListenKeyUserStream
       description: >-
         Start a new user data stream.
 
@@ -9411,6 +9635,7 @@ paths:
       tags:
         - User Data Stream > Spot
       summary: Ping/Keep-alive a ListenKey (USER_STREAM)
+      operationId: pingKeepAliveAListenKeyUserStream
       description: >-
         Keepalive a user data stream to prevent a time out. User data streams will close after 60 minutes. It's recommended to send a ping about every 30 minutes.
 
@@ -9442,6 +9667,7 @@ paths:
       tags:
         - User Data Stream > Spot
       summary: Close a ListenKey (USER_STREAM)
+      operationId: closeAListenKeyUserStream
       description: |-
         Close out a user data stream.
 
@@ -9473,6 +9699,7 @@ paths:
       tags:
         - User Data Stream > Cross Margin
       summary: Create a ListenKey (USER_STREAM)
+      operationId: createAListenKeyUserStream
       description: >-
         Start a new user data stream.
 
@@ -9500,6 +9727,7 @@ paths:
       tags:
         - User Data Stream > Cross Margin
       summary: Ping/Keep-alive a ListenKey (USER_STREAM)
+      operationId: pingKeepAliveAListenKeyUserStream
       description: >-
         Keepalive a user data stream to prevent a time out. User data streams will close after 60 minutes. It's recommended to send a ping about every 30 minutes.
 
@@ -9531,6 +9759,7 @@ paths:
       tags:
         - User Data Stream > Cross Margin
       summary: Close a ListenKey (USER_STREAM)
+      operationId: closeAListenKeyUserStream
       description: |-
         Close out a user data stream.
 
@@ -9562,6 +9791,7 @@ paths:
       tags:
         - User Data Stream > Isolated Margin
       summary: Generate a Listen Key (USER_STREAM)
+      operationId: generateAListenKeyUserStream
       description: >-
         Start a new user data stream.
 
@@ -9594,6 +9824,7 @@ paths:
       tags:
         - User Data Stream > Isolated Margin
       summary: Ping/Keep-alive a Listen Key (USER_STREAM)
+      operationId: pingKeepAliveAListenKeyUserStream
       description: >-
         Keepalive a user data stream to prevent a time out. User data streams will close after 60 minutes. It's recommended to send a ping about every 30 minutes.
 
@@ -9630,6 +9861,7 @@ paths:
       tags:
         - User Data Stream > Isolated Margin
       summary: Close a ListenKey (USER_STREAM)
+      operationId: closeAListenKeyUserStream
       description: |-
         Close out a user data stream.
 
@@ -9666,6 +9898,7 @@ paths:
       tags:
         - Simple Earn
       summary: Get Simple Earn Flexible Product List (USER_DATA)
+      operationId: getSimpleEarnFlexibleProductListUserData
       description: |-
         Get available Simple Earn flexible product list
 
@@ -9703,6 +9936,7 @@ paths:
       tags:
         - Simple Earn
       summary: Get Simple Earn Locked Product List (USER_DATA)
+      operationId: getSimpleEarnLockedProductListUserData
       description: |-
         Get available Simple Earn locked product list
 
@@ -9740,6 +9974,7 @@ paths:
       tags:
         - Simple Earn
       summary: Subscribe Flexible Product (TRADE)
+      operationId: subscribeFlexibleProductTrade
       description: >-
         Rate Limit: 1/3s per account
 
@@ -9788,6 +10023,7 @@ paths:
       tags:
         - Simple Earn
       summary: Subscribe Locked Product (TRADE)
+      operationId: subscribeLockedProductTrade
       description: >-
         Rate Limit: 1/3s per account
 
@@ -9836,6 +10072,7 @@ paths:
       tags:
         - Simple Earn
       summary: Redeem Flexible Product (TRADE)
+      operationId: redeemFlexibleProductTrade
       description: >-
         Rate Limit: 1/3s per account
 
@@ -9880,6 +10117,7 @@ paths:
       tags:
         - Simple Earn
       summary: Redeem Locked Product (TRADE)
+      operationId: redeemLockedProductTrade
       description: >-
         Rate Limit: 1/3s per account
 
@@ -9926,6 +10164,7 @@ paths:
       tags:
         - Simple Earn
       summary: Get Flexible Product Position (USER_DATA)
+      operationId: getFlexibleProductPositionUserData
       description: 'Weight(IP): 150'
       parameters:
         - name: Content-Type
@@ -9960,6 +10199,7 @@ paths:
       tags:
         - Simple Earn
       summary: Get Locked Product Position (USER_DATA)
+      operationId: getLockedProductPositionUserData
       description: 'Weight(IP): 150'
       parameters:
         - name: Content-Type
@@ -9994,6 +10234,7 @@ paths:
       tags:
         - Simple Earn
       summary: Simple Account (USER_DATA)
+      operationId: simpleAccountUserData
       description: 'Weight(IP): 150'
       parameters:
         - name: Content-Type
@@ -10028,6 +10269,7 @@ paths:
       tags:
         - Simple Earn
       summary: Get Flexible Subscription Record (USER_DATA)
+      operationId: getFlexibleSubscriptionRecordUserData
       description: >-
         The time between startTime and endTime cannot be longer than 3 months.
 
@@ -10072,6 +10314,7 @@ paths:
       tags:
         - Simple Earn
       summary: Get Locked Subscription Record (USER_DATA)
+      operationId: getLockedSubscriptionRecordUserData
       description: >-
         The time between startTime and endTime cannot be longer than 3 months.
 
@@ -10116,6 +10359,7 @@ paths:
       tags:
         - Simple Earn
       summary: Get Flexible Redemption Record (USER_DATA)
+      operationId: getFlexibleRedemptionRecordUserData
       description: 'Weight(IP): 150'
       parameters:
         - name: Content-Type
@@ -10144,6 +10388,7 @@ paths:
       tags:
         - Simple Earn
       summary: Get Locked Rewards History (USER_DATA)
+      operationId: getLockedRewardsHistoryUserData
       description: >-
         The time between startTime and endTime cannot be longer than 3 months.
 
@@ -10188,6 +10433,7 @@ paths:
       tags:
         - Simple Earn
       summary: Get Flexible Rewards History (USER_DATA)
+      operationId: getFlexibleRewardsHistoryUserData
       description: 'Weight(IP): 150'
       parameters:
         - name: Content-Type
@@ -10216,6 +10462,7 @@ paths:
       tags:
         - Simple Earn
       summary: Set Flexible Auto Subscribe (USER_DATA)
+      operationId: setFlexibleAutoSubscribeUserData
       description: 'Weight(IP): 150'
       parameters:
         - name: Content-Type
@@ -10259,6 +10506,7 @@ paths:
       tags:
         - Simple Earn
       summary: Set Locked Auto Subscribe (USER_DATA)
+      operationId: setLockedAutoSubscribeUserData
       description: 'Weight(IP): 150'
       parameters:
         - name: Content-Type
@@ -10302,6 +10550,7 @@ paths:
       tags:
         - Simple Earn
       summary: Get Flexible Personal Left Quota (USER_DATA)
+      operationId: getFlexiblePersonalLeftQuotaUserData
       description: 'Weight(IP): 150'
       parameters:
         - name: Content-Type
@@ -10340,6 +10589,7 @@ paths:
       tags:
         - Simple Earn
       summary: Get Locked Personal Left Quota (USER_DATA)
+      operationId: getLockedPersonalLeftQuotaUserData
       description: 'Weight(IP): 150'
       parameters:
         - name: Content-Type
@@ -10378,6 +10628,7 @@ paths:
       tags:
         - Simple Earn
       summary: Get Flexible Subscription Preview (USER_DATA)
+      operationId: getFlexibleSubscriptionPreviewUserData
       description: 'Weight(IP): 150'
       parameters:
         - name: Content-Type
@@ -10420,6 +10671,7 @@ paths:
       tags:
         - Simple Earn
       summary: Get Locked Subscription Preview (USER_DATA)
+      operationId: getLockedSubscriptionPreviewUserData
       description: 'Weight(IP): 150'
       parameters:
         - name: Content-Type
@@ -10462,6 +10714,7 @@ paths:
       tags:
         - Simple Earn
       summary: Get Rate History (USER_DATA)
+      operationId: getRateHistoryUserData
       description: >-
         The time between startTime and endTime cannot be longer than 3 months.
 
@@ -10510,6 +10763,7 @@ paths:
       tags:
         - Simple Earn
       summary: Get Collateral Record (USER_DATA)
+      operationId: getCollateralRecordUserData
       description: >-
         The time between startTime and endTime cannot be longer than 3 months.
 
@@ -10554,6 +10808,7 @@ paths:
       tags:
         - Auto-Invest
       summary: Get target asset list(USER_DATA)
+      operationId: getTargetAssetListUserData
       description: 'Weight(IP): 1'
       parameters:
         - name: Content-Type
@@ -10597,6 +10852,7 @@ paths:
       tags:
         - Auto-Invest
       summary: Get target asset ROI data(USER_DATA)
+      operationId: getTargetAssetRoiDataUserData
       description: |-
         ROI return list for target asset
 
@@ -10643,6 +10899,7 @@ paths:
       tags:
         - Auto-Invest
       summary: Query all source asset and target asset(USER_DATA)
+      operationId: queryAllSourceAssetAndTargetAssetUserData
       description: |-
         Query all source assets and target assets
 
@@ -10680,6 +10937,7 @@ paths:
       tags:
         - Auto-Invest
       summary: Query source asset list(USER_DATA)
+      operationId: querySourceAssetListUserData
       description: |-
         Query Source Asset to be used for investment
 
@@ -10722,6 +10980,7 @@ paths:
       tags:
         - Auto-Invest
       summary: Investment plan creation(USER_DATA)
+      operationId: investmentPlanCreationUserData
       description: |-
         Post an investment plan creation
 
@@ -10801,6 +11060,7 @@ paths:
       tags:
         - Auto-Invest
       summary: Investment plan adjustment (TRADE)
+      operationId: investmentPlanAdjustmentTrade
       description: |-
         Query Source Asset to be used for investment
 
@@ -10871,6 +11131,7 @@ paths:
       tags:
         - Auto-Invest
       summary: Change Plan Status (TRADE)
+      operationId: changePlanStatusTrade
       description: |-
         Change Plan Status
 
@@ -10920,6 +11181,7 @@ paths:
       tags:
         - Auto-Invest
       summary: Get list of plans (USER_DATA)
+      operationId: getListOfPlansUserData
       description: |-
         Query plan lists
 
@@ -10964,6 +11226,7 @@ paths:
       tags:
         - Auto-Invest
       summary: Query holding details of the plan (USER_DATA)
+      operationId: queryHoldingDetailsOfThePlanUserData
       description: |-
         Query holding details of the plan
 
@@ -11003,6 +11266,7 @@ paths:
       tags:
         - Auto-Invest
       summary: Query subscription transaction history (USER_DATA)
+      operationId: querySubscriptionTransactionHistoryUserData
       description: |-
         Query subscription transaction history of a plan
 
@@ -11044,6 +11308,7 @@ paths:
       tags:
         - Auto-Invest
       summary: Query Index Details(USER_DATA)
+      operationId: queryIndexDetailsUserData
       description: |-
         Query subscription transaction history of a plan
 
@@ -11087,6 +11352,7 @@ paths:
       tags:
         - Auto-Invest
       summary: Query Index Linked Plan Position Details(USER_DATA)
+      operationId: queryIndexLinkedPlanPositionDetailsUserData
       description: |-
         Query subscription transaction history of a plan
 
@@ -11130,6 +11396,7 @@ paths:
       tags:
         - Auto-Invest
       summary: One Time Transaction(TRADE)
+      operationId: oneTimeTransactionTrade
       description: |-
         Query subscription transaction history of a plan
 
@@ -11201,6 +11468,7 @@ paths:
       tags:
         - Auto-Invest
       summary: Query One-Time Transaction Status(USER_DATA)
+      operationId: queryOneTimeTransactionStatusUserData
       description: |-
         Query subscription transaction history of a plan
 
@@ -11248,6 +11516,7 @@ paths:
       tags:
         - Auto-Invest
       summary: Index Linked Plan Redemption(TRADE)
+      operationId: indexLinkedPlanRedemptionTrade
       description: |-
         Query subscription transaction history of a plan
 
@@ -11299,6 +11568,7 @@ paths:
       tags:
         - Auto-Invest
       summary: Index Linked Plan Redemption(USER_DATA)
+      operationId: indexLinkedPlanRedemptionUserData
       description: |-
         Query subscription transaction history of a plan
 
@@ -11362,6 +11632,7 @@ paths:
       tags:
         - Auto-Invest
       summary: Index Linked Plan Rebalance Details(USER_DATA)
+      operationId: indexLinkedPlanRebalanceDetailsUserData
       description: |-
         Query subscription transaction history of a plan
 
@@ -11417,6 +11688,7 @@ paths:
       tags:
         - Wallet
       summary: System Status (System)
+      operationId: systemStatusSystem
       description: |-
         Fetch system status.
 
@@ -11437,6 +11709,7 @@ paths:
       tags:
         - Wallet
       summary: All Coins' Information (USER_DATA)
+      operationId: allCoinsInformationUserData
       description: |-
         Get information of coins (available for deposit and withdraw) for user.
 
@@ -11474,6 +11747,7 @@ paths:
       tags:
         - Wallet
       summary: Daily Account Snapshot (USER_DATA)
+      operationId: dailyAccountSnapshotUserData
       description: >-
         - The query time period must be less than 30 days
 
@@ -11522,6 +11796,7 @@ paths:
       tags:
         - Wallet
       summary: Disable Fast Withdraw Switch (USER_DATA)
+      operationId: disableFastWithdrawSwitchUserData
       description: >-
         - This request will disable fastwithdraw switch under your account.
 
@@ -11562,6 +11837,7 @@ paths:
       tags:
         - Wallet
       summary: Enable Fast Withdraw Switch (USER_DATA)
+      operationId: enableFastWithdrawSwitchUserData
       description: >-
         - This request will enable fastwithdraw switch under your account. You need to enable "trade" option for the api key which requests this endpoint.
 
@@ -11602,6 +11878,7 @@ paths:
       tags:
         - Wallet
       summary: Withdraw (USER_DATA)
+      operationId: withdrawUserData
       description: >-
         Submit a withdraw request.
 
@@ -11660,6 +11937,7 @@ paths:
       tags:
         - Wallet
       summary: Deposit History (supporting network) (User Data)
+      operationId: depositHistorySupportingNetworkUserData
       description: >-
         Fetch deposit history.
 
@@ -11703,6 +11981,7 @@ paths:
       tags:
         - Wallet
       summary: Withdraw History (supporting network) (User Data)
+      operationId: withdrawHistorySupportingNetworkUserData
       description: >-
         Fetch withdraw history.
 
@@ -11748,6 +12027,7 @@ paths:
       tags:
         - Wallet
       summary: Deposit Address (supporting network) (User Data)
+      operationId: depositAddressSupportingNetworkUserData
       description: >-
         Fetch deposit address with network.
 
@@ -11797,6 +12077,7 @@ paths:
       tags:
         - Wallet
       summary: Account Status (USER_DATA)
+      operationId: accountStatusUserData
       description: |-
         Fetch account status detail.
 
@@ -11834,6 +12115,7 @@ paths:
       tags:
         - Wallet
       summary: Account API Trading Status (USER_DATA)
+      operationId: accountApiTradingStatusUserData
       description: |-
         Fetch account API trading status with details.
 
@@ -11871,6 +12153,7 @@ paths:
       tags:
         - Wallet
       summary: DustLog (USER_DATA)
+      operationId: dustLogUserData
       description: 'Weight(IP): 1'
       parameters:
         - name: Content-Type
@@ -11905,6 +12188,7 @@ paths:
       tags:
         - Wallet
       summary: Get Assets That Can Be Converted Into BNB (USER_DATA)
+      operationId: getAssetsThatCanBeConvertedIntoBnbUserData
       description: 'Weight(IP): 1'
       parameters:
         - name: Content-Type
@@ -11939,6 +12223,7 @@ paths:
       tags:
         - Wallet
       summary: Dust Transfer (USER_DATA)
+      operationId: dustTransferUserData
       description: |-
         Convert dust assets to BNB.
 
@@ -11981,6 +12266,7 @@ paths:
       tags:
         - Wallet
       summary: Asset Dividend Record (USER_DATA)
+      operationId: assetDividendRecordUserData
       description: |-
         Query asset Dividend Record
 
@@ -12018,6 +12304,7 @@ paths:
       tags:
         - Wallet
       summary: Asset Detail (USER_DATA)
+      operationId: assetDetailUserData
       description: >-
         Fetch details of assets supported on Binance.
 
@@ -12059,6 +12346,7 @@ paths:
       tags:
         - Wallet
       summary: Trade Fee (USER_DATA)
+      operationId: tradeFeeUserData
       description: |-
         Fetch trade fee
 
@@ -12096,6 +12384,7 @@ paths:
       tags:
         - Wallet
       summary: Query User Universal Transfer History (USER_DATA)
+      operationId: queryUserUniversalTransferHistoryUserData
       description: >-
         - `fromSymbol` must be sent when type are ISOLATEDMARGIN_MARGIN and ISOLATEDMARGIN_ISOLATEDMARGIN
 
@@ -12145,6 +12434,7 @@ paths:
       tags:
         - Wallet
       summary: User Universal Transfer (USER_DATA)
+      operationId: userUniversalTransferUserData
       description: >-
         You need to enable `Permits Universal Transfer` option for the api key which requests this endpoint.
 
@@ -12249,6 +12539,7 @@ paths:
       tags:
         - Wallet
       summary: Funding Wallet (USER_DATA)
+      operationId: fundingWalletUserData
       description: >-
         - Currently supports querying the following business assets：Binance Pay, Binance Card, Binance Gift Card, Stock Token
 
@@ -12287,6 +12578,7 @@ paths:
       tags:
         - Wallet
       summary: User Asset (USER_DATA)
+      operationId: userAssetUserData
       description: |-
         Get user assets, just for positive data.
 
@@ -12324,6 +12616,7 @@ paths:
       tags:
         - Wallet
       summary: BUSD Convert (TRADE)
+      operationId: busdConvertTrade
       description: |-
         Get user assets, just for positive data.
 
@@ -12382,6 +12675,7 @@ paths:
       tags:
         - Wallet
       summary: BUSD Convert History (USER_DATA)
+      operationId: busdConvertHistoryUserData
       description: |-
         Get user assets, just for positive data.
 
@@ -12429,6 +12723,7 @@ paths:
       tags:
         - Wallet
       summary: Get Cloud-Mining payment and refund history (USER_DATA)
+      operationId: getCloudMiningPaymentAndRefundHistoryUserData
       description: |-
         Get user assets, just for positive data.
 
@@ -12476,6 +12771,7 @@ paths:
       tags:
         - Wallet
       summary: Get API Key Permission (USER_DATA)
+      operationId: getApiKeyPermissionUserData
       description: 'Weight(IP): 1'
       parameters:
         - name: Content-Type
@@ -12510,6 +12806,7 @@ paths:
       tags:
         - Wallet
       summary: Query auto-converting stable coins (USER_DATA)
+      operationId: queryAutoConvertingStableCoinsUserData
       description: |-
         Get a user's auto-conversion settings in deposit/withdrawal
 
@@ -12540,6 +12837,7 @@ paths:
       tags:
         - Wallet
       summary: Switch on/off BUSD and stable coins conversion (USER_DATA)
+      operationId: switchOnOffBusdAndStableCoinsConversionUserData
       description: >-
         User can use it to turn on or turn off the BUSD auto-conversion from/to a specific stable coin.
 
@@ -12587,6 +12885,7 @@ paths:
         - Wallet
       summary: >-
         One click arrival deposit apply (for expired address deposit) (USER_DATA)
+      operationId: oneClickArrivalDepositApplyForExpiredAddressDepositUserData
       description: |-
         Apply deposit credit for expired address (One click arrival)
 
@@ -12620,6 +12919,7 @@ paths:
       tags:
         - Wallet
       summary: Query User Wallet Balance (USER_DATA)
+      operationId: queryUserWalletBalanceUserData
       description: |-
         Apply deposit credit for expired address (One click arrival)
 
@@ -12658,6 +12958,7 @@ paths:
       tags:
         - Wallet
       summary: Query User Delegation History(For Master Account)(USER_DATA)
+      operationId: queryUserDelegationHistoryForMasterAccountUserData
       description: |-
         Apply deposit credit for expired address (One click arrival)
 
@@ -12729,6 +13030,7 @@ paths:
       tags:
         - Wallet
       summary: Get symbols delist schedule for spot (MARKET_DATA)
+      operationId: getSymbolsDelistScheduleForSpotMarketData
       description: 'Get symbols delist schedule for spot. Weight(IP): 100'
       parameters:
         - name: Content-Type
@@ -12761,6 +13063,7 @@ paths:
       tags:
         - Wallet
       summary: Fetch deposit address list with network(USER_DATA)
+      operationId: fetchDepositAddressListWithNetworkUserData
       parameters:
         - name: Content-Type
           in: header
@@ -12802,6 +13105,7 @@ paths:
       tags:
         - VIP Loans
       summary: Get VIP Loan Ongoing Orders (USER_DATA)
+      operationId: getVipLoanOngoingOrdersUserData
       description: >-
         - If startTime and endTime are not sent, the recent 7-day data will be returned.
 
@@ -12842,6 +13146,7 @@ paths:
       tags:
         - VIP Loans
       summary: VIP Loan Repay (TRADE)
+      operationId: vipLoanRepayTrade
       parameters:
         - name: Content-Type
           in: header
@@ -12883,6 +13188,7 @@ paths:
       tags:
         - VIP Loans
       summary: Get VIP Loan Repayment History (USER_DATA)
+      operationId: getVipLoanRepaymentHistoryUserData
       description: >-
         - If startTime and endTime are not sent, the recent 7-day data will be returned.
 
@@ -12923,6 +13229,7 @@ paths:
       tags:
         - VIP Loans
       summary: VIP Loan Renew (TRADE)
+      operationId: vipLoanRenewTrade
       description: |-
         VIP loan is available for VIP users only.
 
@@ -12969,6 +13276,7 @@ paths:
       tags:
         - VIP Loans
       summary: Check Locked Value of VIP Collateral Account (USER_DATA)
+      operationId: checkLockedValueOfVipCollateralAccountUserData
       description: >-
         - If startTime and endTime are not sent, the recent 7-day data will be returned.
 
@@ -13009,6 +13317,7 @@ paths:
       tags:
         - VIP Loans
       summary: VIP Loan Borrow (TRADE)
+      operationId: vipLoanBorrowTrade
       description: |-
         VIP loan is available for VIP users only.
         loanAccountId refer to loan receiving account
@@ -13080,6 +13389,7 @@ paths:
       tags:
         - VIP Loans
       summary: Get Loanable Assets Data (USER_DATA)
+      operationId: getLoanableAssetsDataUserData
       description: >-
         Get interest rate and borrow limit of loanable assets. The borrow limit is shown in USD value.
 
@@ -13118,6 +13428,7 @@ paths:
       tags:
         - VIP Loans
       summary: Get Collateral Asset Data (USER_DATA)
+      operationId: getCollateralAssetDataUserData
       description: |-
         Get Collateral Asset Data
 
@@ -13155,6 +13466,7 @@ paths:
       tags:
         - VIP Loans
       summary: Query Application Status (USER_DATA)
+      operationId: queryApplicationStatusUserData
       description: 'Weight(UID): 400'
       parameters:
         - name: Content-Type
@@ -13189,6 +13501,7 @@ paths:
       tags:
         - VIP Loans
       summary: Get Borrow Interest Rate (USER_DATA)
+      operationId: getBorrowInterestRateUserData
       description: 'Weight(UID): 400'
       parameters:
         - name: Content-Type

@@ -19,6 +19,7 @@ paths:
       tags:
         - Market
       summary: Test connectivity
+      operationId: testConnectivity
       parameters:
         - name: Content-Type
           in: header
@@ -35,6 +36,7 @@ paths:
       tags:
         - Market
       summary: Get server time
+      operationId: getServerTime
       parameters:
         - name: Content-Type
           in: header
@@ -51,6 +53,7 @@ paths:
       tags:
         - Market
       summary: Exchange Information
+      operationId: exchangeInformation
       description: Current exchange trading rules and symbol information
       parameters:
         - name: Content-Type
@@ -68,6 +71,7 @@ paths:
       tags:
         - Market
       summary: Order Book
+      operationId: orderBook
       parameters:
         - name: Content-Type
           in: header
@@ -89,6 +93,7 @@ paths:
       tags:
         - Market
       summary: Recent Trades List
+      operationId: recentTradesList
       description: Get recent market trades
       parameters:
         - name: Content-Type
@@ -111,6 +116,7 @@ paths:
       tags:
         - Market
       summary: Old Trades Lookup (MARKET_DATA)
+      operationId: oldTradesLookupMarketData
       description: Get older market historical trades.
       parameters:
         - name: Content-Type
@@ -133,6 +139,7 @@ paths:
       tags:
         - Market
       summary: Kline/Candlestick Data
+      operationId: klineCandlestickData
       description: >-
         Kline/candlestick bars for an option symbol. Klines are uniquely identified by their open time.
       parameters:
@@ -161,6 +168,7 @@ paths:
       tags:
         - Market
       summary: Option Mark Price
+      operationId: optionMarkPrice
       description: Option mark price and greek info.
       parameters:
         - name: Content-Type
@@ -178,6 +186,7 @@ paths:
       tags:
         - Market
       summary: 24hr Ticker Price Change Statistics
+      operationId: 24HrTickerPriceChangeStatistics
       description: 24 hour rolling window price change statistics.
       parameters:
         - name: Content-Type
@@ -195,6 +204,7 @@ paths:
       tags:
         - Market
       summary: Symbol Price Ticker
+      operationId: symbolPriceTicker
       description: Get spot index price for option underlying.
       parameters:
         - name: Content-Type
@@ -217,6 +227,7 @@ paths:
       tags:
         - Market
       summary: Historical Exercise Records
+      operationId: historicalExerciseRecords
       description: |-
         REALISTIC_VALUE_STRICKEN -> Exercised
 
@@ -237,6 +248,7 @@ paths:
       tags:
         - Account/Trades
       summary: Option Account Information (TRADE)
+      operationId: optionAccountInformationTrade
       parameters:
         - name: Content-Type
           in: header
@@ -268,6 +280,7 @@ paths:
       tags:
         - Account/Trades
       summary: New Order (TRADE)
+      operationId: newOrderTrade
       description: Send a new order.
       parameters:
         - name: Content-Type
@@ -319,6 +332,7 @@ paths:
       tags:
         - Account/Trades
       summary: Query Single Order (TRADE)
+      operationId: querySingleOrderTrade
       description: Check an order status.
       parameters:
         - name: Content-Type
@@ -355,6 +369,7 @@ paths:
       tags:
         - Account/Trades
       summary: Cancel Option Order (TRADE)
+      operationId: cancelOptionOrderTrade
       description: Cancel an active order.
       parameters:
         - name: Content-Type
@@ -392,6 +407,7 @@ paths:
       tags:
         - Account/Trades
       summary: Place Multiple Orders (TRADE)
+      operationId: placeMultipleOrdersTrade
       description: Send multiple option orders.
       parameters:
         - name: Content-Type
@@ -428,6 +444,7 @@ paths:
       tags:
         - Account/Trades
       summary: Cancel Multiple Option orders (TRADE)
+      operationId: cancelMultipleOptionOrdersTrade
       description: Cancel an active order.
       parameters:
         - name: Content-Type
@@ -465,6 +482,7 @@ paths:
       tags:
         - Account/Trades
       summary: Cancel all Option orders on specific symbol (TRADE)
+      operationId: cancelAllOptionOrdersOnSpecificSymbolTrade
       description: Cancel all active order on a symbol.
       parameters:
         - name: Content-Type
@@ -502,6 +520,7 @@ paths:
       tags:
         - Account/Trades
       summary: Cancel All Option Orders By Underlying (TRADE)
+      operationId: cancelAllOptionOrdersByUnderlyingTrade
       description: Cancel all active orders on specified underlying.
       parameters:
         - name: Content-Type
@@ -539,6 +558,7 @@ paths:
       tags:
         - Account/Trades
       summary: Query Current Open Option Orders (USER_DATA)
+      operationId: queryCurrentOpenOptionOrdersUserData
       description: 'Query current all open orders, status: ACCEPTED PARTIALLY_FILLED'
       parameters:
         - name: Content-Type
@@ -571,6 +591,7 @@ paths:
       tags:
         - Account/Trades
       summary: Query Option Order History (TRADE)
+      operationId: queryOptionOrderHistoryTrade
       description: >-
         Query all finished orders within 1 month, finished status: CANCELLED FILLED REJECTED.
       parameters:
@@ -609,6 +630,7 @@ paths:
       tags:
         - Account/Trades
       summary: Option Position Information (USER_DATA)
+      operationId: optionPositionInformationUserData
       description: Get current position information.
       parameters:
         - name: Content-Type
@@ -641,6 +663,7 @@ paths:
       tags:
         - Account/Trades
       summary: Account Trade List (USER_DATA)
+      operationId: accountTradeListUserData
       description: Get trades for a specific account and symbol.
       parameters:
         - name: Content-Type
@@ -673,6 +696,7 @@ paths:
       tags:
         - Account/Trades
       summary: User Exercise Record (USER_DATA)
+      operationId: userExerciseRecordUserData
       description: Get account exercise records.
       parameters:
         - name: Content-Type
@@ -705,6 +729,7 @@ paths:
       tags:
         - Account/Trades
       summary: Account Funding Flow (USER_DATA)
+      operationId: accountFundingFlowUserData
       description: Query account funding flows.
       parameters:
         - name: Content-Type
@@ -742,6 +767,7 @@ paths:
       tags:
         - Account/Trades
       summary: Get Download Id For Option Transaction History (USER_DATA)
+      operationId: getDownloadIdForOptionTransactionHistoryUserData
       description: >-
         Request Limitation is 5 times per month, shared by front end download page and rest api
 
@@ -790,6 +816,7 @@ paths:
       tags:
         - Account/Trades
       summary: Get Option Transaction History Download Link by Id (USER_DATA)
+      operationId: getOptionTransactionHistoryDownloadLinkByIdUserData
       description: |-
         Download link expiration: 24h
 
@@ -830,6 +857,7 @@ paths:
       tags:
         - Data Stream
       summary: Start User Data Stream (USER_STREAM)
+      operationId: startUserDataStreamUserStream
       description: >-
         Start a new user data stream. The stream will close after 60 minutes unless a keepalive is sent. If the account has an active listenKey, that listenKey will be returned and its validity will be extended for 60 minutes.
       parameters:
@@ -862,6 +890,7 @@ paths:
       tags:
         - Data Stream
       summary: Keepalive User Data Stream (USER_STREAM)
+      operationId: keepaliveUserDataStreamUserStream
       description: >-
         Keepalive a user data stream to prevent a time out. User data streams will close after 60 minutes. It's recommended to send a ping about every 60 minutes.
       parameters:
@@ -899,6 +928,7 @@ paths:
       tags:
         - Data Stream
       summary: Close User Data Stream (USER_STREAM)
+      operationId: closeUserDataStreamUserStream
       description: Close out a user data stream.
       parameters:
         - name: Content-Type
@@ -936,6 +966,7 @@ paths:
       tags:
         - Market Maker
       summary: Option Margin Account Information (USER_DATA)
+      operationId: optionMarginAccountInformationUserData
       description: Get current account information.
       parameters:
         - name: Content-Type

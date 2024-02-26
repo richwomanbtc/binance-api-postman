@@ -25,6 +25,7 @@ paths:
       tags:
         - Market
       summary: Test Connectivity
+      operationId: testConnectivity
       description: Test connectivity to the Rest API.
       parameters:
         - name: Content-Type
@@ -42,6 +43,7 @@ paths:
       tags:
         - Market
       summary: Check Server Time
+      operationId: checkServerTime
       parameters:
         - name: Content-Type
           in: header
@@ -58,6 +60,7 @@ paths:
       tags:
         - Market
       summary: Exchange Information
+      operationId: exchangeInformation
       parameters:
         - name: Content-Type
           in: header
@@ -74,6 +77,7 @@ paths:
       tags:
         - Market
       summary: Order Book
+      operationId: orderBook
       parameters:
         - name: Content-Type
           in: header
@@ -95,6 +99,7 @@ paths:
       tags:
         - Market
       summary: Recent Trades List
+      operationId: recentTradesList
       parameters:
         - name: Content-Type
           in: header
@@ -116,6 +121,7 @@ paths:
       tags:
         - Market
       summary: Old Trades Lookup (MARKET_DATA)
+      operationId: oldTradesLookupMarketData
       description: This endpoint need your API key only, not the secret key.
       parameters:
         - name: Content-Type
@@ -143,6 +149,7 @@ paths:
       tags:
         - Market
       summary: Compressed/Aggregate Trades List
+      operationId: compressedAggregateTradesList
       parameters:
         - name: Content-Type
           in: header
@@ -164,6 +171,7 @@ paths:
       tags:
         - Market
       summary: Kline/Candlestick Data
+      operationId: klineCandlestickData
       description: >-
         Kline/candlestick bars for a symbol. Klines are uniquely identified by their open time.
       parameters:
@@ -193,6 +201,7 @@ paths:
       tags:
         - Market
       summary: Continuous Contract Kline/Candlestick Data
+      operationId: continuousContractKlineCandlestickData
       description: >-
         Kline/candlestick bars for a symbol. Klines are uniquely identified by their open time.
       parameters:
@@ -223,6 +232,7 @@ paths:
       tags:
         - Market
       summary: Index Price Kline/Candlestick Data
+      operationId: indexPriceKlineCandlestickData
       description: >-
         Kline/candlestick bars for the index price of a pair. Klines are uniquely identified by their open time.
       parameters:
@@ -252,6 +262,7 @@ paths:
       tags:
         - Market
       summary: Mark Price Kline/Candlestick Data
+      operationId: markPriceKlineCandlestickData
       description: >-
         Kline/candlestick bars for the mark price of a symbol. Klines are uniquely identified by their open time.
       parameters:
@@ -281,6 +292,7 @@ paths:
       tags:
         - Market
       summary: Mark Price
+      operationId: markPrice
       description: |-
         Mark Price and Funding Rate
 
@@ -301,6 +313,7 @@ paths:
       tags:
         - Market
       summary: Get Funding Rate History
+      operationId: getFundingRateHistory
       description: |-
         Mark Price and Funding Rate
 
@@ -321,6 +334,7 @@ paths:
       tags:
         - Market
       summary: 24hr Ticker Price Change Statistics
+      operationId: 24HrTickerPriceChangeStatistics
       description: |-
         24 hour rolling window price change statistics.
 
@@ -347,6 +361,7 @@ paths:
       tags:
         - Market
       summary: Symbol Price Ticker V2
+      operationId: symbolPriceTickerV2
       description: Latest price for a symbol or symbols.
       parameters:
         - name: Content-Type
@@ -364,6 +379,7 @@ paths:
       tags:
         - Market
       summary: Symbol Order Book Ticker
+      operationId: symbolOrderBookTicker
       description: Best price/qty on the order book for a symbol or symbols.
       parameters:
         - name: Content-Type
@@ -381,6 +397,7 @@ paths:
       tags:
         - Market
       summary: Open Interest
+      operationId: openInterest
       description: Get present open interest of a specific symbol.
       parameters:
         - name: Content-Type
@@ -403,6 +420,7 @@ paths:
       tags:
         - Market
       summary: Open Interest Statistics
+      operationId: openInterestStatistics
       description: Get present open interest of a specific symbol.
       parameters:
         - name: Content-Type
@@ -435,6 +453,7 @@ paths:
       tags:
         - Market
       summary: Top Trader Long/Short Ratio (Accounts)
+      operationId: topTraderLongShortRatioAccounts
       description: Get present open interest of a specific symbol.
       parameters:
         - name: Content-Type
@@ -462,6 +481,7 @@ paths:
       tags:
         - Market
       summary: Top Trader Long/Short Ratio (Positions)
+      operationId: topTraderLongShortRatioPositions
       description: Get present open interest of a specific symbol.
       parameters:
         - name: Content-Type
@@ -489,6 +509,7 @@ paths:
       tags:
         - Market
       summary: Long/Short Ratio
+      operationId: longShortRatio
       description: Get present open interest of a specific symbol.
       parameters:
         - name: Content-Type
@@ -521,6 +542,7 @@ paths:
       tags:
         - Market
       summary: Taker Buy/Sell Volume
+      operationId: takerBuySellVolume
       parameters:
         - name: Content-Type
           in: header
@@ -553,6 +575,7 @@ paths:
       tags:
         - Market
       summary: Historical BLVT NAV Kline/Candlestick
+      operationId: historicalBlvtNavKlineCandlestick
       parameters:
         - name: Content-Type
           in: header
@@ -583,6 +606,7 @@ paths:
       tags:
         - Market
       summary: Composite Index Symbol Information
+      operationId: compositeIndexSymbolInformation
       parameters:
         - name: Content-Type
           in: header
@@ -604,6 +628,7 @@ paths:
       tags:
         - Market
       summary: Get Funding Rate Info
+      operationId: getFundingRateInfo
       parameters:
         - name: Content-Type
           in: header
@@ -620,6 +645,7 @@ paths:
       tags:
         - Market
       summary: Quarterly Contract Settlement Price
+      operationId: quarterlyContractSettlementPrice
       parameters:
         - name: Content-Type
           in: header
@@ -640,6 +666,7 @@ paths:
       tags:
         - Market
       summary: Basis
+      operationId: basis
       parameters:
         - name: Content-Type
           in: header
@@ -680,6 +707,7 @@ paths:
       tags:
         - Account
       summary: Account information
+      operationId: accountInformation
       parameters:
         - name: Content-Type
           in: header
@@ -716,6 +744,7 @@ paths:
       tags:
         - Account
       summary: Get Income History
+      operationId: getIncomeHistory
       parameters:
         - name: Content-Type
           in: header
@@ -747,6 +776,7 @@ paths:
       tags:
         - Account
       summary: Position Information
+      operationId: positionInformation
       parameters:
         - name: Content-Type
           in: header
@@ -778,6 +808,7 @@ paths:
       tags:
         - Account
       summary: Account Trade List
+      operationId: accountTradeList
       parameters:
         - name: Content-Type
           in: header
@@ -814,6 +845,7 @@ paths:
       tags:
         - Account
       summary: Future Account Balance
+      operationId: futureAccountBalance
       parameters:
         - name: Content-Type
           in: header
@@ -845,6 +877,7 @@ paths:
       tags:
         - Account
       summary: Notional and Leverage Brackets (USER_DATA)
+      operationId: notionalAndLeverageBracketsUserData
       description: Get present open interest of a specific symbol.
       parameters:
         - name: Content-Type
@@ -877,6 +910,7 @@ paths:
       tags:
         - Account
       summary: Position ADL Quantile Estimation (USER_DATA)
+      operationId: positionAdlQuantileEstimationUserData
       parameters:
         - name: Content-Type
           in: header
@@ -908,6 +942,7 @@ paths:
       tags:
         - Account
       summary: User Commission Rate (USER_DATA)
+      operationId: userCommissionRateUserData
       parameters:
         - name: Content-Type
           in: header
@@ -943,6 +978,7 @@ paths:
       tags:
         - Trade
       summary: Get Current Multi-Assets Mode (USER_DATA)
+      operationId: getCurrentMultiAssetsModeUserData
       parameters:
         - name: Content-Type
           in: header
@@ -973,6 +1009,7 @@ paths:
       tags:
         - Trade
       summary: Change Multi-Assets Mode (TRADE)
+      operationId: changeMultiAssetsModeTrade
       parameters:
         - name: Content-Type
           in: header
@@ -1010,6 +1047,7 @@ paths:
       tags:
         - Order
       summary: New Order (TRADE)
+      operationId: newOrderTrade
       description: https://binance-docs.github.io/apidocs/futures/en/#new-order-trade
       parameters:
         - name: Content-Type
@@ -1061,6 +1099,7 @@ paths:
       tags:
         - Order
       summary: Modify Order (TRADE)
+      operationId: modifyOrderTrade
       description: >-
         Either orderId or origClientOrderId must be sent, and the orderId will prevail if both are sent.
 
@@ -1124,6 +1163,7 @@ paths:
       tags:
         - Order
       summary: Query Order
+      operationId: queryOrder
       parameters:
         - name: Content-Type
           in: header
@@ -1159,6 +1199,7 @@ paths:
       tags:
         - Order
       summary: Cancel Order
+      operationId: cancelOrder
       parameters:
         - name: Content-Type
           in: header
@@ -1195,6 +1236,7 @@ paths:
       tags:
         - Order
       summary: Place Multiple Orders (TRADE)
+      operationId: placeMultipleOrdersTrade
       parameters:
         - name: Content-Type
           in: header
@@ -1232,6 +1274,7 @@ paths:
       tags:
         - Order
       summary: Modify Multiple Orders (TRADE)
+      operationId: modifyMultipleOrdersTrade
       parameters:
         - name: Content-Type
           in: header
@@ -1270,6 +1313,7 @@ paths:
       tags:
         - Order
       summary: Cancel Multiple Orders (TRADE)
+      operationId: cancelMultipleOrdersTrade
       parameters:
         - name: Content-Type
           in: header
@@ -1311,6 +1355,7 @@ paths:
       tags:
         - Order
       summary: Get Order Modify History (USER_DATA)
+      operationId: getOrderModifyHistoryUserData
       description: >-
         Get order modification history
 
@@ -1356,6 +1401,7 @@ paths:
       tags:
         - Order
       summary: Get Download Id For Futures Order History (USER_DATA)
+      operationId: getDownloadIdForFuturesOrderHistoryUserData
       description: >-
         Request Limitation is 10 times per month, shared by front end download page and rest api
 
@@ -1406,6 +1452,7 @@ paths:
       tags:
         - Order
       summary: Get Futures Order History Download Link by Id (USER_DATA)
+      operationId: getFuturesOrderHistoryDownloadLinkByIdUserData
       description: |-
         Download link expiration: 24h
         Weight: 5
@@ -1448,6 +1495,7 @@ paths:
       tags:
         - Order
       summary: Get Download Id For Futures Trade History (USER_DATA)
+      operationId: getDownloadIdForFuturesTradeHistoryUserData
       description: >-
         Request Limitation is 5 times per month, shared by front end download page and rest api
 
@@ -1498,6 +1546,7 @@ paths:
       tags:
         - Order
       summary: Get Futures Trade Download Link by Id (USER_DATA)
+      operationId: getFuturesTradeDownloadLinkByIdUserData
       description: |-
         Download link expiration: 24h
         Weight: 5
@@ -1540,6 +1589,7 @@ paths:
       tags:
         - Order
       summary: Cancel All Open Orders
+      operationId: cancelAllOpenOrders
       parameters:
         - name: Content-Type
           in: header
@@ -1576,6 +1626,7 @@ paths:
       tags:
         - Order
       summary: Auto-Cancel All Open Orders (TRADE)
+      operationId: autoCancelAllOpenOrdersTrade
       parameters:
         - name: Content-Type
           in: header
@@ -1616,6 +1667,7 @@ paths:
       tags:
         - Order
       summary: Current All Open Orders (USER_DATA)
+      operationId: currentAllOpenOrdersUserData
       parameters:
         - name: Content-Type
           in: header
@@ -1647,6 +1699,7 @@ paths:
       tags:
         - Order
       summary: Query Current Open Order (USER_DATA)
+      operationId: queryCurrentOpenOrderUserData
       parameters:
         - name: Content-Type
           in: header
@@ -1682,6 +1735,7 @@ paths:
       tags:
         - Order
       summary: All Orders
+      operationId: allOrders
       parameters:
         - name: Content-Type
           in: header
@@ -1717,6 +1771,7 @@ paths:
       tags:
         - Order
       summary: User's Force Orders (USER_DATA)
+      operationId: usersForceOrdersUserData
       parameters:
         - name: Content-Type
           in: header
@@ -1748,6 +1803,7 @@ paths:
       tags:
         - Trade
       summary: Change Margin Type
+      operationId: changeMarginType
       parameters:
         - name: Content-Type
           in: header
@@ -1789,6 +1845,7 @@ paths:
       tags:
         - Trade
       summary: Change Initial Leverage
+      operationId: changeInitialLeverage
       parameters:
         - name: Content-Type
           in: header
@@ -1830,6 +1887,7 @@ paths:
       tags:
         - Trade
       summary: Modify Isolated Position Margin
+      operationId: modifyIsolatedPositionMargin
       parameters:
         - name: Content-Type
           in: header
@@ -1876,6 +1934,7 @@ paths:
       tags:
         - Trade
       summary: Get Postion Margin Change History
+      operationId: getPostionMarginChangeHistory
       parameters:
         - name: Content-Type
           in: header
@@ -1912,6 +1971,7 @@ paths:
       tags:
         - Trade
       summary: Change Position Mode（TRADE）
+      operationId: changePositionMode（Trade）
       parameters:
         - name: Content-Type
           in: header
@@ -1947,6 +2007,7 @@ paths:
       tags:
         - Trade
       summary: Get Current Position Mode（USER_DATA）
+      operationId: getCurrentPositionMode（UserData）
       parameters:
         - name: Content-Type
           in: header
@@ -1978,6 +2039,7 @@ paths:
       tags:
         - Trade
       summary: User API Trading Quantitative Rules Indicators (USER_DATA)
+      operationId: userApiTradingQuantitativeRulesIndicatorsUserData
       parameters:
         - name: Content-Type
           in: header
@@ -2009,6 +2071,7 @@ paths:
       tags:
         - Data Stream
       summary: Create New Listen Key
+      operationId: createNewListenKey
       parameters:
         - name: Content-Type
           in: header
@@ -2029,6 +2092,7 @@ paths:
       tags:
         - Data Stream
       summary: Renew Listen Key
+      operationId: renewListenKey
       parameters:
         - name: Content-Type
           in: header
@@ -2049,6 +2113,7 @@ paths:
       tags:
         - Data Stream
       summary: Delete Listen Key
+      operationId: deleteListenKey
       parameters:
         - name: Content-Type
           in: header
@@ -2070,6 +2135,7 @@ paths:
       tags:
         - Portfolio Margin
       summary: Portfolio Margin Account Information
+      operationId: portfolioMarginAccountInformation
       parameters:
         - name: Content-Type
           in: header

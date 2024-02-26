@@ -11,5 +11,6 @@
         "signature": "signature",
         "binance-api-key": "binance-api-key",
         "secret-key": "secret-key"
-    }
+    },
+    "operationId": "auto"
 }
