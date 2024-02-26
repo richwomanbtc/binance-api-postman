@@ -35,16 +35,11 @@ tags:
   - name: Futures Algo
   - name: Spot Algo
     description: >-
-      Binance Spot Execution Algorithm API solution aims to provide users
-      ability to programmatically leverage Binance in-house algorithmic trading
+      Binance Spot Execution Algorithm API solution aims to provide users ability to programmatically leverage Binance in-house algorithmic trading
 
-      capability to automate order execution strategy, improve execution
-      transparency and give users smart access to the available market
-      liquidity.
+      capability to automate order execution strategy, improve execution transparency and give users smart access to the available market liquidity.
 
-      During the introductory period, there will be no additional fees for TWAP
-      orders. Standard trading fees apply. Order size exceeds to maximum API
-      supported size (100,000 USDT).
+      During the introductory period, there will be no additional fees for TWAP orders. Standard trading fees apply. Order size exceeds to maximum API supported size (100,000 USDT).
 
       Please contact liquidity@binance.com for larger sizes.
   - name: Gift Card
@@ -61,11 +56,7 @@ tags:
     description: Pay Endpoints
   - name: Portfolio Margin
     description: >-
-      The Binance Portfolio Margin Program is a cross-asset margin program
-      supporting consolidated margin balance across trading products with over
-      200+ effective crypto collaterals. It is designed for professional
-      traders, market makers, and institutional users looking to actively trade
-      & hedge cross-asset and optimize risk-management in a consolidated setup.
+      The Binance Portfolio Margin Program is a cross-asset margin program supporting consolidated margin balance across trading products with over 200+ effective crypto collaterals. It is designed for professional traders, market makers, and institutional users looking to actively trade & hedge cross-asset and optimize risk-management in a consolidated setup.
   - name: Rebate
     description: Rebate Endpoints
   - name: Savings
@@ -120,8 +111,6 @@ paths:
         - BLVT
       summary: Subscribe BLVT (USER_DATA)
       description: 'Weight(IP): 1'
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -203,8 +192,6 @@ paths:
         - BLVT
       summary: Redeem BLVT (USER_DATA)
       description: 'Weight(IP): 1'
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -320,8 +307,7 @@ paths:
         - C2C
       summary: Get C2C Trade History (USER_DATA)
       description: >-
-        - If startTimestamp and endTimestamp are not sent, the recent 30-day
-        data will be returned.
+        - If startTimestamp and endTimestamp are not sent, the recent 30-day data will be returned.
 
         - The max interval between startTimestamp and endTimestamp is 30 days.
 
@@ -453,8 +439,6 @@ paths:
         - The max interval between startTime and endTime is 30 days.
 
         Weight(UID): 100
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -479,8 +463,7 @@ paths:
           schema:
             type: string
           description: >-
-            When specified, it is the amount you will be debited after the
-            conversion
+            When specified, it is the amount you will be debited after the conversion
         - name: timestamp
           in: query
           schema:
@@ -507,8 +490,6 @@ paths:
         - The max interval between startTime and endTime is 30 days.
 
         Weight(UID): 100
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -594,8 +575,6 @@ paths:
         Either baseAmount or quoteAmount is used.
 
         Weight(UID): 500
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -612,8 +591,7 @@ paths:
           schema:
             type: string
           description: >-
-            base asset (use the response fromIsBase from GET
-            /sapi/v1/convert/exchangeInfo api to check which one is baseAsset )
+            base asset (use the response fromIsBase from GET /sapi/v1/convert/exchangeInfo api to check which one is baseAsset )
         - name: quoteAsset
           in: query
           schema:
@@ -660,8 +638,6 @@ paths:
         Enable users to cancel a limit order
 
         Weight(UID): 200
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -785,8 +761,7 @@ paths:
         - Crypto Loans
       summary: Get Crypto Loans Income History (USER_DATA)
       description: >-
-        - If startTime and endTime are not sent, the recent 7-day data will be
-        returned.
+        - If startTime and endTime are not sent, the recent 7-day data will be returned.
 
         - The max interval between startTime and endTime is 30 days.
 
@@ -830,8 +805,6 @@ paths:
       tags:
         - Crypto Loans
       summary: Borrow - Crypto Loan Borrow (TRADE)
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -943,8 +916,6 @@ paths:
       tags:
         - Crypto Loans
       summary: Repay - Crypto Loan Repay (TRADE)
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -1019,8 +990,6 @@ paths:
       tags:
         - Crypto Loans
       summary: Adjust LTV - Crypto Loan Adjust LTV (TRADE)
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -1212,8 +1181,6 @@ paths:
       tags:
         - Crypto Loans
       summary: Crypto Loan Customize Margin Call (TRADE)
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -1251,8 +1218,6 @@ paths:
       tags:
         - Crypto Loans
       summary: Borrow - Flexible Loan Borrow (TRADE)
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -1400,8 +1365,6 @@ paths:
       tags:
         - Crypto Loans
       summary: Repay - Flexible Loan Repay (TRADE)
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -1508,8 +1471,6 @@ paths:
       tags:
         - Crypto Loans
       summary: Adjust LTV - Flexible Loan Adjust LTV (TRADE)
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -1593,8 +1554,7 @@ paths:
         - Fiat
       summary: Get Fiat Deposit/Withdraw History (USER_DATA)
       description: >-
-        - If beginTime and endTime are not sent, the recent 30-day data will be
-        returned.
+        - If beginTime and endTime are not sent, the recent 30-day data will be returned.
 
 
         Weight(UID): 90000
@@ -1640,8 +1600,7 @@ paths:
         - Fiat
       summary: Get Fiat Payments History (USER_DATA)
       description: >-
-        - If beginTime and endTime are not sent, the recent 30-day data will be
-        returned.
+        - If beginTime and endTime are not sent, the recent 30-day data will be returned.
 
 
         Weight(IP): 1
@@ -1690,8 +1649,6 @@ paths:
         Execute transfer between spot account and futures account.
 
         Weight(IP): 1
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -1718,10 +1675,7 @@ paths:
           schema:
             type: string
           description: >-
-            1: transfer from spot account to USDT-Ⓜ futures account. 2: transfer
-            from USDT-Ⓜ futures account to spot account. 3: transfer from spot
-            account to COIN-Ⓜ futures account. 4: transfer from COIN-Ⓜ futures
-            account to spot account.
+            1: transfer from spot account to USDT-Ⓜ futures account. 2: transfer from USDT-Ⓜ futures account to spot account. 3: transfer from spot account to COIN-Ⓜ futures account. 4: transfer from COIN-Ⓜ futures account to spot account.
         - name: timestamp
           in: query
           schema:
@@ -1844,19 +1798,9 @@ paths:
 
         - Max open orders allowed: 10 orders.
 
-        - Leverage of symbols and position mode will be the same as your futures
-        account settings. You can set up through the trading page or fapi.
+        - Leverage of symbols and position mode will be the same as your futures account settings. You can set up through the trading page or fapi.
 
-        - Receiving "success": true does not mean that your order will be
-        executed. Please use the query order endpoints（GET
-        sapi/v1/algo/futures/openOrders or GET
-        sapi/v1/algo/futures/historicalOrders） to check the order status. For
-        example: Your futures balance is insufficient, or open position with
-        reduce only or position side is inconsistent with your own setting. In
-        these cases you will receive "success": true, but the order status will
-        be expired after we check it.
-      requestBody:
-        content: {}
+        - Receiving "success": true does not mean that your order will be executed. Please use the query order endpoints（GET sapi/v1/algo/futures/openOrders or GET sapi/v1/algo/futures/historicalOrders） to check the order status. For example: Your futures balance is insufficient, or open position with reduce only or position side is inconsistent with your own setting. In these cases you will receive "success": true, but the order status will be expired after we check it.
       parameters:
         - name: Content-Type
           in: header
@@ -1884,16 +1828,13 @@ paths:
           schema:
             type: string
           description: >-
-            Quantity of base asset; The notional (quantity * mark price(base
-            asset)) must be more than the equivalent of 10,000 USDT and less
-            than the equivalent of 1,000,000 USDT.
+            Quantity of base asset; The notional (quantity * mark price(base asset)) must be more than the equivalent of 10,000 USDT and less than the equivalent of 1,000,000 USDT.
         - name: urgency
           in: query
           schema:
             type: string
           description: >-
-            Represent the relative speed of the current execution; ENUM: LOW,
-            MEDIUM, HIGH.
+            Represent the relative speed of the current execution; ENUM: LOW, MEDIUM, HIGH.
           example: LOW
         - name: timestamp
           in: query
@@ -1921,8 +1862,6 @@ paths:
         Send in a Twap new order. Only support on USDⓈ-M Contracts.
 
         Weight(UID): 3000
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -1949,16 +1888,13 @@ paths:
           schema:
             type: string
           description: >-
-            Quantity of base asset; The notional (quantity * mark price(base
-            asset)) must be more than the equivalent of 10,000 USDT and less
-            than the equivalent of 1,000,000 USDT
+            Quantity of base asset; The notional (quantity * mark price(base asset)) must be more than the equivalent of 10,000 USDT and less than the equivalent of 1,000,000 USDT
         - name: duration
           in: query
           schema:
             type: string
           description: >-
-            Duration for TWAP orders in seconds. [300, 86400];Less than 5min =>
-            defaults to 5 min; Greater than 24h => defaults to 24h
+            Duration for TWAP orders in seconds. [300, 86400];Less than 5min => defaults to 5 min; Greater than 24h => defaults to 24h
         - name: timestamp
           in: query
           schema:
@@ -2134,8 +2070,6 @@ paths:
         Total Algo open orders max allowed: 10 orders.
 
         Weight(UID): 3000
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -2162,9 +2096,7 @@ paths:
           schema:
             type: string
           description: >-
-            Quantity of base asset; The notional (quantity * last price(base
-            asset)) must be more than the equivalent of 1,000 USDT and less than
-            the equivalent of 100,000 USDT
+            Quantity of base asset; The notional (quantity * last price(base asset)) must be more than the equivalent of 1,000 USDT and less than the equivalent of 100,000 USDT
         - name: duration
           in: query
           schema:
@@ -2350,8 +2282,7 @@ paths:
         - Gift Card
       summary: Create a Binance Code (USER_DATA)
       description: >-
-        This API is for creating a Binance Code. To get started with, please
-        make sure:
+        This API is for creating a Binance Code. To get started with, please make sure:
 
 
         - You have a Binance account
@@ -2360,16 +2291,13 @@ paths:
 
         - You have a sufﬁcient balance in your Binance funding wallet
 
-        - You need Enable Withdrawals for the API Key which requests this
-        endpoint.
+        - You need Enable Withdrawals for the API Key which requests this endpoint.
 
 
         Daily creation volume: 2 BTC / 24H Daily creation times: 200 Codes / 24H
 
 
         Weight(IP): 1
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -2414,17 +2342,13 @@ paths:
         - Gift Card
       summary: Redeem a Binance Code (USER_DATA)
       description: >-
-        This API is for redeeming the Binance Code. Once redeemed, the coins
-        will be deposited in your funding wallet.
+        This API is for redeeming the Binance Code. Once redeemed, the coins will be deposited in your funding wallet.
 
 
-        Please note that if you enter the wrong code 5 times within 24 hours,
-        you will no longer be able to redeem any Binance Code that day.
+        Please note that if you enter the wrong code 5 times within 24 hours, you will no longer be able to redeem any Binance Code that day.
 
 
         Weight(IP): 1
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -2464,17 +2388,13 @@ paths:
         - Gift Card
       summary: Buy a Binance Code (TRADE)
       description: >-
-        This API is for redeeming the Binance Code. Once redeemed, the coins
-        will be deposited in your funding wallet.
+        This API is for redeeming the Binance Code. Once redeemed, the coins will be deposited in your funding wallet.
 
 
-        Please note that if you enter the wrong code 5 times within 24 hours,
-        you will no longer be able to redeem any Binance Code that day.
+        Please note that if you enter the wrong code 5 times within 24 hours, you will no longer be able to redeem any Binance Code that day.
 
 
         Weight(IP): 1
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -2496,8 +2416,7 @@ paths:
           schema:
             type: string
           description: >-
-            The token you want to buy, example: BNB. If faceToken = baseToken,
-            it's the same as createCode endpoint.
+            The token you want to buy, example: BNB. If faceToken = baseToken, it's the same as createCode endpoint.
         - name: baseTokenAmount
           in: query
           schema:
@@ -2526,13 +2445,10 @@ paths:
         - Gift Card
       summary: Verify a Binance Code (USER_DATA)
       description: >-
-        This API is for verifying whether the Binance Code is valid or not by
-        entering Binance Code or reference number.
+        This API is for verifying whether the Binance Code is valid or not by entering Binance Code or reference number.
 
 
-        Please note that if you enter the wrong binance code 5 times within an
-        hour, you will no longer be able to verify any binance code for that
-        hour.
+        Please note that if you enter the wrong binance code 5 times within an hour, you will no longer be able to verify any binance code for that hour.
 
 
         Weight(IP): 1
@@ -2575,13 +2491,10 @@ paths:
         - Gift Card
       summary: Fetch Token Limit (USER_DATA)
       description: >-
-        This API is for verifying whether the Binance Code is valid or not by
-        entering Binance Code or reference number.
+        This API is for verifying whether the Binance Code is valid or not by entering Binance Code or reference number.
 
 
-        Please note that if you enter the wrong binance code 5 times within an
-        hour, you will no longer be able to verify any binance code for that
-        hour.
+        Please note that if you enter the wrong binance code 5 times within an hour, you will no longer be able to verify any binance code for that hour.
 
 
         Weight(IP): 1
@@ -2628,8 +2541,7 @@ paths:
 
         This RSA Public key will be used to encrypt the card code.
 
-        Please note that the RSA Public key fetched is valid only for the
-        current day.
+        Please note that the RSA Public key fetched is valid only for the current day.
 
 
         Weight(IP): 1
@@ -2669,14 +2581,10 @@ paths:
       description: >-
         Adjust cross margin max leverage
 
-        The margin level need higher than the initial risk ratio of adjusted
-        leverage, the initial risk ratio of 3x is 1.5 and the initial risk ratio
-        of 5x is 1.25
+        The margin level need higher than the initial risk ratio of adjusted leverage, the initial risk ratio of 3x is 1.5 and the initial risk ratio of 5x is 1.25
 
 
         Weight(IP): 3000
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -2823,8 +2731,7 @@ paths:
       description: >-
         - Either `orderId` or `origClientOrderId` must be sent.
 
-        - For some historical orders `cummulativeQuoteQty` will be < 0, meaning
-        the data is not available at this time.
+        - For some historical orders `cummulativeQuoteQty` will be < 0, meaning the data is not available at this time.
 
 
         Weight(IP): 10
@@ -2870,8 +2777,6 @@ paths:
         Post a new order for margin account.
 
         Weight(UID): 6
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -3081,12 +2986,9 @@ paths:
         - Margin
       summary: Query Margin Account's Open Orders (USER_DATA)
       description: >-
-        - If the `symbol` is not sent, orders for all symbols will be returned
-        in an array.
+        - If the `symbol` is not sent, orders for all symbols will be returned in an array.
 
-        - When all symbols are returned, the number of requests counted against
-        the rate limiter is equal to the number of symbols currently trading on
-        the exchange
+        - When all symbols are returned, the number of requests counted against the rate limiter is equal to the number of symbols currently trading on the exchange
 
         - If isIsolated ="TRUE", symbol must be sent.
 
@@ -3169,11 +3071,9 @@ paths:
         - Margin
       summary: Query Margin Account's All Orders (USER_DATA)
       description: >-
-        - If `orderId` is set, it will get orders >= that orderId. Otherwise
-        most recent orders are returned.
+        - If `orderId` is set, it will get orders >= that orderId. Otherwise most recent orders are returned.
 
-        - For some historical orders `cummulativeQuoteQty` will be < 0, meaning
-        the data is not available at this time.
+        - For some historical orders `cummulativeQuoteQty` will be < 0, meaning the data is not available at this time.
 
 
         Weight(IP): 200
@@ -3232,8 +3132,6 @@ paths:
           - OCO counts as 2 orders against the order rate limit.
 
         Weight(UID): 6
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -3376,8 +3274,7 @@ paths:
         - Margin
       summary: Query Margin Account's all OCO (USER_DATA)
       description: >-
-        Retrieves all OCO for a specific margin account based on provided
-        optional parameters
+        Retrieves all OCO for a specific margin account based on provided optional parameters
 
 
         Weight(IP): 200
@@ -3449,8 +3346,7 @@ paths:
         - Margin
       summary: Query Margin Account's Trade List (USER_DATA)
       description: >-
-        - If `fromId` is set, it will get orders >= that `fromId`. Otherwise
-        most recent trades are returned.
+        - If `fromId` is set, it will get orders >= that `fromId`. Otherwise most recent trades are returned.
 
 
         Weight(IP): 10
@@ -3496,8 +3392,7 @@ paths:
       description: >-
         - If `isolatedSymbol` is not sent, crossed margin data will be sent.
 
-        - `borrowLimit` is also available from
-        https://www.binance.com/en/margin-fee
+        - `borrowLimit` is also available from https://www.binance.com/en/margin-fee
 
 
         Weight(IP): 50
@@ -3625,8 +3520,7 @@ paths:
       description: >-
         - If "symbols" is not sent, all isolated assets will be returned.
 
-        - If "symbols" is sent, only the isolated assets of the sent symbols
-        will be returned.
+        - If "symbols" is sent, only the isolated assets of the sent symbols will be returned.
 
 
         Weight(IP): 10
@@ -3663,8 +3557,7 @@ paths:
         - Margin
       summary: Disable Isolated Margin Account (TRADE)
       description: >-
-        Disable isolated margin account for a specific symbol. Each trading pair
-        can only be deactivated once every 24 hours .
+        Disable isolated margin account for a specific symbol. Each trading pair can only be deactivated once every 24 hours .
 
 
         Weight(UID): 300
@@ -3710,8 +3603,6 @@ paths:
         Enable isolated margin account for a specific symbol.
 
         Weight(UID): 300
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -3826,8 +3717,6 @@ paths:
         - "spotBNBBurn" and "interestBNBBurn" should be sent at least one.
 
         Weight(IP): 1
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -3937,12 +3826,10 @@ paths:
         - Margin
       summary: Query Cross Margin Fee Data (USER_DATA)
       description: >-
-        Get cross margin fee data collection with any vip level or user's
-        current specific data as https://www.binance.com/en/margin-fee
+        Get cross margin fee data collection with any vip level or user's current specific data as https://www.binance.com/en/margin-fee
 
 
-        Weight(IP): 1 when coin is specified; 5 when the coin parameter is
-        omitted
+        Weight(IP): 1 when coin is specified; 5 when the coin parameter is omitted
       parameters:
         - name: Content-Type
           in: header
@@ -3977,12 +3864,10 @@ paths:
         - Margin
       summary: Query Isolated Margin Fee Data (USER_DATA)
       description: >-
-        Get isolated margin fee data collection with any vip level or user's
-        current specific data as https://www.binance.com/en/margin-fee
+        Get isolated margin fee data collection with any vip level or user's current specific data as https://www.binance.com/en/margin-fee
 
 
-        Weight(IP): 1 when a single is specified; 10 when the symbol parameter
-        is omitted
+        Weight(IP): 1 when a single is specified; 10 when the symbol parameter is omitted
       parameters:
         - name: Content-Type
           in: header
@@ -4017,8 +3902,7 @@ paths:
         - Margin
       summary: Query Isolated Margin Tier Data (USER_DATA)
       description: >-
-        Get isolated margin tier data collection with any tier as
-        https://www.binance.com/en/margin-data
+        Get isolated margin tier data collection with any tier as https://www.binance.com/en/margin-data
 
 
         Weight(IP): 1
@@ -4169,8 +4053,6 @@ paths:
         The maximum number of coin is 10
 
         Weight(UID): 3000
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -4187,8 +4069,7 @@ paths:
           schema:
             type: string
           description: >-
-            The assets list of small liability exchange, Example: assetNames =
-            BTC,ETH
+            The assets list of small liability exchange, Example: assetNames = BTC,ETH
         - name: timestamp
           in: query
           schema:
@@ -4299,11 +4180,9 @@ paths:
       tags:
         - Margin
       summary: >-
-        Get tokens or symbols delist schedule for cross margin and isolated
-        margin (MARKET_DATA)
+        Get tokens or symbols delist schedule for cross margin and isolated margin (MARKET_DATA)
       description: >-
-        Get tokens or symbols delist schedule for cross margin and isolated
-        margin
+        Get tokens or symbols delist schedule for cross margin and isolated margin
 
 
         Weight(UID): 100
@@ -4341,8 +4220,7 @@ paths:
         - Margin
       summary: Get cross or isolated margin capital flow(USER_DATA)
       description: >-
-        Get tokens or symbols delist schedule for cross margin and isolated
-        margin
+        Get tokens or symbols delist schedule for cross margin and isolated margin
 
 
         Weight(UID): 100
@@ -4406,8 +4284,7 @@ paths:
         - Margin
       summary: Query Margin Available Inventory (USER_DATA)
       description: >-
-        Get tokens or symbols delist schedule for cross margin and isolated
-        margin
+        Get tokens or symbols delist schedule for cross margin and isolated margin
 
 
         Weight(UID): 100
@@ -4447,8 +4324,7 @@ paths:
         - Margin
       summary: Margin manual liquidation(MARGIN)
       description: >-
-        Get tokens or symbols delist schedule for cross margin and isolated
-        margin
+        Get tokens or symbols delist schedule for cross margin and isolated margin
 
 
         Weight(UID): 100
@@ -4487,8 +4363,7 @@ paths:
       tags:
         - Margin
       summary: >-
-        Query Liability Coin Leverage Bracket in Cross Margin Pro
-        Mode(MARKET_DATA)
+        Query Liability Coin Leverage Bracket in Cross Margin Pro Mode(MARKET_DATA)
       parameters:
         - name: Content-Type
           in: header
@@ -4511,8 +4386,6 @@ paths:
         - Margin
       summary: Margin account borrow/repay(MARGIN)
       description: 'Weight(UID): 3000'
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -4650,8 +4523,7 @@ paths:
         Current exchange trading rules and symbol information
 
 
-        - If any symbol provided in either symbol or symbols do not exist, the
-        endpoint will throw an error.
+        - If any symbol provided in either symbol or symbols do not exist, the endpoint will throw an error.
 
 
         Weight(IP): 10
@@ -4758,14 +4630,11 @@ paths:
         - Market
       summary: Compressed/Aggregate Trades List
       description: >-
-        Get compressed, aggregate trades. Trades that fill at the time, from the
-        same order, with the same price will have the quantity aggregated.
+        Get compressed, aggregate trades. Trades that fill at the time, from the same order, with the same price will have the quantity aggregated.
 
-        - If `startTime` and `endTime` are sent, time between startTime and
-        endTime must be less than 1 hour.
+        - If `startTime` and `endTime` are sent, time between startTime and endTime must be less than 1 hour.
 
-        - If `fromId`, `startTime`, and `endTime` are not sent, the most recent
-        aggregate trades will be returned.
+        - If `fromId`, `startTime`, and `endTime` are not sent, the most recent aggregate trades will be returned.
 
 
         Weight(IP): 1
@@ -4797,8 +4666,7 @@ paths:
         Klines are uniquely identified by their open time.
 
 
-        - If `startTime` and `endTime` are not sent, the most recent klines are
-        returned.
+        - If `startTime` and `endTime` are not sent, the most recent klines are returned.
 
 
         Weight(IP): 1
@@ -4830,12 +4698,10 @@ paths:
         - Market
       summary: UIKlines
       description: >-
-        The request is similar to klines having the same parameters and
-        response.
+        The request is similar to klines having the same parameters and response.
 
 
-        uiKlines return modified kline data, optimized for presentation of
-        candlestick charts.
+        uiKlines return modified kline data, optimized for presentation of candlestick charts.
       parameters:
         - name: Content-Type
           in: header
@@ -4889,12 +4755,10 @@ paths:
         - Market
       summary: 24hr Ticker Price Change Statistics
       description: >-
-        24 hour rolling window price change statistics. Careful when accessing
-        this with no symbol.
+        24 hour rolling window price change statistics. Careful when accessing this with no symbol.
 
 
-        - If the symbol is not sent, tickers for all symbols will be returned in
-        an array.
+        - If the symbol is not sent, tickers for all symbols will be returned in an array.
 
 
         Weight(IP):
@@ -4922,8 +4786,7 @@ paths:
         Latest price for a symbol or symbols.
 
 
-        - If the symbol is not sent, prices for all symbols will be returned in
-        an array.
+        - If the symbol is not sent, prices for all symbols will be returned in an array.
 
 
         Weight(IP):
@@ -4951,8 +4814,7 @@ paths:
         Best price/qty on the order book for a symbol or symbols.
 
 
-        - If the symbol is not sent, bookTickers for all symbols will be
-        returned in an array.
+        - If the symbol is not sent, bookTickers for all symbols will be returned in an array.
 
 
         Weight(IP):
@@ -4977,25 +4839,19 @@ paths:
         - Market
       summary: Rolling window price change statistics
       description: >-
-        The window used to compute statistics is typically slightly wider than
-        requested windowSize.
+        The window used to compute statistics is typically slightly wider than requested windowSize.
 
 
-        openTime for /api/v3/ticker always starts on a minute, while the
-        closeTime is the current time of the request. As such, the effective
-        window might be up to 1 minute wider than requested.
+        openTime for /api/v3/ticker always starts on a minute, while the closeTime is the current time of the request. As such, the effective window might be up to 1 minute wider than requested.
 
 
-        E.g. If the closeTime is 1641287867099 (January 04, 2022 09:17:47:099
-        UTC) , and the windowSize is 1d. the openTime will be: 1641201420000
-        (January 3, 2022, 09:17:00 UTC)
+        E.g. If the closeTime is 1641287867099 (January 04, 2022 09:17:47:099 UTC) , and the windowSize is 1d. the openTime will be: 1641201420000 (January 3, 2022, 09:17:00 UTC)
 
 
         Weight(IP): 2 for each requested symbol regardless of windowSize.
 
 
-        The weight for this request will cap at 100 once the number of symbols
-        in the request is more than 50.
+        The weight for this request will cap at 100 once the number of symbols in the request is more than 50.
       parameters:
         - name: Content-Type
           in: header
@@ -5338,8 +5194,6 @@ paths:
         - Mining
       summary: Hashrate Resale Request (USER_DATA)
       description: 'Weight(IP): 5'
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -5371,8 +5225,7 @@ paths:
           schema:
             type: string
           description: >-
-            Resale hashrate h/s must be transferred (BTC is greater than
-            500000000000 ETH is greater than 500000)
+            Resale hashrate h/s must be transferred (BTC is greater than 500000000000 ETH is greater than 500000)
         - name: timestamp
           in: query
           schema:
@@ -5396,8 +5249,6 @@ paths:
         - Mining
       summary: Cancel hashrate resale configuration (USER_DATA)
       description: 'Weight(IP): 5'
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -5571,8 +5422,7 @@ paths:
       description: >-
         - The max interval between startTime and endTime is 90 days.
 
-        - If startTime and endTime are not sent, the recent 7 days' data will be
-        returned.
+        - If startTime and endTime are not sent, the recent 7 days' data will be returned.
 
 
         Weight(UID): 3000
@@ -5592,8 +5442,7 @@ paths:
           schema:
             type: integer
           description: >-
-            0: purchase order, 1: sell order, 2: royalty income, 3: primary
-            market order, 4: mint fee
+            0: purchase order, 1: sell order, 2: royalty income, 3: primary market order, 4: mint fee
           example: '1'
         - name: timestamp
           in: query
@@ -5620,8 +5469,7 @@ paths:
       description: >-
         - The max interval between startTime and endTime is 90 days.
 
-        - If startTime and endTime are not sent, the recent 7 days' data will be
-        returned.
+        - If startTime and endTime are not sent, the recent 7 days' data will be returned.
 
 
         Weight(UID): 3000
@@ -5661,8 +5509,7 @@ paths:
       description: >-
         - The max interval between startTime and endTime is 90 days.
 
-        - If startTime and endTime are not sent, the recent 7 days' data will be
-        returned.
+        - If startTime and endTime are not sent, the recent 7 days' data will be returned.
 
 
         Weight(UID): 3000
@@ -5734,8 +5581,7 @@ paths:
         - Pay
       summary: Get Pay Trade History (USER_DATA)
       description: >-
-        - If startTimestamp and endTimestamp are not sent, the recent 90 days'
-        data will be returned.
+        - If startTimestamp and endTimestamp are not sent, the recent 90 days' data will be returned.
 
         - The max interval between startTimestamp and endTimestamp is 90 days.
 
@@ -5876,8 +5722,6 @@ paths:
         Repay futures Negative Balance
 
         Weight(IP): 1500
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -5915,8 +5759,7 @@ paths:
       tags:
         - Portfolio Margin
       summary: >-
-        Query Classic Portfolio Margin Negative Balance Interest
-        History(USER_DATA)
+        Query Classic Portfolio Margin Negative Balance Interest History(USER_DATA)
       description: |-
         Query interest history of negative balance for portfolio margin.
 
@@ -5989,16 +5832,13 @@ paths:
         Transfers all assets from Futures Account to Margin account
 
 
-        The BNB would not be collected from UM-PM account to the Portfolio
-        Margin account.
+        The BNB would not be collected from UM-PM account to the Portfolio Margin account.
 
 
         You can only use this function 500 times per hour in a rolling manner.
 
 
         Weight(IP): 1500
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -6038,8 +5878,6 @@ paths:
         The BNB transfer is not be supported
 
         Weight(IP): 60
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -6077,13 +5915,10 @@ paths:
         BNB transfer can be between Margin Account and USDM Account
 
 
-        You can only use this function 2 times per 10 minutes in a rolling
-        manner
+        You can only use this function 2 times per 10 minutes in a rolling manner
 
 
         Weight(IP): 1500
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -6130,8 +5965,6 @@ paths:
         Change Auto-repay-futures Status
 
         Weight(IP): 1500
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -6148,8 +5981,7 @@ paths:
           schema:
             type: string
           description: >-
-            Default: true; false for turn off the auto-repay futures negative
-            balance function
+            Default: true; false for turn off the auto-repay futures negative balance function
         - name: timestamp
           in: query
           schema:
@@ -6212,8 +6044,6 @@ paths:
         Repay futures Negative Balance
 
         Weight(IP): 1500
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -6287,8 +6117,7 @@ paths:
       description: >-
         - The max interval between startTime and endTime is 90 days.
 
-        - If startTime and endTime are not sent, the recent 7 days' data will be
-        returned.
+        - If startTime and endTime are not sent, the recent 7 days' data will be returned.
 
         - The earliest startTime is supported on June 10, 2020
 
@@ -6367,8 +6196,6 @@ paths:
         - Savings
       summary: Purchase Fixed/Activity Project (USER_DATA)
       description: 'Weight(IP): 1'
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -6453,8 +6280,6 @@ paths:
         - PositionId is mandatory parameter for fixed position.
 
         Weight(IP): 1
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -6497,16 +6322,12 @@ paths:
         - Sub-Account
       summary: Create a Virtual Sub-account (For Master Account)
       description: >-
-        - This request will generate a virtual sub account under your master
-        account.
+        - This request will generate a virtual sub account under your master account.
 
-        - You need to enable "trade" option for the api key which requests this
-        endpoint.
+        - You need to enable "trade" option for the api key which requests this endpoint.
 
 
         Weight(IP): 1
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -6523,8 +6344,7 @@ paths:
           schema:
             type: string
           description: >-
-            Please input a string. We will create a virtual email using that
-            string for you to register
+            Please input a string. We will create a virtual email using that string for you to register
         - name: timestamp
           in: query
           schema:
@@ -6667,8 +6487,6 @@ paths:
         - Master account can transfer max 2000 times a minute
 
         Weight(IP): 1
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -6935,8 +6753,6 @@ paths:
         - Sub-Account
       summary: Enable Margin for Sub-account (For Master Account)
       description: 'Weight(IP): 1'
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -7049,8 +6865,6 @@ paths:
         - Sub-Account
       summary: Enable Futures for Sub-account (For Master Account)
       description: 'Weight(IP): 1'
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -7202,8 +7016,6 @@ paths:
         - Sub-Account
       summary: Futures Transfer for Sub-account (For Master Account)
       description: 'Weight(IP): 1'
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -7235,17 +7047,13 @@ paths:
           schema:
             type: string
           description: >-
-            * `1` - transfer from subaccount's spot account to its USDT-margined
-            futures account
+            * `1` - transfer from subaccount's spot account to its USDT-margined futures account
 
-            * `2` - transfer from subaccount's USDT-margined futures account to
-            its spot account
+            * `2` - transfer from subaccount's USDT-margined futures account to its spot account
 
-            * `3` - transfer from subaccount's spot account to its COIN-margined
-            futures account
+            * `3` - transfer from subaccount's spot account to its COIN-margined futures account
 
-            * `4` - transfer from subaccount's COIN-margined futures account to
-            its spot account
+            * `4` - transfer from subaccount's COIN-margined futures account to its spot account
         - name: timestamp
           in: query
           schema:
@@ -7269,8 +7077,6 @@ paths:
         - Sub-Account
       summary: Margin Transfer for Sub-account (For Master Account)
       description: 'Weight(IP): 1'
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -7304,8 +7110,7 @@ paths:
           description: >-
             * `1` - transfer from subaccount's spot account to margin account
 
-            * `2` - transfer from subaccount's margin account to its spot
-            account
+            * `2` - transfer from subaccount's margin account to its spot account
         - name: timestamp
           in: query
           schema:
@@ -7329,8 +7134,6 @@ paths:
         - Sub-Account
       summary: Transfer to Sub-account of Same Master (For Sub-account)
       description: 'Weight(IP): 1'
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -7380,8 +7183,6 @@ paths:
         - Sub-Account
       summary: Transfer to Master (For Sub-account)
       description: 'Weight(IP): 1'
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -7426,11 +7227,9 @@ paths:
         - Sub-Account
       summary: Sub-account Transfer History (For Sub-account)
       description: >-
-        - If `type` is not sent, the records of type 2: transfer out will be
-        returned by default.
+        - If `type` is not sent, the records of type 2: transfer out will be returned by default.
 
-        - If `startTime` and `endTime` are not sent, the recent 30-day data will
-        be returned.
+        - If `startTime` and `endTime` are not sent, the recent 30-day data will be returned.
 
 
         Weight(IP): 1
@@ -7474,8 +7273,7 @@ paths:
 
         - The query time period must be less then 30 days.
 
-        - If startTime and endTime not sent, return records of the last 30 days
-        by default.
+        - If startTime and endTime not sent, return records of the last 30 days by default.
 
 
         Weight(IP): 1
@@ -7512,8 +7310,7 @@ paths:
         - Sub-Account
       summary: Universal Transfer (For Master Account)
       description: >-
-        - You need to enable "internal transfer" option for the api key which
-        requests this endpoint.
+        - You need to enable "internal transfer" option for the api key which requests this endpoint.
 
         - Transfer from master account by default if fromEmail is not sent.
 
@@ -7523,8 +7320,6 @@ paths:
 
 
         Weight(IP): 1
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -7710,8 +7505,6 @@ paths:
         - Sub-Account
       summary: Enable Leverage Token for Sub-account (For Master Account)
       description: 'Weight(IP): 1'
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -7881,14 +7674,10 @@ paths:
         - Sub-Account
       summary: Update IP Restriction for Sub-Account API key (For Master Account)
       description: >-
-        Before the usage of this endpoint, please ensure `POST
-        /sapi/v1/sub-account/subAccountApi/ipRestriction` was used to enable the
-        IP restriction.
+        Before the usage of this endpoint, please ensure `POST /sapi/v1/sub-account/subAccountApi/ipRestriction` was used to enable the IP restriction.
 
 
         Weight(UID): 3000
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -7914,9 +7703,7 @@ paths:
           schema:
             type: string
           description: >-
-            IP Restriction status. 1 = IP Unrestricted. 2 = Restrict access to
-            trusted IPs only. 3 = Restrict access to users' trusted third party
-            IPs only
+            IP Restriction status. 1 = IP Unrestricted. 2 = Restrict access to trusted IPs only. 3 = Restrict access to users' trusted third party IPs only
         - name: timestamp
           in: query
           schema:
@@ -7939,11 +7726,8 @@ paths:
       tags:
         - Sub-Account
       summary: >-
-        Deposit assets into the managed sub-account (For Investor Master
-        Account)
+        Deposit assets into the managed sub-account (For Investor Master Account)
       description: 'Weight(IP): 1'
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -8031,11 +7815,8 @@ paths:
       tags:
         - Sub-Account
       summary: >-
-        Withdrawl assets from the managed sub-account (For Investor Master
-        Account)
+        Withdrawl assets from the managed sub-account (For Investor Master Account)
       description: 'Weight(IP): 1'
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -8089,8 +7870,7 @@ paths:
 
         - Support query within the last one month only
 
-        - If `startTime` and `endTime` not sent, return records of the last 7
-        days by default
+        - If `startTime` and `endTime` not sent, return records of the last 7 days by default
 
 
         Weight(IP): 2400
@@ -8138,16 +7918,13 @@ paths:
       tags:
         - Sub-Account
       summary: >-
-        Query Managed Sub Account Transfer Log (For Investor Master Account)
-        (USER_DATA)
+        Query Managed Sub Account Transfer Log (For Investor Master Account) (USER_DATA)
       description: >-
         Investor can use this api to query managed sub account transfer log.
 
-        This endpoint is available for investor of Managed Sub-Account.A Managed
-        Sub-Account is an account
+        This endpoint is available for investor of Managed Sub-Account.A Managed Sub-Account is an account
 
-        type for investors who value flexibility in asset allocation and account
-        application, while
+        type for investors who value flexibility in asset allocation and account application, while
 
         delegating trades to a professional trading team.
 
@@ -8179,8 +7956,7 @@ paths:
           schema:
             type: string
           description: >-
-            End Time (The start time and end time interval cannot exceed half a
-            year)
+            End Time (The start time and end time interval cannot exceed half a year)
         - name: page
           in: query
           schema:
@@ -8207,19 +7983,8 @@ paths:
       tags:
         - Sub-Account
       summary: >-
-        Query Managed Sub Account Transfer Log (For Trading Team Master Account)
-        (USER_DATA)
-      description: >-
-        Trading team can use this api to query managed sub account transfer log.
-        This endpoint
-         is available for trading team of Managed Sub-Account. A Managed Sub-Account is 
-        an account type for investors who value flexibility in asset allocation 
-
-        and account application, while delegating trades to a professional
-        trading team.
-
-
-        Weight(UID): 60
+        Query Managed Sub Account Transfer Log (For Trading Team Master Account) (USER_DATA)
+      description: "Trading team can use this api to query managed sub account transfer log. This endpoint\n is available for trading team of Managed Sub-Account. A Managed Sub-Account is \nan account type for investors who value flexibility in asset allocation \nand account application, while delegating trades to a professional trading team.\n\nWeight(UID): 60"
       parameters:
         - name: Content-Type
           in: header
@@ -8246,8 +8011,7 @@ paths:
           schema:
             type: string
           description: >-
-            End Time (The start time and end time interval cannot exceed half a
-            year)
+            End Time (The start time and end time interval cannot exceed half a year)
         - name: page
           in: query
           schema:
@@ -8274,11 +8038,9 @@ paths:
       tags:
         - Sub-Account
       summary: >-
-        Query Managed Sub-account Futures Asset Details (For Investor Master
-        Account) (USER_DATA)
+        Query Managed Sub-account Futures Asset Details (For Investor Master Account) (USER_DATA)
       description: >-
-        Investor can use this api to query managed sub account futures asset
-        details
+        Investor can use this api to query managed sub account futures asset details
 
 
         Weight(UID): 60
@@ -8314,11 +8076,9 @@ paths:
       tags:
         - Sub-Account
       summary: >-
-        Query Managed Sub-account Margin Asset Details (For Investor Master
-        Account) (USER_DATA)
+        Query Managed Sub-account Margin Asset Details (For Investor Master Account) (USER_DATA)
       description: >-
-        Investor can use this api to query managed sub account margin asset
-        details
+        Investor can use this api to query managed sub account margin asset details
 
 
         Weight(IP): 1
@@ -8433,8 +8193,7 @@ paths:
       tags:
         - Sub-Account
       summary: >-
-        Query Sub-account Transaction Statistics (For Master Account)
-        (USER_DATA)
+        Query Sub-account Transaction Statistics (For Master Account) (USER_DATA)
       description: |-
         Query Sub-account Transaction statistics (For Master Account).
 
@@ -8477,8 +8236,7 @@ paths:
       tags:
         - Sub-Account
       summary: >-
-        Get Managed Sub-account Deposit Address (For Investor Master Account)
-        (USER_DATA)
+        Get Managed Sub-account Deposit Address (For Investor Master Account) (USER_DATA)
       description: |-
         Get investor's managed sub-account deposit address.
 
@@ -8529,8 +8287,6 @@ paths:
         Enable Options for Sub-account (For Master Account).
 
         Weight(IP): 1
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -8569,8 +8325,7 @@ paths:
       tags:
         - Sub-Account
       summary: >-
-        Query Managed Sub Account Transfer Log (For Trading Team Sub
-        Account)(USER_DATA)
+        Query Managed Sub Account Transfer Log (For Trading Team Sub Account)(USER_DATA)
       description: |-
         Query Managed Sub Account Transfer Log (For Trading Team Sub Account)
 
@@ -8596,8 +8351,7 @@ paths:
           schema:
             type: string
           description: >-
-            End Time (The start time and end time interval cannot exceed half a
-            year)
+            End Time (The start time and end time interval cannot exceed half a year)
         - name: page
           in: query
           schema:
@@ -8633,13 +8387,10 @@ paths:
       description: >-
         Test new order creation and signature/recvWindow long.
 
-        Creates and validates a new order but does not send it into the matching
-        engine.
+        Creates and validates a new order but does not send it into the matching engine.
 
 
         Weight(IP): 1
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -8701,8 +8452,7 @@ paths:
 
         - Either `orderId` or `origClientOrderId` must be sent.
 
-        - For some historical orders `cummulativeQuoteQty` will be < 0, meaning
-        the data is not available at this time.
+        - For some historical orders `cummulativeQuoteQty` will be < 0, meaning the data is not available at this time.
 
 
         Weight(IP): 2
@@ -8748,35 +8498,24 @@ paths:
         Send in a new order.
 
 
-        - `LIMIT_MAKER` are `LIMIT` orders that will be rejected if they would
-        immediately match and trade as a taker.
+        - `LIMIT_MAKER` are `LIMIT` orders that will be rejected if they would immediately match and trade as a taker.
 
-        - `STOP_LOSS` and `TAKE_PROFIT` will execute a `MARKET` order when the
-        `stopPrice` is reached.
+        - `STOP_LOSS` and `TAKE_PROFIT` will execute a `MARKET` order when the `stopPrice` is reached.
 
-        - Any `LIMIT` or `LIMIT_MAKER` type order can be made an iceberg order
-        by sending an `icebergQty`.
+        - Any `LIMIT` or `LIMIT_MAKER` type order can be made an iceberg order by sending an `icebergQty`.
 
         - Any order with an `icebergQty` MUST have `timeInForce` set to `GTC`.
 
-        - `MARKET` orders using `quantity` specifies how much a user wants to
-        buy or sell based on the market price.
+        - `MARKET` orders using `quantity` specifies how much a user wants to buy or sell based on the market price.
 
-        - `MARKET` orders using `quoteOrderQty` specifies the amount the user
-        wants to spend (when buying) or receive (when selling) of the quote
-        asset; the correct quantity will be determined based on the market
-        liquidity and `quoteOrderQty`.
+        - `MARKET` orders using `quoteOrderQty` specifies the amount the user wants to spend (when buying) or receive (when selling) of the quote asset; the correct quantity will be determined based on the market liquidity and `quoteOrderQty`.
 
-        - `MARKET` orders using `quoteOrderQty` will not break `LOT_SIZE` filter
-        rules; the order will execute a quantity that will have the notional
-        value as close as possible to `quoteOrderQty`.
+        - `MARKET` orders using `quoteOrderQty` will not break `LOT_SIZE` filter rules; the order will execute a quantity that will have the notional value as close as possible to `quoteOrderQty`.
 
-        - same `newClientOrderId` can be accepted only when the previous one is
-        filled, otherwise the order will be rejected.
+        - same `newClientOrderId` can be accepted only when the previous one is filled, otherwise the order will be rejected.
 
 
-        Trigger order price rules against market price for both `MARKET` and
-        `LIMIT` versions:
+        Trigger order price rules against market price for both `MARKET` and `LIMIT` versions:
 
 
         - Price above market price: `STOP_LOSS` `BUY`, `TAKE_PROFIT` `SELL`
@@ -8786,8 +8525,6 @@ paths:
 
 
         Weight(IP): 1
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -8888,13 +8625,10 @@ paths:
         Filters are evaluated before the cancel order is placed.
 
 
-        If the new order placement is successfully sent to the engine, the order
-        count will increase by 1.
+        If the new order placement is successfully sent to the engine, the order count will increase by 1.
 
 
         Weight(IP): 1
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -8927,11 +8661,9 @@ paths:
           schema:
             type: string
           description: >-
-            - `STOP_ON_FAILURE` If the cancel request fails, the new order
-            placement will not be attempted.
+            - `STOP_ON_FAILURE` If the cancel request fails, the new order placement will not be attempted.
 
-            - `ALLOW_FAILURES` If new order placement will be attempted even if
-            cancel request fails.
+            - `ALLOW_FAILURES` If new order placement will be attempted even if cancel request fails.
         - name: timestamp
           in: query
           schema:
@@ -8955,8 +8687,7 @@ paths:
         - Trade
       summary: Current Open Orders (USER_DATA)
       description: >-
-        Get all open orders on a symbol. Careful when accessing this with no
-        symbol.
+        Get all open orders on a symbol. Careful when accessing this with no symbol.
 
 
         Weight(IP):
@@ -9044,11 +8775,9 @@ paths:
         Get all account orders; active, canceled, or filled..
 
 
-        - If `orderId` is set, it will get orders >= that `orderId`. Otherwise
-        most recent orders are returned.
+        - If `orderId` is set, it will get orders >= that `orderId`. Otherwise most recent orders are returned.
 
-        - For some historical orders `cummulativeQuoteQty` will be < 0, meaning
-        the data is not available at this time.
+        - For some historical orders `cummulativeQuoteQty` will be < 0, meaning the data is not available at this time.
 
         - If `startTime` and/or `endTime` provided, `orderId` is not required
 
@@ -9093,21 +8822,7 @@ paths:
       tags:
         - Trade
       summary: New OCO (TRADE)
-      description: |-
-        Send in a new OCO
-
-        - Price Restrictions:
-          - `SELL`: Limit Price > Last Price > Stop Price
-          - `BUY`: Limit Price < Last Price < Stop Price
-        - Quantity Restrictions:
-            - Both legs must have the same quantity
-            - `ICEBERG` quantities however do not have to be the same
-        - Order Rate Limit
-            - `OCO` counts as 2 orders against the order rate limit.
-            
-        Weight(IP): 1
-      requestBody:
-        content: {}
+      description: "Send in a new OCO\n\n- Price Restrictions:\n  - `SELL`: Limit Price > Last Price > Stop Price\n  - `BUY`: Limit Price < Last Price < Stop Price\n- Quantity Restrictions:\n    - Both legs must have the same quantity\n    - `ICEBERG` quantities however do not have to be the same\n- Order Rate Limit\n    - `OCO` counts as 2 orders against the order rate limit.\n    \nWeight(IP): 1"
       parameters:
         - name: Content-Type
           in: header
@@ -9364,8 +9079,7 @@ paths:
         Get trades for a specific account and symbol.
 
 
-        If `fromId` is set, it will get id >= that `fromId`. Otherwise most
-        recent orders are returned.
+        If `fromId` is set, it will get id >= that `fromId`. Otherwise most recent orders are returned.
 
 
         Weight(IP): 10
@@ -9448,13 +9162,10 @@ paths:
       description: >-
         Test new order creation and signature/recvWindow long.
 
-        Creates and validates a new order but does not send it into the matching
-        engine.
+        Creates and validates a new order but does not send it into the matching engine.
 
 
         Weight(IP): 1
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -9487,8 +9198,7 @@ paths:
           schema:
             type: integer
           description: >-
-            Set the response JSON. MARKET and LIMIT order types default to FULL,
-            all other orders default to ACK.
+            Set the response JSON. MARKET and LIMIT order types default to FULL, all other orders default to ACK.
           example: '1234567890'
         - name: signature
           in: query
@@ -9509,13 +9219,10 @@ paths:
       description: >-
         Test new order creation and signature/recvWindow long.
 
-        Creates and validates a new order but does not send it into the matching
-        engine.
+        Creates and validates a new order but does not send it into the matching engine.
 
 
         Weight(IP): 1
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -9680,14 +9387,10 @@ paths:
       description: >-
         Start a new user data stream.
 
-        The stream will close after 60 minutes unless a keepalive is sent. If
-        the account has an active `listenKey`, that `listenKey` will be returned
-        and its validity will be extended for 60 minutes.
+        The stream will close after 60 minutes unless a keepalive is sent. If the account has an active `listenKey`, that `listenKey` will be returned and its validity will be extended for 60 minutes.
 
 
         Weight: 1
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -9709,14 +9412,10 @@ paths:
         - User Data Stream > Spot
       summary: Ping/Keep-alive a ListenKey (USER_STREAM)
       description: >-
-        Keepalive a user data stream to prevent a time out. User data streams
-        will close after 60 minutes. It's recommended to send a ping about every
-        30 minutes.
+        Keepalive a user data stream to prevent a time out. User data streams will close after 60 minutes. It's recommended to send a ping about every 30 minutes.
 
 
         Weight: 1
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -9777,14 +9476,10 @@ paths:
       description: >-
         Start a new user data stream.
 
-        The stream will close after 60 minutes unless a keepalive is sent. If
-        the account has an active `listenKey`, that `listenKey` will be returned
-        and its validity will be extended for 60 minutes.
+        The stream will close after 60 minutes unless a keepalive is sent. If the account has an active `listenKey`, that `listenKey` will be returned and its validity will be extended for 60 minutes.
 
 
         Weight: 1
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -9806,14 +9501,10 @@ paths:
         - User Data Stream > Cross Margin
       summary: Ping/Keep-alive a ListenKey (USER_STREAM)
       description: >-
-        Keepalive a user data stream to prevent a time out. User data streams
-        will close after 60 minutes. It's recommended to send a ping about every
-        30 minutes.
+        Keepalive a user data stream to prevent a time out. User data streams will close after 60 minutes. It's recommended to send a ping about every 30 minutes.
 
 
         Weight: 1
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -9874,14 +9565,10 @@ paths:
       description: >-
         Start a new user data stream.
 
-        The stream will close after 60 minutes unless a keepalive is sent. If
-        the account has an active `listenKey`, that `listenKey` will be returned
-        and its validity will be extended for 60 minutes.
+        The stream will close after 60 minutes unless a keepalive is sent. If the account has an active `listenKey`, that `listenKey` will be returned and its validity will be extended for 60 minutes.
 
 
         Weight: 1
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -9908,14 +9595,10 @@ paths:
         - User Data Stream > Isolated Margin
       summary: Ping/Keep-alive a Listen Key (USER_STREAM)
       description: >-
-        Keepalive a user data stream to prevent a time out. User data streams
-        will close after 60 minutes. It's recommended to send a ping about every
-        30 minutes.
+        Keepalive a user data stream to prevent a time out. User data streams will close after 60 minutes. It's recommended to send a ping about every 30 minutes.
 
 
         Weight: 1
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -10061,13 +9744,10 @@ paths:
         Rate Limit: 1/3s per account
 
 
-        You need to open Enable Spot & Margin Trading permission for the API Key
-        which requests this endpoint.
+        You need to open Enable Spot & Margin Trading permission for the API Key which requests this endpoint.
 
 
         Weight(IP): 1
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -10112,13 +9792,10 @@ paths:
         Rate Limit: 1/3s per account
 
 
-        You need to open Enable Spot & Margin Trading permission for the API Key
-        which requests this endpoint.
+        You need to open Enable Spot & Margin Trading permission for the API Key which requests this endpoint.
 
 
         Weight(IP): 1
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -10163,13 +9840,10 @@ paths:
         Rate Limit: 1/3s per account
 
 
-        You need to open Enable Spot & Margin Trading permission for the API Key
-        which requests this endpoint.
+        You need to open Enable Spot & Margin Trading permission for the API Key which requests this endpoint.
 
 
         Weight(IP): 1
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -10210,13 +9884,10 @@ paths:
         Rate Limit: 1/3s per account
 
 
-        You need to open Enable Spot & Margin Trading permission for the API Key
-        which requests this endpoint
+        You need to open Enable Spot & Margin Trading permission for the API Key which requests this endpoint
 
 
         Weight(IP): 1
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -10360,14 +10031,11 @@ paths:
       description: >-
         The time between startTime and endTime cannot be longer than 3 months.
 
-        If startTime and endTime are both not sent, then the last 30 days' data
-        will be returned.
+        If startTime and endTime are both not sent, then the last 30 days' data will be returned.
 
-        If startTime is sent but endTime is not sent, the next 30 days' data
-        beginning from startTime will be returned.
+        If startTime is sent but endTime is not sent, the next 30 days' data beginning from startTime will be returned.
 
-        If endTime is sent but startTime is not sent, the 30 days' data before
-        endTime will be returned.
+        If endTime is sent but startTime is not sent, the 30 days' data before endTime will be returned.
 
 
         Weight(IP): 150
@@ -10407,14 +10075,11 @@ paths:
       description: >-
         The time between startTime and endTime cannot be longer than 3 months.
 
-        If startTime and endTime are both not sent, then the last 30 days' data
-        will be returned.
+        If startTime and endTime are both not sent, then the last 30 days' data will be returned.
 
-        If startTime is sent but endTime is not sent, the next 30 days' data
-        beginning from startTime will be returned.
+        If startTime is sent but endTime is not sent, the next 30 days' data beginning from startTime will be returned.
 
-        If endTime is sent but startTime is not sent, the 30 days' data before
-        endTime will be returned.
+        If endTime is sent but startTime is not sent, the 30 days' data before endTime will be returned.
 
 
         Weight(IP): 150
@@ -10482,14 +10147,11 @@ paths:
       description: >-
         The time between startTime and endTime cannot be longer than 3 months.
 
-        If startTime and endTime are both not sent, then the last 30 days' data
-        will be returned.
+        If startTime and endTime are both not sent, then the last 30 days' data will be returned.
 
-        If startTime is sent but endTime is not sent, the next 30 days' data
-        beginning from startTime will be returned.
+        If startTime is sent but endTime is not sent, the next 30 days' data beginning from startTime will be returned.
 
-        If endTime is sent but startTime is not sent, the 30 days' data before
-        endTime will be returned.
+        If endTime is sent but startTime is not sent, the 30 days' data before endTime will be returned.
 
 
         Weight(IP): 150
@@ -10555,8 +10217,6 @@ paths:
         - Simple Earn
       summary: Set Flexible Auto Subscribe (USER_DATA)
       description: 'Weight(IP): 150'
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -10600,8 +10260,6 @@ paths:
         - Simple Earn
       summary: Set Locked Auto Subscribe (USER_DATA)
       description: 'Weight(IP): 150'
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -10807,14 +10465,11 @@ paths:
       description: >-
         The time between startTime and endTime cannot be longer than 3 months.
 
-        If startTime and endTime are both not sent, then the last 30 days' data
-        will be returned.
+        If startTime and endTime are both not sent, then the last 30 days' data will be returned.
 
-        If startTime is sent but endTime is not sent, the next 30 days' data
-        beginning from startTime will be returned.
+        If startTime is sent but endTime is not sent, the next 30 days' data beginning from startTime will be returned.
 
-        If endTime is sent but startTime is not sent, the 30 days' data before
-        endTime will be returned.
+        If endTime is sent but startTime is not sent, the 30 days' data before endTime will be returned.
 
 
         Weight(IP): 150
@@ -10858,14 +10513,11 @@ paths:
       description: >-
         The time between startTime and endTime cannot be longer than 3 months.
 
-        If startTime and endTime are both not sent, then the last 30 days' data
-        will be returned.
+        If startTime and endTime are both not sent, then the last 30 days' data will be returned.
 
-        If startTime is sent but endTime is not sent, the next 30 days' data
-        beginning from startTime will be returned.
+        If startTime is sent but endTime is not sent, the next 30 days' data beginning from startTime will be returned.
 
-        If endTime is sent but startTime is not sent, the 30 days' data before
-        endTime will be returned.
+        If endTime is sent but startTime is not sent, the 30 days' data before endTime will be returned.
 
 
         Weight(IP): 1
@@ -11076,8 +10728,6 @@ paths:
         max one request every 3s per account
 
         Weight(IP): 1
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -11128,9 +10778,7 @@ paths:
           schema:
             type: string
           description: >-
-            sum(all node's percentage) == 100, when in request parameter, just
-            like this details[0].targetAsset=BTC details[0].percentage=60
-            details[1].targetAsset=ETH
+            sum(all node's percentage) == 100, when in request parameter, just like this details[0].targetAsset=BTC details[0].percentage=60 details[1].targetAsset=ETH
         - name: timestamp
           in: query
           schema:
@@ -11159,8 +10807,6 @@ paths:
         max one request every 3s per account
 
         Weight(IP): 1
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -11202,9 +10848,7 @@ paths:
           schema:
             type: string
           description: >-
-            sum(all node's percentage) == 100, when in request parameter, just
-            like this details[0].targetAsset=BTC details[0].percentage=60
-            details[1].targetAsset=ETH
+            sum(all node's percentage) == 100, when in request parameter, just like this details[0].targetAsset=BTC details[0].percentage=60 details[1].targetAsset=ETH
         - name: timestamp
           in: query
           schema:
@@ -11233,8 +10877,6 @@ paths:
         max one request every 3s per account
 
         Weight(IP): 1
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -11496,8 +11138,6 @@ paths:
         If both startTime and endTime are null, then default is 30days
 
         Weight(IP): 1
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -11616,8 +11256,6 @@ paths:
         If both startTime and endTime are null, then default is 30days
 
         Weight(IP): 1
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -11841,8 +11479,7 @@ paths:
 
         - Support query within the last one month only
 
-        - If startTimeand endTime not sent, return records of the last 7 days by
-        default
+        - If startTimeand endTime not sent, return records of the last 7 days by default
 
 
         Weight(IP): 2400
@@ -11888,13 +11525,10 @@ paths:
       description: >-
         - This request will disable fastwithdraw switch under your account.
 
-        - You need to enable "trade" option for the api key which requests this
-        endpoint.
+        - You need to enable "trade" option for the api key which requests this endpoint.
 
 
         Weight(IP): 1
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -11929,18 +11563,12 @@ paths:
         - Wallet
       summary: Enable Fast Withdraw Switch (USER_DATA)
       description: >-
-        - This request will enable fastwithdraw switch under your account. You
-        need to enable "trade" option for the api key which requests this
-        endpoint.
+        - This request will enable fastwithdraw switch under your account. You need to enable "trade" option for the api key which requests this endpoint.
 
-        - When Fast Withdraw Switch is on, transferring funds to a Binance
-        account will be done instantly. There is no on-chain transaction, no
-        transaction ID and no withdrawal fee.
+        - When Fast Withdraw Switch is on, transferring funds to a Binance account will be done instantly. There is no on-chain transaction, no transaction ID and no withdrawal fee.
 
 
         Weight(IP): 1
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -11980,13 +11608,10 @@ paths:
 
         - If `network` not send, return with default network of the coin.
 
-        - You can get `network` and `isDefault` in `networkList` of a coin in
-        the response of `Get /sapi/v1/capital/config/getall (HMAC SHA256)`.
+        - You can get `network` and `isDefault` in `networkList` of a coin in the response of `Get /sapi/v1/capital/config/getall (HMAC SHA256)`.
 
 
         Weight(IP): 1
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -12039,11 +11664,9 @@ paths:
         Fetch deposit history.
 
 
-        - Please notice the default `startTime` and `endTime` to make sure that
-        time interval is within 0-90 days.
+        - Please notice the default `startTime` and `endTime` to make sure that time interval is within 0-90 days.
 
-        - If both `startTime` and `endTime` are sent, time between `startTime`
-        and `endTime` must be less than 90 days.
+        - If both `startTime` and `endTime` are sent, time between `startTime` and `endTime` must be less than 90 days.
 
 
         Weight(IP): 1
@@ -12086,11 +11709,9 @@ paths:
 
         - `network` may not be in the response for old withdraw.
 
-        - Please notice the default `startTime` and `endTime` to make sure that
-        time interval is within 0-90 days.
+        - Please notice the default `startTime` and `endTime` to make sure that time interval is within 0-90 days.
 
-        - If both `startTime` and `endTime` are sent, time between `startTime`
-        and `endTime` must be less than 90 days
+        - If both `startTime` and `endTime` are sent, time between `startTime` and `endTime` must be less than 90 days
 
 
         Weight(IP): 1
@@ -12133,8 +11754,7 @@ paths:
 
         - If network is not send, return with default network of the coin.
 
-        - You can get network and isDefault in networkList in the response of
-        Get /sapi/v1/capital/config/getall (HMAC SHA256).
+        - You can get network and isDefault in networkList in the response of Get /sapi/v1/capital/config/getall (HMAC SHA256).
 
 
         Weight(IP): 10
@@ -12286,8 +11906,6 @@ paths:
         - Wallet
       summary: Get Assets That Can Be Converted Into BNB (USER_DATA)
       description: 'Weight(IP): 1'
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -12325,8 +11943,6 @@ paths:
         Convert dust assets to BNB.
 
         Weight(UID): 10
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -12406,8 +12022,7 @@ paths:
         Fetch details of assets supported on Binance.
 
 
-        - Please get network and other deposit or withdraw details from `GET
-        /sapi/v1/capital/config/getall`.
+        - Please get network and other deposit or withdraw details from `GET /sapi/v1/capital/config/getall`.
 
 
         Weight(IP): 1
@@ -12482,16 +12097,13 @@ paths:
         - Wallet
       summary: Query User Universal Transfer History (USER_DATA)
       description: >-
-        - `fromSymbol` must be sent when type are ISOLATEDMARGIN_MARGIN and
-        ISOLATEDMARGIN_ISOLATEDMARGIN
+        - `fromSymbol` must be sent when type are ISOLATEDMARGIN_MARGIN and ISOLATEDMARGIN_ISOLATEDMARGIN
 
-        - `toSymbol` must be sent when type are MARGIN_ISOLATEDMARGIN and
-        ISOLATEDMARGIN_ISOLATEDMARGIN
+        - `toSymbol` must be sent when type are MARGIN_ISOLATEDMARGIN and ISOLATEDMARGIN_ISOLATEDMARGIN
 
         - Support query within the last 6 months only
 
-        - If `startTime` and `endTime` not sent, return records of the last 7
-        days by default
+        - If `startTime` and `endTime` not sent, return records of the last 7 days by default
 
 
         Weight(IP): 1
@@ -12534,15 +12146,12 @@ paths:
         - Wallet
       summary: User Universal Transfer (USER_DATA)
       description: >-
-        You need to enable `Permits Universal Transfer` option for the api key
-        which requests this endpoint.
+        You need to enable `Permits Universal Transfer` option for the api key which requests this endpoint.
 
 
-        - `fromSymbol` must be sent when type are ISOLATEDMARGIN_MARGIN and
-        ISOLATEDMARGIN_ISOLATEDMARGIN
+        - `fromSymbol` must be sent when type are ISOLATEDMARGIN_MARGIN and ISOLATEDMARGIN_ISOLATEDMARGIN
 
-        - `toSymbol` must be sent when type are MARGIN_ISOLATEDMARGIN and
-        ISOLATEDMARGIN_ISOLATEDMARGIN
+        - `toSymbol` must be sent when type are MARGIN_ISOLATEDMARGIN and ISOLATEDMARGIN_ISOLATEDMARGIN
 
 
         ENUM of transfer types:
@@ -12555,13 +12164,11 @@ paths:
 
         - UMFUTURE_MAIN USDⓈ-M Futures account transfer to Spot account
 
-        - UMFUTURE_MARGIN USDⓈ-M Futures account transfer to
-        Margin（cross）account
+        - UMFUTURE_MARGIN USDⓈ-M Futures account transfer to Margin（cross）account
 
         - CMFUTURE_MAIN COIN-M Futures account transfer to Spot account
 
-        - CMFUTURE_MARGIN COIN-M Futures account transfer to Margin(cross)
-        account
+        - CMFUTURE_MARGIN COIN-M Futures account transfer to Margin(cross) account
 
         - MARGIN_MAIN Margin（cross）account transfer to Spot account
 
@@ -12569,14 +12176,11 @@ paths:
 
         - MARGIN_CMFUTURE Margin（cross）account transfer to COIN-M Futures
 
-        - ISOLATEDMARGIN_MARGIN Isolated margin account transfer to
-        Margin(cross) account
+        - ISOLATEDMARGIN_MARGIN Isolated margin account transfer to Margin(cross) account
 
-        - MARGIN_ISOLATEDMARGIN Margin(cross) account transfer to Isolated
-        margin account
+        - MARGIN_ISOLATEDMARGIN Margin(cross) account transfer to Isolated margin account
 
-        - ISOLATEDMARGIN_ISOLATEDMARGIN Isolated margin account transfer to
-        Isolated margin account
+        - ISOLATEDMARGIN_ISOLATEDMARGIN Isolated margin account transfer to Isolated margin account
 
         - MAIN_FUNDING Spot account transfer to Funding account
 
@@ -12596,8 +12200,6 @@ paths:
 
 
         Weight(IP): 1
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -12648,13 +12250,10 @@ paths:
         - Wallet
       summary: Funding Wallet (USER_DATA)
       description: >-
-        - Currently supports querying the following business assets：Binance Pay,
-        Binance Card, Binance Gift Card, Stock Token
+        - Currently supports querying the following business assets：Binance Pay, Binance Card, Binance Gift Card, Stock Token
 
 
         Weight(IP): 1
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -12692,8 +12291,6 @@ paths:
         Get user assets, just for positive data.
 
         Weight(IP): 5
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -12731,8 +12328,6 @@ paths:
         Get user assets, just for positive data.
 
         Weight(IP): 5
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -12946,16 +12541,13 @@ paths:
         - Wallet
       summary: Switch on/off BUSD and stable coins conversion (USER_DATA)
       description: >-
-        User can use it to turn on or turn off the BUSD auto-conversion from/to
-        a specific stable coin.
+        User can use it to turn on or turn off the BUSD auto-conversion from/to a specific stable coin.
 
 
         Params need to be in the POST body
 
 
         Weight(UID): 600
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -12977,8 +12569,7 @@ paths:
           schema:
             type: string
           description: >-
-            true: turn on the auto-conversion. false: turn off the
-            auto-conversion
+            true: turn on the auto-conversion. false: turn off the auto-conversion
         - name: signature
           in: query
           schema:
@@ -12995,16 +12586,13 @@ paths:
       tags:
         - Wallet
       summary: >-
-        One click arrival deposit apply (for expired address deposit)
-        (USER_DATA)
+        One click arrival deposit apply (for expired address deposit) (USER_DATA)
       description: |-
         Apply deposit credit for expired address (One click arrival)
 
         Params need to be in the POST body
 
         Weight(IP): 1
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -13215,8 +12803,7 @@ paths:
         - VIP Loans
       summary: Get VIP Loan Ongoing Orders (USER_DATA)
       description: >-
-        - If startTime and endTime are not sent, the recent 7-day data will be
-        returned.
+        - If startTime and endTime are not sent, the recent 7-day data will be returned.
 
         - The max interval between startTime and endTime is 30 days.
 
@@ -13255,8 +12842,6 @@ paths:
       tags:
         - VIP Loans
       summary: VIP Loan Repay (TRADE)
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -13299,8 +12884,7 @@ paths:
         - VIP Loans
       summary: Get VIP Loan Repayment History (USER_DATA)
       description: >-
-        - If startTime and endTime are not sent, the recent 7-day data will be
-        returned.
+        - If startTime and endTime are not sent, the recent 7-day data will be returned.
 
         - The max interval between startTime and endTime is 30 days.
 
@@ -13343,8 +12927,6 @@ paths:
         VIP loan is available for VIP users only.
 
         Weight(UID): 6000
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -13388,8 +12970,7 @@ paths:
         - VIP Loans
       summary: Check Locked Value of VIP Collateral Account (USER_DATA)
       description: >-
-        - If startTime and endTime are not sent, the recent 7-day data will be
-        returned.
+        - If startTime and endTime are not sent, the recent 7-day data will be returned.
 
         - The max interval between startTime and endTime is 30 days.
 
@@ -13435,8 +13016,6 @@ paths:
         loanAccountId and collateralAccountId under same master account
 
         Weight(UID): 6000
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -13502,8 +13081,7 @@ paths:
         - VIP Loans
       summary: Get Loanable Assets Data (USER_DATA)
       description: >-
-        Get interest rate and borrow limit of loanable assets. The borrow limit
-        is shown in USD value.
+        Get interest rate and borrow limit of loanable assets. The borrow limit is shown in USD value.
 
 
         Weight(IP): 400

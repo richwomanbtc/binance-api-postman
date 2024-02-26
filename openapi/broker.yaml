@@ -13,8 +13,6 @@ paths:
       tags:
         - default
       summary: Create a Sub Account
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -81,8 +79,6 @@ paths:
       tags:
         - default
       summary: Enable Margin for Sub Account
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -123,8 +119,6 @@ paths:
       tags:
         - default
       summary: Enable Futures for Sub Account
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -165,8 +159,6 @@ paths:
       tags:
         - default
       summary: Change Sub Account Api Permission
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -290,8 +282,6 @@ paths:
       tags:
         - default
       summary: Change Sub Account Commission
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -335,8 +325,6 @@ paths:
       tags:
         - default
       summary: Change Sub Account Futures Commission Adjustment
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -449,8 +437,6 @@ paths:
       tags:
         - default
       summary: Sub Account Transfer
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -573,8 +559,6 @@ paths:
       tags:
         - default
       summary: Generate Broker Commission Rebate History
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -636,8 +620,6 @@ paths:
       tags:
         - default
       summary: Enable Or Disable BNB Burn for Sub Account SPOT and MARGIN
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -677,8 +659,6 @@ paths:
       tags:
         - default
       summary: Enable Or Disable BNB Burn for Sub Account Margin Interest
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header

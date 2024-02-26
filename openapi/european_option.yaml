@@ -134,8 +134,7 @@ paths:
         - Market
       summary: Kline/Candlestick Data
       description: >-
-        Kline/candlestick bars for an option symbol. Klines are uniquely
-        identified by their open time.
+        Kline/candlestick bars for an option symbol. Klines are uniquely identified by their open time.
       parameters:
         - name: Content-Type
           in: header
@@ -270,8 +269,6 @@ paths:
         - Account/Trades
       summary: New Order (TRADE)
       description: Send a new order.
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -396,8 +393,6 @@ paths:
         - Account/Trades
       summary: Place Multiple Orders (TRADE)
       description: Send multiple option orders.
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -577,8 +572,7 @@ paths:
         - Account/Trades
       summary: Query Option Order History (TRADE)
       description: >-
-        Query all finished orders within 1 month, finished status: CANCELLED
-        FILLED REJECTED.
+        Query all finished orders within 1 month, finished status: CANCELLED FILLED REJECTED.
       parameters:
         - name: Content-Type
           in: header
@@ -749,8 +743,7 @@ paths:
         - Account/Trades
       summary: Get Download Id For Option Transaction History (USER_DATA)
       description: >-
-        Request Limitation is 5 times per month, shared by front end download
-        page and rest api
+        Request Limitation is 5 times per month, shared by front end download page and rest api
 
         The time between startTime and endTime can not be longer than 1 year
 
@@ -838,12 +831,7 @@ paths:
         - Data Stream
       summary: Start User Data Stream (USER_STREAM)
       description: >-
-        Start a new user data stream. The stream will close after 60 minutes
-        unless a keepalive is sent. If the account has an active listenKey, that
-        listenKey will be returned and its validity will be extended for 60
-        minutes.
-      requestBody:
-        content: {}
+        Start a new user data stream. The stream will close after 60 minutes unless a keepalive is sent. If the account has an active listenKey, that listenKey will be returned and its validity will be extended for 60 minutes.
       parameters:
         - name: Content-Type
           in: header
@@ -875,11 +863,7 @@ paths:
         - Data Stream
       summary: Keepalive User Data Stream (USER_STREAM)
       description: >-
-        Keepalive a user data stream to prevent a time out. User data streams
-        will close after 60 minutes. It's recommended to send a ping about every
-        60 minutes.
-      requestBody:
-        content: {}
+        Keepalive a user data stream to prevent a time out. User data streams will close after 60 minutes. It's recommended to send a ping about every 60 minutes.
       parameters:
         - name: Content-Type
           in: header

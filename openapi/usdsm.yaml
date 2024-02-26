@@ -165,8 +165,7 @@ paths:
         - Market
       summary: Kline/Candlestick Data
       description: >-
-        Kline/candlestick bars for a symbol. Klines are uniquely identified by
-        their open time.
+        Kline/candlestick bars for a symbol. Klines are uniquely identified by their open time.
       parameters:
         - name: Content-Type
           in: header
@@ -195,8 +194,7 @@ paths:
         - Market
       summary: Continuous Contract Kline/Candlestick Data
       description: >-
-        Kline/candlestick bars for a symbol. Klines are uniquely identified by
-        their open time.
+        Kline/candlestick bars for a symbol. Klines are uniquely identified by their open time.
       parameters:
         - name: Content-Type
           in: header
@@ -226,8 +224,7 @@ paths:
         - Market
       summary: Index Price Kline/Candlestick Data
       description: >-
-        Kline/candlestick bars for the index price of a pair. Klines are
-        uniquely identified by their open time.
+        Kline/candlestick bars for the index price of a pair. Klines are uniquely identified by their open time.
       parameters:
         - name: Content-Type
           in: header
@@ -256,8 +253,7 @@ paths:
         - Market
       summary: Mark Price Kline/Candlestick Data
       description: >-
-        Kline/candlestick bars for the mark price of a symbol. Klines are
-        uniquely identified by their open time.
+        Kline/candlestick bars for the mark price of a symbol. Klines are uniquely identified by their open time.
       parameters:
         - name: Content-Type
           in: header
@@ -977,8 +973,6 @@ paths:
       tags:
         - Trade
       summary: Change Multi-Assets Mode (TRADE)
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -1017,8 +1011,6 @@ paths:
         - Order
       summary: New Order (TRADE)
       description: https://binance-docs.github.io/apidocs/futures/en/#new-order-trade
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -1070,31 +1062,22 @@ paths:
         - Order
       summary: Modify Order (TRADE)
       description: >-
-        Either orderId or origClientOrderId must be sent, and the orderId will
-        prevail if both are sent.
+        Either orderId or origClientOrderId must be sent, and the orderId will prevail if both are sent.
 
-        Both quantity and price must be sent, which is different from dapi
-        modify order endpoint.
+        Both quantity and price must be sent, which is different from dapi modify order endpoint.
 
-        When the new quantity or price doesn't satisfy PRICE_FILTER /
-        PERCENT_FILTER / LOT_SIZE, amendment will be rejected and the order will
-        stay as it is.
+        When the new quantity or price doesn't satisfy PRICE_FILTER / PERCENT_FILTER / LOT_SIZE, amendment will be rejected and the order will stay as it is.
 
-        However the order will be cancelled by the amendment in the following
-        situations:
+        However the order will be cancelled by the amendment in the following situations:
 
-        - when the order is in partially filled status and the new quantity <=
-        executedQty
+        - when the order is in partially filled status and the new quantity <= executedQty
 
-        - When the order is GTX and the new price will cause it to be executed
-        immediately
+        - When the order is GTX and the new price will cause it to be executed immediately
 
         One order can only be modfied for less than 10000 times
 
 
         Weight: 1
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -1212,8 +1195,6 @@ paths:
       tags:
         - Order
       summary: Place Multiple Orders (TRADE)
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -1251,8 +1232,6 @@ paths:
       tags:
         - Order
       summary: Modify Multiple Orders (TRADE)
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -1335,8 +1314,7 @@ paths:
       description: >-
         Get order modification history
 
-        Either orderId or origClientOrderId must be sent, and the orderId will
-        prevail if both are sent.
+        Either orderId or origClientOrderId must be sent, and the orderId will prevail if both are sent.
 
 
         Weight: 1
@@ -1379,8 +1357,7 @@ paths:
         - Order
       summary: Get Download Id For Futures Order History (USER_DATA)
       description: >-
-        Request Limitation is 10 times per month, shared by front end download
-        page and rest api
+        Request Limitation is 10 times per month, shared by front end download page and rest api
 
         The time between startTime and endTime can not be longer than 1 year
 
@@ -1472,8 +1449,7 @@ paths:
         - Order
       summary: Get Download Id For Futures Trade History (USER_DATA)
       description: >-
-        Request Limitation is 5 times per month, shared by front end download
-        page and rest api
+        Request Limitation is 5 times per month, shared by front end download page and rest api
 
         The time between startTime and endTime can not be longer than 1 year
 
@@ -1600,8 +1576,6 @@ paths:
       tags:
         - Order
       summary: Auto-Cancel All Open Orders (TRADE)
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -1774,8 +1748,6 @@ paths:
       tags:
         - Trade
       summary: Change Margin Type
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -1817,8 +1789,6 @@ paths:
       tags:
         - Trade
       summary: Change Initial Leverage
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -1860,8 +1830,6 @@ paths:
       tags:
         - Trade
       summary: Modify Isolated Position Margin
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -1944,8 +1912,6 @@ paths:
       tags:
         - Trade
       summary: Change Position Mode（TRADE）
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -2043,8 +2009,6 @@ paths:
       tags:
         - Data Stream
       summary: Create New Listen Key
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
@@ -2065,8 +2029,6 @@ paths:
       tags:
         - Data Stream
       summary: Renew Listen Key
-      requestBody:
-        content: {}
       parameters:
         - name: Content-Type
           in: header
